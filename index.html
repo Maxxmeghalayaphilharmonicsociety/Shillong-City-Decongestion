@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formal Representation & Evidentiary Submission — Shillong Peak Ropeway Project</title>
-    
-    <!-- Tailwind CSS -->
+    <title>Formal Representation: Shillong Peak Ropeway Project | Public Evidentiary Submission</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,831 +12,667 @@
             theme: {
                 extend: {
                     colors: {
-                        legal: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            gold: '#d97706',
-                            crimson: '#dc2626',
-                            emerald: '#059669',
-                            navy: '#1e3a8a'
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        amber: {
+                            800: '#92400e',
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
                         serif: ['Merriweather', 'Georgia', 'serif'],
-                        heading: ['Cinzel', 'serif']
+                        heading: ['Cinzel', 'Times New Roman', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
-    <!-- Google Fonts -->
+    <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        ::selection {
+            background-color: #0284c7;
+            color: #ffffff;
         }
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(100, 116, 139, 0.5);
-            border-radius: 4px;
-        }
-        
-        /* Reading progress bar */
-        #progress-bar {
-            width: 0%;
-            transition: width 0.1s ease-out;
-        }
-
-        /* Search highlights */
-        mark.highlight {
+        mark {
             background-color: #fef08a;
-            color: #000;
+            color: #854d0e;
             padding: 0.1em 0.3em;
             border-radius: 0.2em;
         }
-        .dark mark.highlight {
+        .dark mark {
             background-color: #854d0e;
-            color: #fff;
+            color: #fef08a;
         }
-
-        /* Print styles */
         @media print {
-            body {
-                background: white !important;
-                color: black !important;
-                font-size: 11pt;
-            }
-            .no-print {
-                display: none !important;
-            }
-            .print-only {
-                display: block !important;
-            }
-            .page-break {
-                page-break-before: always;
-            }
-            .shadow-lg, .shadow-2xl, .shadow-md {
-                box-shadow: none !important;
-            }
-            .border {
-                border-color: #ccc !important;
-            }
-            a[href^="http"]:after {
-                content: " (" attr(href) ")";
-                font-size: 80%;
-            }
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; font-size: 11pt; }
+            .print-full-width { width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .shadow-xl, .shadow-2xl, .shadow-md { box-shadow: none !important; }
+            .border { border-color: #d1d5db !important; }
+            a { text-decoration: underline; color: #000 !important; }
+            a::after { content: " (" attr(href) ")"; font-size: 80%; }
         }
     </style>
 </head>
-<body class="bg-slate-100 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-200">
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased selection:bg-sky-500 selection:text-white transition-colors duration-300">
 
-    <!-- Reading Progress Bar -->
-    <div class="fixed top-0 left-0 w-full h-1.5 bg-slate-200 dark:bg-slate-800 z-50 no-print">
-        <div id="progress-bar" class="h-full bg-amber-600 dark:bg-amber-500"></div>
-    </div>
+    <!-- Reading Progress Indicator -->
+    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-sky-600 dark:bg-sky-400 z-50 transition-all duration-150 no-print" style="width: 0%;"></div>
 
-    <!-- Navigation Bar -->
-    <nav class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur border-b border-slate-200 dark:border-slate-800 shadow-sm no-print">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Brand / Doc Header -->
-                <div class="flex items-center space-x-3">
-                    <div class="p-2 bg-slate-900 text-amber-500 rounded-lg dark:bg-amber-500 dark:text-slate-950">
-                        <i class="fa-solid fa-scale-balanced text-xl"></i>
-                    </div>
-                    <div>
-                        <span class="block text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">Official Record Filing</span>
-                        <span class="font-heading font-bold text-sm sm:text-base text-slate-900 dark:text-white">Shillong Peak Ropeway Submission</span>
-                    </div>
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-lg bg-sky-900 text-gold-400 flex items-center justify-center font-heading font-bold text-lg shadow-inner border border-amber-500/30">
+                    <i class="fa-solid font-bold fa-scale-balanced text-amber-400"></i>
                 </div>
-
-                <!-- Desktop Navigation Controls -->
-                <div class="hidden md:flex items-center space-x-3">
-                    <!-- Search Input -->
-                    <div class="relative">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-sm"></i>
-                        <input type="text" id="searchInput" placeholder="Search record text..." 
-                            class="pl-9 pr-8 py-1.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200 w-48 focus:w-64 transition-all">
-                        <button id="clearSearch" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
-
-                    <!-- Quick Action Controls -->
-                    <button onclick="copyDocumentText()" title="Copy Full Text" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-regular fa-copy"></i>
-                    </button>
-                    <button onclick="window.print()" title="Print / Save PDF" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-print"></i>
-                    </button>
-                    <button id="themeToggle" title="Toggle Dark/Light Mode" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-moon dark:hidden"></i>
-                        <i class="fa-solid fa-sun hidden dark:inline"></i>
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center space-x-2">
-                    <button id="mobileMenuBtn" class="p-2 text-slate-700 dark:text-slate-200 rounded-lg">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
+                <div>
+                    <h1 class="text-sm font-bold font-heading text-slate-900 dark:text-white tracking-wide uppercase">Evidentiary Submission</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Shillong Peak Ropeway Project Representation</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 space-y-3">
-            <div class="relative">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400"></i>
-                <input type="text" id="searchInputMobile" placeholder="Search record..." 
-                    class="w-full pl-9 pr-3 py-2 text-sm rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
-            </div>
-            <div class="grid grid-cols-2 gap-2 text-sm">
-                <button onclick="copyDocumentText()" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-left flex items-center space-x-2">
-                    <i class="fa-regular fa-copy text-amber-500"></i>
-                    <span>Copy Text</span>
+            <!-- Search and Controls -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <!-- Search Box -->
+                <div class="relative hidden md:block w-48 lg:w-64">
+                    <input type="text" id="search-input" placeholder="Search document..." 
+                        class="w-full pl-9 pr-4 py-1.5 text-xs bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-full border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-xs text-slate-400"></i>
+                    <button id="clear-search" class="hidden absolute right-3 top-2.5 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Theme">
+                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-amber-400 text-lg"></i>
                 </button>
-                <button onclick="window.print()" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-left flex items-center space-x-2">
-                    <i class="fa-solid fa-print text-amber-500"></i>
-                    <span>Print PDF</span>
+
+                <!-- Copy Text Button -->
+                <button id="copy-text-btn" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Copy Document Text">
+                    <i class="fa-regular fa-copy text-lg"></i>
+                </button>
+
+                <!-- Print Button -->
+                <button onclick="window.print()" class="hidden sm:flex items-center space-x-1 px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-md transition-colors border border-slate-300 dark:border-slate-700">
+                    <i class="fa-solid fa-print"></i>
+                    <span>Print / PDF</span>
                 </button>
             </div>
-            <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs text-slate-500">
-                <span>Theme</span>
-                <button id="themeToggleMobile" class="px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-md">Toggle Mode</button>
-            </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Page Container -->
+    <!-- Main Container -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
-            <!-- Sidebar Navigation (Desktop) -->
-            <aside class="hidden lg:block lg:col-span-3 space-y-6 sticky top-24 h-fit no-print">
-                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <h3 class="text-xs uppercase tracking-wider font-bold text-slate-400 dark:text-slate-500 mb-4">Document Outline</h3>
-                    <nav class="space-y-1 text-sm font-medium" id="toc">
-                        <a href="#meta-header" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-file-contract text-amber-500 w-5"></i> Meta Header & Recipients
+            <!-- Sidebar / Table of Contents -->
+            <aside class="lg:col-span-1 no-print">
+                <div class="sticky top-24 bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 font-sans">Document Navigation</h3>
+                    <nav class="space-y-1 text-xs">
+                        <a href="#header-block" class="toc-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400 font-medium transition-colors">
+                            <i class="fa-solid fa-file-contract mr-2 text-slate-400"></i>Header & Addressees
                         </a>
-                        <a href="#preamble" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-book-open text-blue-500 w-5"></i> Preamble
+                        <a href="#preamble" class="toc-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400 font-medium transition-colors">
+                            <i class="fa-solid fa-scroll mr-2 text-slate-400"></i>Preamble
                         </a>
-                        <a href="#question-1" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-circle-question text-indigo-500 w-5"></i> Question 1: Decongestion & NST
+                        <a href="#question-1" class="toc-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400 font-medium transition-colors">
+                            <i class="fa-solid fa-circle-question mr-2 text-indigo-500"></i>Q1: Decongestion & NST
                         </a>
-                        <a href="#question-2" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-droplet text-emerald-500 w-5"></i> Question 2: Hydrology & EIA
+                        <a href="#question-2" class="toc-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400 font-medium transition-colors">
+                            <i class="fa-solid fa-droplet mr-2 text-emerald-500"></i>Q2: EIA & Water Catchment
                         </a>
-                        <a href="#question-3" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-shield-halved text-rose-500 w-5"></i> Question 3: Defence Security
+                        <a href="#question-3" class="toc-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400 font-medium transition-colors">
+                            <i class="fa-solid fa-shield-halved mr-2 text-rose-500"></i>Q3: Defence Security
                         </a>
-                        <a href="#closing-demands" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-gavel text-amber-600 w-5"></i> Closing Demands & Signatures
+                        <a href="#demands" class="toc-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400 font-medium transition-colors">
+                            <i class="fa-solid fa-gavel mr-2 text-amber-500"></i>Closing Demands
                         </a>
                     </nav>
-                </div>
 
-                <!-- Fast Specs Metadata Card -->
-                <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-5 rounded-2xl shadow-md border border-slate-700">
-                    <div class="flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <span>Filing Highlights</span>
+                    <hr class="border-slate-200 dark:border-slate-800 my-4">
+
+                    <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 rounded-lg p-3">
+                        <div class="flex items-center space-x-2 text-amber-800 dark:text-amber-400 font-semibold text-xs mb-1">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span>Statutory Record</span>
+                        </div>
+                        <p class="text-[11px] text-amber-900/80 dark:text-amber-300/80 leading-relaxed">
+                            Official evidentiary submission requiring point-by-point administrative response.
+                        </p>
                     </div>
-                    <ul class="text-xs space-y-2.5 text-slate-300">
-                        <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Filing Date:</span>
-                            <span class="font-semibold text-white">Nov 11, 2026</span>
-                        </li>
-                        <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Project Outlay:</span>
-                            <span class="font-semibold text-amber-400">₹151 Crore</span>
-                        </li>
-                        <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Central Grant:</span>
-                            <span class="font-semibold text-white">₹70+ Cr (PM-DevINE)</span>
-                        </li>
-                        <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Forest Clearance:</span>
-                            <span class="font-semibold text-rose-400">2.3257 Ha / 545 Trees</span>
-                        </li>
-                        <li class="flex justify-between">
-                            <span>Submitter:</span>
-                            <span class="font-semibold text-white">Concerned Citizens</span>
-                        </li>
-                    </ul>
                 </div>
             </aside>
 
             <!-- Main Legal Representation Document -->
-            <main class="lg:col-span-9 space-y-10">
+            <main class="lg:col-span-3 space-y-8 print-full-width" id="document-content">
 
-                <!-- MAIN DOCUMENT PAPER CONTAINER -->
-                <article id="printable-area" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-6 sm:p-10 md:p-14 relative">
-                    
-                    <!-- Official Stamp Header Badge -->
-                    <div class="flex flex-wrap items-center justify-between gap-4 pb-8 mb-8 border-b border-slate-200 dark:border-slate-800">
-                        <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-200 border border-rose-300 dark:border-rose-800">
-                            <span class="w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-400 animate-pulse mr-2"></span>
-                            OFFICIAL EVIDENTIARY RECORD FILING
+                <!-- Header Banner Card -->
+                <section id="header-block" class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sky-500/10 to-transparent rounded-bl-full pointer-events-none"></div>
+
+                    <!-- Top Meta Badge -->
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200 dark:border-slate-800">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold border border-slate-300 dark:border-slate-700">
+                            <i class="fa-solid fa-gavel text-amber-600"></i>
+                            <span>FORMAL REPRESENTATION & EVIDENTIARY SUBMISSION</span>
                         </div>
-                        <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
-                            REF NO: MRDA/EIDP/EVID-2026/11
+                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1 rounded-md">
+                            <i class="fa-regular fa-calendar-check mr-1.5 text-sky-600"></i>DATE: November 11, 2026
                         </div>
                     </div>
 
-                    <!-- Title Header Section -->
-                    <header id="meta-header" class="mb-10 text-center sm:text-left">
-                        <h1 class="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4 tracking-tight">
-                            FORMAL REPRESENTATION AND EVIDENTIARY SUBMISSION
-                        </h1>
-                        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium tracking-wide uppercase">
-                            Submitted under Public Trust Doctrine and Environmental Governance Frameworks
+                    <!-- TO Block -->
+                    <div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-5 border border-slate-200/80 dark:border-slate-700/50 mb-8">
+                        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 font-sans">
+                            <i class="fa-solid fa-paper-plane mr-2 text-sky-600"></i>ADDRESSED TO THE CONCERNED AUTHORITIES:
+                        </h2>
+                        <ol class="space-y-2 text-sm font-medium text-slate-800 dark:text-slate-200 pl-2">
+                            <li class="flex items-start">
+                                <span class="font-bold text-sky-600 dark:text-sky-400 mr-2">1.</span>
+                                <span><strong>The Chief Executive Officer</strong>, Meghalaya Ropeway Development Authority (MRDA)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-sky-600 dark:text-sky-400 mr-2">2.</span>
+                                <span><strong>The Director</strong>, Directorate of Tourism, Government of Meghalaya</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-sky-600 dark:text-sky-400 mr-2">3.</span>
+                                <span><strong>The District Magistrate / Deputy Commissioner</strong>, East Khasi Hills District</span>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Subject Heading -->
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">SUBJECT</span>
+                        <h2 class="text-lg sm:text-xl font-bold font-serif text-slate-900 dark:text-white mt-1 leading-snug">
+                            Evidentiary Submission Regarding Public Statements on the Justification for Decongestion, Environmental Impact Assessment (EIA) Exemptions in Protected Forests, and Security Contradictions of the Proposed Shillong Peak Ropeway Project
+                        </h2>
+                    </div>
+                </section>
+
+                <!-- Preamble -->
+                <section id="preamble" class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-xl">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-2 h-6 bg-sky-600 rounded-full"></div>
+                        <h2 class="text-base font-bold uppercase tracking-widest text-slate-900 dark:text-white font-sans">PREAMBLE</h2>
+                    </div>
+                    <div class="prose dark:prose-invert max-w-none font-serif leading-relaxed text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base">
+                        <p>
+                            This representation is submitted to place on official record glaring institutional contradictions, statutory violations, and documented facts regarding the <strong>₹151-Crore Shillong Peak Ropeway Project</strong>.
                         </p>
-                    </header>
+                        <p>
+                            For years, the state leadership, cabinet ministers, and central funding submissions justified this project to the public as an urban transit solution meant to decongest Shillong. Administrative records, however, expose a troubling contradiction: the project imposes massive concrete construction within vital forest and water catchment areas while sidestepping mandatory environmental impact assessments, genuine public consultations, and essential security clearances.
+                        </p>
+                        <p class="font-sans font-medium text-slate-900 dark:text-white bg-sky-50 dark:bg-sky-950/40 p-4 rounded-xl border-l-4 border-sky-600">
+                            Accordingly, I present Three Core Questions backed by verified records and the government’s own public admissions, requiring an immediate, formal written response from the concerned authorities.
+                        </p>
+                    </div>
+                </section>
 
-                    <!-- Formal Header Details Box (To / Date / Subject) -->
-                    <section class="bg-slate-50 dark:bg-slate-800/60 rounded-xl p-6 mb-10 border-l-4 border-amber-600 dark:border-amber-500 text-sm space-y-4">
-                        <div>
-                            <span class="block text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">TO:</span>
-                            <ol class="space-y-1 font-semibold text-slate-900 dark:text-slate-100 pl-4 list-decimal">
-                                <li>The Chief Executive Officer, Meghalaya Ropeway Development Authority (MRDA)</li>
-                                <li>The Director, Directorate of Tourism, Government of Meghalaya</li>
-                                <li>The District Magistrate / Deputy Commissioner, East Khasi Hills District</li>
-                            </ol>
+                <!-- QUESTION 1 -->
+                <section id="question-1" class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-indigo-100 dark:bg-indigo-950/60 text-indigo-800 dark:text-indigo-300 text-xs font-bold font-sans uppercase">
+                        <i class="fa-solid fa-traffic-light"></i>
+                        <span>QUESTION 1: URBAN TRANSIT & PRECEDENT FAILURE</span>
+                    </div>
+
+                    <h2 class="text-lg sm:text-xl font-bold font-serif text-slate-900 dark:text-white leading-snug">
+                        On the Justification for Decongestion, Central Funding Mandates, and Replicating the New Shillong Township (NST) Failure
+                    </h2>
+
+                    <div class="prose dark:prose-invert max-w-none font-serif leading-relaxed text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base">
+                        <p>
+                            For decades, the New Shillong Township (NST) was sold to the public on one big promise: to decongest Shillong by shifting offices and traffic out of the city. Thousands of crores of public money have been poured into NST, yet it stands today as a massive warning of failed planning. Old Shillong is more choked and unlivable than ever, and NST itself is already descending into gridlock because the government focused only on pouring concrete and erecting massive office complexes without basic civic services or integrated transit routes in place.
+                        </p>
+                        <p>
+                            Now, we are watching the exact same script play out with the Shillong Peak Ropeway. For years, from the 2019 15th Finance Commission submissions to public assurances by our Chief Minister and Deputy Chief Minister, aerial ropeways were pitched to the public and sanctioned over ₹70 crore in central funding under the banner of 'decongesting Shillong city.' Yet today, when questioned by residents, the administration stands before us and publicly denies that this ropeway was ever meant for city decongestion, admitting it is purely a tourist facility.
+                        </p>
+                    </div>
+
+                    <!-- Core Question Callout Box -->
+                    <div class="bg-slate-900 text-white dark:bg-slate-950 p-6 rounded-xl shadow-lg border-l-4 border-indigo-500 my-6">
+                        <p class="text-xs uppercase tracking-wider text-indigo-400 font-sans font-bold mb-2">
+                            <i class="fa-solid fa-circle-question mr-1.5"></i>CORE FORMAL QUESTION TO THE ADMINISTRATION:
+                        </p>
+                        <p class="font-serif italic text-base sm:text-lg leading-relaxed text-slate-100">
+                            "Having spent thousands of crores on NST only to worsen gridlock on both ends, and having now publicly abandoned the very 'decongestion' justification / promise used to justify and fund this ropeway, why and by what moral or administrative right, should the government proceed with this Ropeway project here at Lum Shyllong at all when the administration has already miserably failed to deliver on decongesting the city?"
+                        </p>
+                    </div>
+
+                    <!-- Q1 Evidentiary References -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-sans mb-4 flex items-center">
+                            <i class="fa-solid fa-folder-open mr-2 text-indigo-500"></i>EVIDENTIARY REFERENCES (PUBLIC DOMAIN)
+                        </h3>
+
+                        <div class="space-y-4 text-xs sm:text-sm font-sans">
+                            <!-- Ref 1 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">1. Public Declarations by State Leadership Framing the Justification for Decongestion:</h4>
+                                <ul class="space-y-2 text-slate-700 dark:text-slate-300 pl-4 list-disc">
+                                    <li>
+                                        <strong>Chief Minister Conrad K. Sangma (Dec 4, 2024):</strong> Official foundation stone address explicitly asserted: <em>"The ropeway is a potential mode of urban transport and could be a solution to decongest the city."</em>
+                                    </li>
+                                    <li>
+                                        <strong>Deputy Chief Minister Prestone Tynsong (Sept 6, 2022):</strong> Publicly announced to media outlets (Hub Network, The Shillong Times) that aerial transit networks were being taken up specifically to <em>"decongest Shillong city"</em> where road widening is unfeasible.
+                                    </li>
+                                    <li>
+                                        <strong>15th Finance Commission Submissions (July 16, 2019):</strong> Official Meghalaya State Government submissions sought grants explicitly framed around the master objective to <em>"introduce ropeways to decongest Shillong city."</em>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Ref 2 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-1">2. Central Funding Criteria (PM-DevINE Scheme / Ministry of DoNER):</h4>
+                                <p class="text-slate-700 dark:text-slate-300">
+                                    Sanctioned with over ₹70 Crore in central funding under PM-DevINE, the project brief relies on alternative urban transit criteria to reduce vehicular load on central hill routes.
+                                </p>
+                            </div>
+
+                            <!-- Ref 3 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">3. The New Shillong Township (NST) Decongestion Precedent & Links:</h4>
+                                <p class="text-slate-700 dark:text-slate-300 mb-3">
+                                    Promised as a macro-level relief valve to decongest Shillong City, NST project failed due to unintegrated transit planning, merely shifting gridlock onto narrow arterial bottlenecks. The lower terminal at Lawsohtun replicates this failure by creating "Induced Demand" traffic congestion inside residential nodes.
+                                </p>
+                                <div class="space-y-1.5 font-mono text-[11px]">
+                                    <div class="text-slate-500 font-bold uppercase tracking-wider mb-1 font-sans">Verified Source Links:</div>
+                                    <a href="https://theshillongtimes.com/2024/10/04/new-shillong-still-in-devp-stage-despite-crores-spent/" target="_blank" rel="noopener noreferrer" class="block text-sky-600 dark:text-sky-400 hover:underline truncate">1. https://theshillongtimes.com/2024/10/04/new-shillong-still-in-devp-stage-despite-crores-spent/</a>
+                                    <a href="https://theprint.in/india/meghalaya-secretariat-to-be-shifted-to-decongest-shillong/806066/" target="_blank" rel="noopener noreferrer" class="block text-sky-600 dark:text-sky-400 hover:underline truncate">2. https://theprint.in/india/meghalaya-secretariat-to-be-shifted-to-decongest-shillong/806066/</a>
+                                    <a href="https://www.landconflictwatch.org/conflicts/land-acquisition-for-new-shillong-township#" target="_blank" rel="noopener noreferrer" class="block text-sky-600 dark:text-sky-400 hover:underline truncate">3. https://www.landconflictwatch.org/conflicts/land-acquisition-for-new-shillong-township#</a>
+                                    <a href="https://highlandpost.com/rs-2500-cr-to-be-spent-for-administrative-city-at-new-shillong/" target="_blank" rel="noopener noreferrer" class="block text-sky-600 dark:text-sky-400 hover:underline truncate">4. https://highlandpost.com/rs-2500-cr-to-be-spent-for-administrative-city-at-new-shillong/</a>
+                                    <a href="https://newsonair.gov.in/new-shillong-township-will-be-meghalayas-engine-of-growth-says-meghalaya-cm-conrad-k-sangma/" target="_blank" rel="noopener noreferrer" class="block text-sky-600 dark:text-sky-400 hover:underline truncate">5. https://newsonair.gov.in/new-shillong-township-will-be-meghalayas-engine-of-growth-says-meghalaya-cm-conrad-k-sangma/</a>
+                                    <a href="https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2003970&reg=48&lang=2" target="_blank" rel="noopener noreferrer" class="block text-sky-600 dark:text-sky-400 hover:underline truncate">6. https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2003970&reg=48&lang=2</a>
+                                    <a href="https://theshillongtimes.com/2022/01/18/govt-offices-to-be-shifted-to-nst/" target="_blank" rel="noopener noreferrer" class="block text-sky-600 dark:text-sky-400 hover:underline truncate">7. https://theshillongtimes.com/2022/01/18/govt-offices-to-be-shifted-to-nst/</a>
+                                    <a href="https://www.syllad.com/shillong-traffic-jams-wont-end-without-land-and-public-cooperation-rymbui/" target="_blank" rel="noopener noreferrer" class="block text-sky-600 dark:text-sky-400 hover:underline truncate">8. https://www.syllad.com/shillong-traffic-jams-wont-end-without-land-and-public-cooperation-rymbui/</a>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-slate-200 dark:border-slate-700">
+                    </div>
+                </section>
+
+                <!-- QUESTION 2 -->
+                <section id="question-2" class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-xs font-bold font-sans uppercase">
+                        <i class="fa-solid fa-tree"></i>
+                        <span>QUESTION 2: HYDROLOGY & EIA EXEMPTION VIOLATIONS</span>
+                    </div>
+
+                    <h2 class="text-lg sm:text-xl font-bold font-serif text-slate-900 dark:text-white leading-snug">
+                        Hiding Behind the 2022 EIA Exemption While Ignoring Heavy Concrete Terminals & Water Catchment Risks
+                    </h2>
+
+                    <div class="prose dark:prose-invert max-w-none font-serif leading-relaxed text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base">
+                        <p>
+                            The administration labels this project "eco-friendly" by pointing to overhead cables and a 0.2% footprint for six mid-line towers, while relying on the April 27, 2022 amendment (S.O. 1953(E)) to the EIA Notification, 2006 to bypass a comprehensive EIA and statutory public hearing.
+                        </p>
+                        <p>
+                            However, measuring only the mid-line towers ignores the diversion of <strong>2.3257 hectares of forest</strong>, the felling of <strong>545 mature trees</strong>, and the massive reinforced concrete (RCC) terminal buildings explicitly mandated in the Directorate of Tourism's own tender documents inside Upper Shillong’s vital water catchment.
+                        </p>
+                    </div>
+
+                    <!-- Core Question Callout Box -->
+                    <div class="bg-slate-900 text-white dark:bg-slate-950 p-6 rounded-xl shadow-lg border-l-4 border-emerald-500 my-6">
+                        <p class="text-xs uppercase tracking-wider text-emerald-400 font-sans font-bold mb-2">
+                            <i class="fa-solid fa-circle-question mr-1.5"></i>CORE FORMAL QUESTION TO THE ADMINISTRATION:
+                        </p>
+                        <p class="font-serif italic text-base sm:text-lg leading-relaxed text-slate-100 mb-4">
+                            "On what independent, peer-reviewed hydrological basis/data does the government claim that Shillong’s spring sources, specifically Patakhana and Wahingdoh, will remain safe from concrete excavation and catchment disruption, and why has the administration not made public the complete records of the following:"
+                        </p>
+                        <ol class="space-y-3 font-sans text-xs sm:text-sm text-slate-200 pl-2">
+                            <li class="flex items-start">
+                                <span class="font-bold text-emerald-400 mr-2">1.</span>
+                                <span><strong>The full Public Health Engineering (PHE) water catchment report:</strong> Officials verbally cited this report on November 5, 2026 to claim a "0.2% footprint" for the six towers, yet have never published the study or explained why it omits the RCC terminal buildings explicitly listed in Tender Corrigendum-09 (Clauses 2.4.1 and 2.4.2(a));</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-emerald-400 mr-2">2.</span>
+                                <span><strong>The complete New Development Bank (NDB) Environment and Social Management Plan (ESMP):</strong> Only a two-page Project Summary and scattered tender excerpts, such as S. No. 3 of Corrigendum-09, which treats 1:10 compensatory afforestation merely as a "recommendation" for "provisioning" rather than a binding rule, are public, while the full ESMP required under NDB’s Environment and Social Framework remains undisclosed;</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-emerald-400 mr-2">3.</span>
+                                <span><strong>The Stage-II MoEF&CC forest diversion approval and conditions:</strong> Officials confirmed obtaining MoEF&CC forest diversion and tree-felling approval (2.3257 ha / 545 trees), yet the formal Stage-II clearance letter and its legally binding conditions have not been placed in the public domain; and</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-emerald-400 mr-2">4.</span>
+                                <span><strong>The mandatory environmental safeguard compliance records under OM F. No. 22-17/2021-IA.III:</strong> While MoEF&CC exempted aerial ropeways from prior Environmental Clearance in April 2022 (S.O. 1953(E)), it simultaneously issued this Office Memorandum binding project proponents to strict construction safeguards, whose compliance records remain hidden from public inspection?</span>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Q2 Evidentiary References -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-sans mb-4 flex items-center">
+                            <i class="fa-solid fa-folder-open mr-2 text-emerald-500"></i>EVIDENTIARY REFERENCES (PUBLIC DOMAIN & STATUTORY FILINGS)
+                        </h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm font-sans">
+                            <!-- Ref 1 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
+                                <span class="inline-block px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-bold text-[10px] uppercase">Catchment & Tender Scope</span>
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100">1. PHE Catchment Note & RCC Terminal Scope:</h4>
+                                <p class="text-slate-700 dark:text-slate-300 text-xs">
+                                    <strong>Official Verbal Citation (Nov 5, 2026):</strong> MRDA CEO C.V.D. Diengdoh, IAS cited an unpublished PHE report claiming six mid-line towers occupy 0.2% of catchment area (500m–1km from Patakhana and Wahingdoh springs). Verified via <em>The Times of India</em> & <em>SP News Agency</em>.
+                                </p>
+                                <p class="text-slate-700 dark:text-slate-300 text-xs">
+                                    <strong>Contradictory Tender Scope (July 18, 2024):</strong> Directorate of Tourism Corrigendum-09 (Clauses 2.4.1 & 2.4.2(a)) mandates bidder experience in constructing heavy "RCC Building, Towers", proving massive concrete terminal footprints were omitted from the 0.2% claim. Available via <em>New Development Bank Procurement Portal (Corrigendum-09 PDF)</em>.
+                                </p>
+                            </div>
+
+                            <!-- Ref 2 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
+                                <span class="inline-block px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-bold text-[10px] uppercase">NDB Multilateral Safeguards</span>
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100">2. NDB Category B & Non-Binding ESMP:</h4>
+                                <p class="text-slate-700 dark:text-slate-300 text-xs">
+                                    <strong>NDB Sovereign Financing Disclosure (July 18, 2022):</strong> Classified as Category B under NDB’s ESF, explicitly acknowledging forest diversion, impacts on indigenous people, and community health/safety risks requiring full ESMPs. Document available via <em>New Development Bank Project Summary PDF</em>.
+                                </p>
+                                <p class="text-slate-700 dark:text-slate-300 text-xs">
+                                    <strong>Non-Binding Tree Replacement:</strong> Tender Corrigendum-09 (Clause 11.0, ESMP Table S. No. 3) states 1:10 compensatory afforestation is merely a "recommendation" for "provisioning" rather than a binding covenant.
+                                </p>
+                            </div>
+
+                            <!-- Ref 3 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
+                                <span class="inline-block px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-bold text-[10px] uppercase">Forest Diversion</span>
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100">3. Stage-II Forest Diversion & Tree Felling:</h4>
+                                <p class="text-slate-700 dark:text-slate-300 text-xs">
+                                    <strong>Official Disclosure (Nov 5, 2026):</strong> MRDA confirmed MoEF&CC approval for diverting 2.3257 hectares of forest land and felling 545 mature trees, yet the formal Stage-II clearance letter and binding conditions remain withheld from the public. Verified via <em>SP News Agency</em>.
+                                </p>
+                            </div>
+
+                            <!-- Ref 4 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
+                                <span class="inline-block px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-bold text-[10px] uppercase">MoEF&CC Statutory Mandates</span>
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100">4. Gazette S.O. 1953(E) & Office Memorandum:</h4>
+                                <p class="text-slate-700 dark:text-slate-300 text-xs">
+                                    <strong>Gazette Notification S.O. 1953(E) (April 27, 2022):</strong> Omits aerial ropeways from prior EC under EIA 2006. Indexed via <em>India Code / MoEF&CC Gazette Record</em>.
+                                </p>
+                                <p class="text-slate-700 dark:text-slate-300 text-xs">
+                                    <strong>Binding Office Memorandum F. No. 22-17/2021-IA.III:</strong> Exemption is strictly subject to mandatory construction safeguards; compliance records remain undisclosed. Indexed via <em>MoEF&CC PARIVESH OM Compilation Portal</em>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- QUESTION 3 -->
+                <section id="question-3" class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 text-xs font-bold font-sans uppercase">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>QUESTION 3: DEFENCE SECURITY & POLICY DOUBLE STANDARD</span>
+                    </div>
+
+                    <h2 class="text-lg sm:text-xl font-bold font-serif text-slate-900 dark:text-white leading-snug">
+                        On Traffic Contradictions and the Double Standard on Military Security
+                    </h2>
+
+                    <div class="prose dark:prose-invert max-w-none font-serif leading-relaxed text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base">
+                        <p>
+                            In February and April 2026, the state government formally scrapped its flagship Rilbong–Barik flyover previously promoted as Shillong’s "single largest traffic decongestion intervention" after Defence authorities (GOC 101 Area) objected that an elevated corridor near Cantonment boundaries posed an unacceptable security risk.
+                        </p>
+                        <p>
+                            Yet, for a commercial tourist ropeway directly bordering the strategic Eastern Air Command (EAC) Air Force Station and radar facilities at Upper Shillong, the administration claims that simply placing the upper terminal 80 metres below the viewpoint resolves all security concerns.
+                        </p>
+                    </div>
+
+                    <!-- Core Question Callout Box -->
+                    <div class="bg-slate-900 text-white dark:bg-slate-950 p-6 rounded-xl shadow-lg border-l-4 border-rose-500 my-6 space-y-4">
+                        <p class="text-xs uppercase tracking-wider text-rose-400 font-sans font-bold">
+                            <i class="fa-solid fa-circle-question mr-1.5"></i>CORE FORMAL QUESTIONS TO THE ADMINISTRATION:
+                        </p>
+                        <p class="font-serif italic text-base sm:text-lg leading-relaxed text-slate-100">
+                            "How can the government justify sacrificing a vital public commuter flyover at Rilbong–Barik on military security grounds while simultaneously operating 13 elevated passenger cabins with an unobstructed aerial line-of-sight overlooking sensitive Air Force and Army installations at Upper Shillong?"
+                        </p>
+                        <p class="font-sans text-xs uppercase tracking-widest text-slate-400 font-bold text-center">AND</p>
+                        <p class="font-serif italic text-base sm:text-lg leading-relaxed text-slate-100">
+                            "Why has the administration failed to place the exact security conditions attached to the IAF (26 July 2023), Indian Army (7 August 2023), and AAI (24 April 2023) No Objection Certificates, even in redacted form, in the public domain?"
+                        </p>
+                    </div>
+
+                    <!-- Q3 Evidentiary References -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-sans mb-4 flex items-center">
+                            <i class="fa-solid fa-folder-open mr-2 text-rose-500"></i>EVIDENTIARY REFERENCES (MILITARY & INFRASTRUCTURE PRECEDENT)
+                        </h3>
+
+                        <div class="space-y-4 text-xs sm:text-sm font-sans">
+                            <!-- Ref 1 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-1">1. Rejection of the Rilbong–Barik Elevated Corridor on Defence Security Grounds (Feb–April 2026):</h4>
+                                <p class="text-slate-700 dark:text-slate-300">
+                                    <strong>Official Cancellation:</strong> Following formal objections by General Officer Commanding (GOC), 101 Area regarding elevated structures near Cantonment zones, Deputy CM Prestone Tynsong confirmed on April 28, 2026 that the flyover was scrapped due to <em>"safety and security reasons"</em>. Reported by <em>The Shillong Times</em> (Feb 13, 2026) and <em>The Meghalayan Express</em> (April 28, 2026).
+                                </p>
+                            </div>
+
+                            <!-- Ref 2 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-1">2. Proximity to Eastern Air Command (EAC) & Aerial Elevation Above Sensitive Zones:</h4>
+                                <p class="text-slate-700 dark:text-slate-300">
+                                    <strong>Official Alignment Admission (Oct 23, 2026):</strong> Tourism officials admitted during public consultations that the upper terminal was shifted 80m below the viewpoint specifically to <em>"address Air Force security concerns"</em> near EAC station, while still operating 13 elevated gondola cabins above the ridge canopy. Reported by <em>The Assam Tribune</em> (Oct 23, 2026).
+                                </p>
+                            </div>
+
+                            <!-- Ref 3 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-1">3. Undisclosed Defence & Aviation NOC Conditions:</h4>
+                                <p class="text-slate-700 dark:text-slate-300">
+                                    <strong>Official Clearance Claims (Aug 2 & Nov 5, 2026):</strong> MRDA stated it obtained NOCs from AAI (24 April 2023), IAF (26 July 2023), and Indian Army (7 August 2023), but has failed to publish the NOC documents or operational conditions—even in redacted form. Verified via <em>SP News Agency</em> & <em>Government of Meghalaya DIPR Press Release</em>.
+                                </p>
+                            </div>
+
+                            <!-- Ref 4 -->
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-1">4. The Policy Double Standard:</h4>
+                                <p class="text-slate-700 dark:text-slate-300">
+                                    While daily urban commuters were denied an elevated decongestion flyover at Rilbong–Barik to protect ground-level Cantonment perimeters, an elevated commercial tourist ropeway operating directly beside strategic Air Force radar and defence assets is being pushed forward without disclosing its security parameters.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DEMAND FOR FORMAL CLARIFICATION AND STATUTORY COMPLIANCE -->
+                <section id="demands" class="bg-slate-900 text-white rounded-2xl p-6 sm:p-10 border border-slate-800 shadow-2xl space-y-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-amber-500/20 text-amber-400 text-xs font-bold font-sans uppercase border border-amber-500/30">
+                        <i class="fa-solid fa-gavel"></i>
+                        <span>STATUTORY DEMANDS FOR COMPLIANCE</span>
+                    </div>
+
+                    <h2 class="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide">
+                        DEMAND FOR FORMAL CLARIFICATION AND STATUTORY COMPLIANCE
+                    </h2>
+
+                    <p class="font-serif text-slate-300 text-sm sm:text-base leading-relaxed">
+                        In light of the documentary evidence and institutional contradictions placed on record above, the citizens hereby demand:
+                    </p>
+
+                    <div class="space-y-4 font-sans">
+                        <div class="bg-slate-800/80 p-5 rounded-xl border border-slate-700/80 flex items-start space-x-4">
+                            <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5 border border-amber-500/40">1</span>
                             <div>
-                                <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">DATE:</span>
-                                <span class="font-semibold text-slate-900 dark:text-slate-100">November 11, 2026</span>
-                            </div>
-                            <div class="md:col-span-2">
-                                <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">SUBJECT:</span>
-                                <span class="font-semibold text-slate-900 dark:text-slate-100 leading-snug block">
-                                    Evidentiary Submission Regarding Public Statements on the Justification for Decongestion, Environmental Impact Assessment (EIA) Exemptions in Protected Forests, and Security Contradictions of the Proposed Shillong Peak Ropeway Project
-                                </span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- PREAMBLE -->
-                    <section id="preamble" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <span class="p-2 bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded-lg text-sm font-bold">SECTION 1</span>
-                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">PREAMBLE</h2>
-                        </div>
-                        
-                        <div class="font-serif text-slate-700 dark:text-slate-300 leading-relaxed text-base sm:text-lg space-y-4 bg-slate-50/50 dark:bg-slate-800/30 p-6 rounded-xl border border-slate-200/80 dark:border-slate-800">
-                            <p>
-                                This representation is submitted to place on official record glaring institutional contradictions, statutory violations, and documented facts regarding the <strong class="text-amber-700 dark:text-amber-400 font-semibold">₹151-Crore Shillong Peak Ropeway Project</strong>.
-                            </p>
-                            <p>
-                                For years, the state leadership, cabinet ministers, and central funding submissions justified this project to the public as an urban transit solution meant to decongest Shillong. Administrative records, however, expose a troubling contradiction: the project imposes massive concrete construction within vital forest and water catchment areas while sidestepping mandatory environmental impact assessments, genuine public consultations, and essential security clearances.
-                            </p>
-                            <p>
-                                Accordingly, I present Three Core Questions backed by verified records and the government’s own public admissions, requiring an immediate, formal written response from the concerned authorities.
-                            </p>
-                        </div>
-                    </section>
-
-                    <hr class="border-slate-200 dark:border-slate-800 my-10">
-
-                    <!-- QUESTION 1 -->
-                    <section id="question-1" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 rounded-lg text-xs font-bold uppercase tracking-wider">QUESTION 1</span>
-                            <h2 class="font-heading text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                                On the Justification for Decongestion, Central Funding Mandates, and Replicating the New Shillong Township (NST) Failure
-                            </h2>
-                        </div>
-
-                        <!-- Formal Question Text Box -->
-                        <div class="bg-indigo-50/40 dark:bg-indigo-950/20 border-l-4 border-indigo-600 dark:border-indigo-400 p-6 rounded-r-xl mb-6 font-serif text-slate-800 dark:text-slate-200 leading-relaxed space-y-4">
-                            <p>
-                                For decades, the New Shillong Township (NST) was sold to the public on one big promise: to decongest Shillong by shifting offices and traffic out of the city. Thousands of crores of public money have been poured into NST, yet it stands today as a massive warning of failed planning. Old Shillong is more choked and unlivable than ever, and NST itself is already descending into gridlock because the government focused only on pouring concrete and erecting massive office complexes without basic civic services or integrated transit routes in place.
-                            </p>
-                            <p>
-                                Now, we are watching the exact same script play out with the Shillong Peak Ropeway. For years, from the 2019 15th Finance Commission submissions to public assurances by our Chief Minister and Deputy Chief Minister, aerial ropeways were pitched to the public and sanctioned over ₹70 crore in central funding under the banner of 'decongesting Shillong city.' Yet today, when questioned by residents, the administration stands before us and publicly denies that this ropeway was ever meant for city decongestion, admitting it is purely a tourist facility.
-                            </p>
-                            <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-indigo-200 dark:border-indigo-900 font-sans text-indigo-950 dark:text-indigo-200 font-medium">
-                                <span class="block text-xs uppercase font-bold text-indigo-600 dark:text-indigo-400 mb-1">Formal Core Interrogation:</span>
-                                "So my question to the administration is simple: Having spent thousands of crores on NST only to worsen gridlock on both ends, and having now publicly abandoned the very 'decongestion' justification / promise used to justify and fund this ropeway, why and by what moral or administrative right, should the government proceed with this Ropeway project here at Lum Shyllong at all when the administration has already miserably failed to deliver on decongesting the city?"
-                            </div>
-                        </div>
-
-                        <!-- Evidentiary References Grid for Q1 -->
-                        <div class="space-y-4">
-                            <h3 class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider flex items-center space-x-2">
-                                <i class="fa-solid fa-folder-open text-indigo-500"></i>
-                                <span>EVIDENTIARY REFERENCES (PUBLIC DOMAIN):</span>
-                            </h3>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <!-- Ref 1 -->
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex justify-between items-start mb-2">
-                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">1. State Leadership Declarations</span>
-                                            <i class="fa-solid fa-quote-left text-slate-300 dark:text-slate-600"></i>
-                                        </div>
-                                        <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300">
-                                            <li><strong>Chief Minister Conrad K. Sangma (Dec 4, 2024):</strong> Official foundation stone address explicitly asserted: <em>"The ropeway is a potential mode of urban transport and could be a solution to decongest the city."</em></li>
-                                            <li><strong>Deputy Chief Minister Prestone Tynsong (Sept 6, 2022):</strong> Publicly announced to media outlets (Hub Network, The Shillong Times) that aerial transit networks were being taken up specifically to "decongest Shillong city" where road widening is unfeasible.</li>
-                                            <li><strong>15th Finance Commission Submissions (July 16, 2019):</strong> Official Meghalaya State Government submissions sought grants explicitly framed around the master objective to "introduce ropeways to decongest Shillong city."</li>
-                                        </ul>
-                                    </div>
-                                    <div class="mt-4 pt-2 border-t border-slate-100 dark:border-slate-700/50 flex justify-between items-center text-[11px] text-slate-400">
-                                        <span>Verified Press Records</span>
-                                        <a href="https://theshillongtimes.com" target="_blank" class="text-indigo-600 hover:underline">Media Link <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                                    </div>
-                                </div>
-
-                                <!-- Ref 2 -->
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex justify-between items-start mb-2">
-                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">2. Central Funding Criteria</span>
-                                            <i class="fa-solid fa-indian-rupee-sign text-slate-300 dark:text-slate-600"></i>
-                                        </div>
-                                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                                            Sanctioned with over <strong>₹70 Crore</strong> in central funding under PM-DevINE (Ministry of DoNER), the project brief relies on alternative urban transit criteria to reduce vehicular load on central hill routes.
-                                        </p>
-                                    </div>
-                                    <div class="mt-4 pt-2 border-t border-slate-100 dark:border-slate-700/50 flex justify-between items-center text-[11px] text-slate-400">
-                                        <span>DoNER Sanction</span>
-                                        <a href="https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2003970&reg=48&lang=2" target="_blank" class="text-indigo-600 hover:underline">PIB Record <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                                    </div>
-                                </div>
-
-                                <!-- Ref 3 -->
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex justify-between items-start mb-2">
-                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200">3. NST Decongestion Precedent</span>
-                                            <i class="fa-solid fa-city text-slate-300 dark:text-slate-600"></i>
-                                        </div>
-                                        <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300">
-                                            <li>Promised as a macro-level relief valve to decongest Shillong City, NST project failed due to unintegrated transit planning, merely shifting gridlock onto narrow arterial bottlenecks.</li>
-                                            <li>The lower terminal at Lawsohtun replicates this failure by creating "Induced Demand" traffic congestion inside residential nodes.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="mt-3 pt-2 border-t border-slate-100 dark:border-slate-700/50">
-                                        <span class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Source Links:</span>
-                                        <div class="flex flex-wrap gap-1 text-[10px]">
-                                            <a href="https://theshillongtimes.com/2024/10/04/new-shillong-still-in-devp-stage-despite-crores-spent/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Shillong Times (2024)</a>
-                                            <a href="https://theprint.in/india/meghalaya-secretariat-to-be-shifted-to-decongest-shillong/806066/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">ThePrint (Secretariat)</a>
-                                            <a href="https://www.landconflictwatch.org/conflicts/land-acquisition-for-new-shillong-township#" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Land Conflict Watch</a>
-                                            <a href="https://highlandpost.com/rs-2500-cr-to-be-spent-for-administrative-city-at-new-shillong/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Highland Post (₹2500Cr)</a>
-                                            <a href="https://newsonair.gov.in/new-shillong-township-will-be-meghalayas-engine-of-growth-says-meghalaya-cm-conrad-k-sangma/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">NewsOnAir (CM Address)</a>
-                                            <a href="https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2003970&reg=48&lang=2" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">PIB Release</a>
-                                            <a href="https://theshillongtimes.com/2022/01/18/govt-offices-to-be-shifted-to-nst/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Shillong Times (2022)</a>
-                                            <a href="https://www.syllad.com/shillong-traffic-jams-wont-end-without-land-and-public-cooperation-rymbui/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Syllad (Traffic Crisis)</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <hr class="border-slate-200 dark:border-slate-800 my-10">
-
-                    <!-- QUESTION 2 -->
-                    <section id="question-2" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-lg text-xs font-bold uppercase tracking-wider">QUESTION 2</span>
-                            <h2 class="font-heading text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                                Hiding Behind the 2022 EIA Exemption While Ignoring Heavy Concrete Terminals & Water Catchment Risks
-                            </h2>
-                        </div>
-
-                        <!-- Formal Question Text Box -->
-                        <div class="bg-emerald-50/40 dark:bg-emerald-950/20 border-l-4 border-emerald-600 dark:border-emerald-400 p-6 rounded-r-xl mb-6 font-serif text-slate-800 dark:text-slate-200 leading-relaxed space-y-4">
-                            <p>
-                                The administration labels this project "eco-friendly" by pointing to overhead cables and a 0.2% footprint for six mid-line towers, while relying on the April 27, 2022 amendment (S.O. 1953(E)) to the EIA Notification, 2006 to bypass a comprehensive EIA and statutory public hearing. 
-                            </p>
-                            <p>
-                                However, measuring only the mid-line towers ignores the diversion of <strong>2.3257 hectares of forest</strong>, the felling of <strong>545 mature trees</strong>, and the massive reinforced concrete (RCC) terminal buildings explicitly mandated in the Directorate of Tourism's own tender documents inside Upper Shillong’s vital water catchment.
-                            </p>
-
-                            <div class="pt-2 font-sans">
-                                <p class="font-semibold text-slate-900 dark:text-white mb-3">
-                                    So my question to the administration is: 
-                                    On what independent, peer-reviewed hydrological basis/data does the government claim that Shillong’s spring sources, specifically Patakhana and Wahingdoh, will remain safe from concrete excavation and catchment disruption, and why has the administration not made public the complete records of the following:
-                                </p>
-                                
-                                <ol class="space-y-3 pl-2 text-sm text-slate-700 dark:text-slate-300 font-sans">
-                                    <li class="bg-white dark:bg-slate-900 p-3.5 rounded-lg border border-emerald-200 dark:border-emerald-900">
-                                        <strong class="text-emerald-700 dark:text-emerald-400 block mb-1">1. The full Public Health Engineering (PHE) water catchment report:</strong>
-                                        Officials verbally cited this report on November 5, 2026 to claim a "0.2% footprint" for the six towers, yet have never published the study or explained why it omits the RCC terminal buildings explicitly listed in Tender Corrigendum-09 (Clauses 2.4.1 and 2.4.2(a));
-                                    </li>
-                                    <li class="bg-white dark:bg-slate-900 p-3.5 rounded-lg border border-emerald-200 dark:border-emerald-900">
-                                        <strong class="text-emerald-700 dark:text-emerald-400 block mb-1">2. The complete New Development Bank (NDB) Environment and Social Management Plan (ESMP):</strong>
-                                        Only a two-page Project Summary and scattered tender excerpts, such as S. No. 3 of Corrigendum-09, which treats 1:10 compensatory afforestation merely as a "recommendation" for "provisioning" rather than a binding rule, are public, while the full ESMP required under NDB’s Environment and Social Framework remains undisclosed;
-                                    </li>
-                                    <li class="bg-white dark:bg-slate-900 p-3.5 rounded-lg border border-emerald-200 dark:border-emerald-900">
-                                        <strong class="text-emerald-700 dark:text-emerald-400 block mb-1">3. The Stage-II MoEF&CC forest diversion approval and conditions:</strong>
-                                        Officials confirmed obtaining MoEF&CC forest diversion and tree-felling approval (2.3257 ha / 545 trees), yet the formal Stage-II clearance letter and its legally binding conditions have not been placed in the public domain; and
-                                    </li>
-                                    <li class="bg-white dark:bg-slate-900 p-3.5 rounded-lg border border-emerald-200 dark:border-emerald-900">
-                                        <strong class="text-emerald-700 dark:text-emerald-400 block mb-1">4. The mandatory environmental safeguard compliance records under OM F. No. 22-17/2021-IA.III:</strong>
-                                        While MoEF&CC exempted aerial ropeways from prior Environmental Clearance in April 2022 (S.O. 1953(E)), it simultaneously issued this Office Memorandum binding project proponents to strict construction safeguards, whose compliance records remain hidden from public inspection?
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-
-                        <!-- Evidentiary References Grid Q2 -->
-                        <div class="space-y-4">
-                            <h3 class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider flex items-center space-x-2">
-                                <i class="fa-solid fa-folder-open text-emerald-500"></i>
-                                <span>EVIDENTIARY REFERENCES:</span>
-                            </h3>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1">
-                                        <span>1. PHE Catchment Note & RCC Terminal Tender Scope</span>
-                                        <span class="text-[10px] bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded">Tender Ref M/D Tour/2019/90</span>
-                                    </div>
-                                    <p><strong>Official Verbal Citation (Nov 5, 2026):</strong> During public consultation at State Convention Centre, Shillong, MRDA CEO C.V.D. Diengdoh, IAS cited an unpublished PHE report claiming six mid-line towers occupy 0.2% of catchment area and sit 500m to 1km from springs (including Patakhana and Wahingdoh). Verified via The Times of India and SP News Agency.</p>
-                                    <p><strong>Contradictory Tender Scope (July 18, 2024):</strong> Directorate of Tourism Corrigendum-09 (No. M/D Tour 180/2019/Part IV/57), Clauses 2.4.1 and 2.4.2(a) explicitly mandate bidder experience in constructing <em>"RCC Building, Towers"</em>, proving heavy concrete terminal stations are omitted from the 0.2% footprint calculation. Document available via NDB Procurement Portal.</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1">
-                                        <span>2. NDB Category B Disclosure & Non-Binding ESMP</span>
-                                        <span class="text-[10px] bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded">NDB ESF Framework</span>
-                                    </div>
-                                    <p><strong>NDB Financing Disclosure (July 18, 2022):</strong> Classified as Category B under NDB’s Environment and Social Framework (ESF), acknowledging <em>"diversion of forest land, likely impact on indigenous people, and occupational and community health and safety"</em>, requiring full Environmental and Social Management Plans (ESMPs).</p>
-                                    <p><strong>Non-Binding Tree Replacement Clause:</strong> Corrigendum-09 Clause 11.0 (ESMP Table, S. No. 3), the 1:10 compensatory afforestation ratio is explicitly framed as non-binding: <em>"for the purpose of provisioning, this ESMP recommends 10 trees to be planted for every tree being cut"</em>, leaving replacement strictly to baseline Forest Department minimums.</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1">
-                                        <span>3. Stage-II Forest Diversion Clearance</span>
-                                        <span class="text-[10px] bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">2.3257 Ha / 545 Trees</span>
-                                    </div>
-                                    <p><strong>Official Disclosure (Nov 5, 2026):</strong> MRDA CEO C.V.D. Diengdoh confirmed forest diversion clearance and tree-cutting permission were obtained from MoEF&CC for 2.3257 hectares of forest land and felling of 545 mature trees, without releasing the formal Stage-II sanction letter or binding conditions into the public domain. Verified via SP News Agency.</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1">
-                                        <span>4. MoEF&CC Gazette Exemption & Safeguards</span>
-                                        <span class="text-[10px] bg-blue-100 dark:bg-blue-950 px-2 py-0.5 rounded">S.O. 1953(E) & OM F.No.22-17/2021</span>
-                                    </div>
-                                    <p><strong>Gazette S.O. 1953(E) (April 27, 2022):</strong> Omits aerial ropeways (Item 7(g)) from prior EC under EIA 2006. Text indexed via India Code / MoEF&CC Gazette Record.</p>
-                                    <p><strong>Binding Office Memorandum F. No. 22-17/2021-IA.III (April 27, 2022):</strong> Issued simultaneously by MoEF&CC Impact Assessment Division, stipulating that EC exemption is <em>"subject to certain environmental safeguards"</em> and does not exempt the project from approvals under any other Act. Listed on MoEF&CC PARIVESH OM Compilation Portal.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <hr class="border-slate-200 dark:border-slate-800 my-10">
-
-                    <!-- QUESTION 3 -->
-                    <section id="question-3" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 rounded-lg text-xs font-bold uppercase tracking-wider">QUESTION 3</span>
-                            <h2 class="font-heading text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                                On Traffic Contradictions and the Double Standard on Military Security
-                            </h2>
-                        </div>
-
-                        <!-- Strategic Security Callout Banner -->
-                        <div class="mb-6 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-rose-200 dark:border-rose-950 flex flex-col sm:flex-row items-center gap-4">
-                            <div class="w-16 h-16 flex-shrink-0 bg-slate-900 text-amber-400 p-2 rounded-lg border border-slate-700 flex flex-col items-center justify-center text-center">
-                                <i class="fa-solid fa-shield-halved text-2xl"></i>
-                            </div>
-                            <div class="text-xs space-y-1">
-                                <span class="font-bold text-rose-700 dark:text-rose-400 uppercase tracking-wide block">Strategic Defence Zone Security Contradiction</span>
-                                <p class="text-slate-600 dark:text-slate-300">
-                                    The upper ropeway terminal directly borders the strategic Eastern Air Command (EAC) Air Force Station and radar facilities at Upper Shillong. While public commuter infrastructure (Rilbong-Barik flyover) was scrapped for Cantonment proximity, 13 elevated commercial gondola cabins are permitted to operate with direct aerial line-of-sight.
+                                <h3 class="font-bold text-white text-sm sm:text-base mb-1">Point-by-Point Written Clarification</h3>
+                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                    A formal, written, point-by-point response addressing each of the Three Interlinked Core Questions detailed in this representation, placed on official record without generic or evasive assurances.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Formal Question Text Box -->
-                        <div class="bg-rose-50/40 dark:bg-rose-950/20 border-l-4 border-rose-600 dark:border-rose-400 p-6 rounded-r-xl mb-6 font-serif text-slate-800 dark:text-slate-200 leading-relaxed space-y-4">
-                            <p>
-                                In February and April 2026, the state government formally scrapped its flagship <strong>Rilbong–Barik flyover</strong> previously promoted as Shillong’s "single largest traffic decongestion intervention" after Defence authorities (GOC 101 Area) objected that an elevated corridor near Cantonment boundaries posed an unacceptable security risk.
-                            </p>
-                            <p>
-                                Yet, for a commercial tourist ropeway directly bordering the strategic <strong>Eastern Air Command (EAC) Air Force Station</strong> and radar facilities at Upper Shillong, the administration claims that simply placing the upper terminal 80 metres below the viewpoint resolves all security concerns.
-                            </p>
-
-                            <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-rose-200 dark:border-rose-900 font-sans space-y-3 text-slate-900 dark:text-slate-100">
-                                <div>
-                                    <span class="block text-xs uppercase font-bold text-rose-600 dark:text-rose-400 mb-1">Core Security Question A:</span>
-                                    "How can the government justify sacrificing a vital public commuter flyover at Rilbong–Barik on military security grounds while simultaneously operating 13 elevated passenger cabins with an unobstructed aerial line-of-sight overlooking sensitive Air Force and Army installations at Upper Shillong?"
-                                </div>
-                                <div class="pt-2 border-t border-slate-100 dark:border-slate-800">
-                                    <span class="block text-xs uppercase font-bold text-rose-600 dark:text-rose-400 mb-1">Core Security Question B:</span>
-                                    "And why has the administration failed to place the exact security conditions attached to the IAF (26 July 2023), Indian Army (7 August 2023), and AAI (24 April 2023) No Objection Certificates, even in redacted form, in the public domain?"
-                                </div>
+                        <div class="bg-slate-800/80 p-5 rounded-xl border border-slate-700/80 flex items-start space-x-4">
+                            <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5 border border-amber-500/40">2</span>
+                            <div>
+                                <h3 class="font-bold text-white text-sm sm:text-base mb-1">Full Public Disclosure of Primary Records</h3>
+                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                    Immediate publication in the public domain of the complete Detailed Project Report (DPR), the Traffic Impact Assessment (TIA) for the Lawsohtun–Madan Laban corridor, the full Public Health Engineering (PHE) water catchment report alongside an independent baseline Hydro-geological Survey, the complete New Development Bank (NDB) Environment and Social Management Plan (ESMP), the Stage-II MoEF&CC forest diversion conditions, OM F. No. 22-17/2021-IA.III compliance records, the Defence & Aviation NOCs (AAI, IAF, and Indian Army—even in redacted form), and the PM GatiShakti geospatial compliance filings.
+                                </p>
                             </div>
                         </div>
 
-                        <!-- Evidentiary References Grid Q3 -->
-                        <div class="space-y-4">
-                            <h3 class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider flex items-center space-x-2">
-                                <i class="fa-solid fa-folder-open text-rose-500"></i>
-                                <span>EVIDENTIARY REFERENCES (PUBLIC DOMAIN):</span>
-                            </h3>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>1. Scrapping of Rilbong–Barik Corridor</span>
-                                        <span class="text-[10px] bg-rose-100 dark:bg-rose-950 px-2 py-0.5 rounded">Feb–April 2026</span>
-                                    </div>
-                                    <p><strong>Official Cancellation:</strong> Following formal objections conveyed by GOC 101 Area regarding elevated structures near Cantonment zones, Dy CM Prestone Tynsong publicly confirmed on April 28, 2026 that the flyover was dropped due to <em>"safety and security reasons"</em> and downgraded to a surface 4-lane road. Reported by The Shillong Times (Feb 13, 2026) and The Meghalayan Express (April 28, 2026).</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>2. Eastern Air Command Proximity</span>
-                                        <span class="text-[10px] bg-amber-100 dark:bg-amber-950 px-2 py-0.5 rounded">Oct 23, 2026</span>
-                                    </div>
-                                    <p><strong>Official Alignment Admission:</strong> Tourism Department officials admitted during public consultations that upper terminal was shifted roughly 80 metres below Shillong Peak viewpoint specifically to <em>"address Air Force security concerns"</em> adjacent to EAC station, while still operating 13 elevated gondola cabins above the ridge canopy. Reported by The Assam Tribune (Oct 23, 2026).</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>3. Undisclosed Defence & Aviation NOC Conditions</span>
-                                        <span class="text-[10px] bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">NOCs Withheld</span>
-                                    </div>
-                                    <p><strong>Official Clearance Claims (Aug 2 & Nov 5, 2026):</strong> MRDA stated it obtained NOCs from Airports Authority of India (24 April 2023), Indian Air Force (26 July 2023), and Indian Army (7 August 2023), but failed to place actual NOC documents or operational, altitude, or surveillance conditions—even in redacted form—in the public domain. Verified via SP News Agency & Govt DIPR Press Release.</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>4. The Policy Double Standard</span>
-                                        <span class="text-[10px] bg-rose-100 dark:bg-rose-950 px-2 py-0.5 rounded">Institutional Contradiction</span>
-                                    </div>
-                                    <p>While daily urban commuters were denied an elevated decongestion flyover at Rilbong–Barik to protect ground-level Cantonment perimeters, an elevated commercial tourist ropeway operating directly beside strategic Air Force radar and defence assets is being pushed forward without disclosing its security parameters.</p>
-                                </div>
+                        <div class="bg-slate-800/80 p-5 rounded-xl border border-slate-700/80 flex items-start space-x-4">
+                            <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5 border border-amber-500/40">3</span>
+                            <div>
+                                <h3 class="font-bold text-white text-sm sm:text-base mb-1">Immediate Moratorium on Civil Works</h3>
+                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                    A complete suspension of all tree-felling, excavation, and civil construction activities until all withheld statutory clearances and environmental studies are publicly disclosed and a genuine, comprehensive public consultation and independent hydrological evaluation are conducted in full compliance with environmental and civic governance norms.
+                                </p>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
-                    <hr class="border-slate-200 dark:border-slate-800 my-10">
-
-                    <!-- CLOSING DEMAND SECTION -->
-                    <section id="closing-demands" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 rounded-lg text-xs font-bold uppercase tracking-wider">CLOSING DEMAND</span>
-                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
-                                DEMAND FOR FORMAL CLARIFICATION AND STATUTORY COMPLIANCE
-                            </h2>
+                    <!-- Signature & Verification Block -->
+                    <div class="pt-8 mt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 font-sans">
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">SUBMITTED ON BEHALF OF THE CITIZENS:</p>
+                            <p class="text-base font-bold text-amber-400 font-serif">Concerned Citizens of Meghalaya</p>
+                            <p class="text-xs text-slate-400 mt-1">Shillong, East Khasi Hills, Meghalaya</p>
                         </div>
-
-                        <div class="bg-slate-900 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6">
-                            <p class="font-serif text-sm sm:text-base leading-relaxed text-slate-300 border-b border-slate-800 pb-4">
-                                In light of the documentary evidence and institutional contradictions placed on record above, the Concerned Citizens of Meghalaya hereby demand:
-                            </p>
-
-                            <ol class="space-y-4 font-sans text-sm">
-                                <li class="flex items-start space-x-3 bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-                                    <div class="w-7 h-7 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs flex-shrink-0">1</div>
-                                    <div>
-                                        <strong class="text-amber-400 block text-base mb-1">Point-by-Point Written Clarification:</strong>
-                                        <p class="text-slate-300 leading-relaxed">
-                                            A formal, written, point-by-point response addressing each of the Three Interlinked Core Questions detailed in this representation, placed on official record without generic or evasive assurances.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li class="flex items-start space-x-3 bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-                                    <div class="w-7 h-7 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs flex-shrink-0">2</div>
-                                    <div>
-                                        <strong class="text-amber-400 block text-base mb-1">Full Public Disclosure of Primary Records:</strong>
-                                        <p class="text-slate-300 leading-relaxed">
-                                            Immediate publication in the public domain of the complete Detailed Project Report (DPR), the Traffic Impact Assessment (TIA) for the Lawsohtun–Madan Laban corridor, the full Public Health Engineering (PHE) water catchment report alongside an independent baseline Hydro-geological Survey, the complete New Development Bank (NDB) Environment and Social Management Plan (ESMP), the Stage-II MoEF&CC forest diversion conditions, OM F. No. 22-17/2021-IA.III compliance records, the Defence & Aviation NOCs (AAI, IAF, and Indian Army—even in redacted form), and the PM GatiShakti geospatial compliance filings.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li class="flex items-start space-x-3 bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-                                    <div class="w-7 h-7 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs flex-shrink-0">3</div>
-                                    <div>
-                                        <strong class="text-amber-400 block text-base mb-1">Immediate Moratorium on Civil Works:</strong>
-                                        <p class="text-slate-300 leading-relaxed">
-                                            A complete suspension of all tree-felling, excavation, and civil construction activities until all withheld statutory clearances and environmental studies are publicly disclosed and a genuine, comprehensive public consultation and independent hydrological evaluation are conducted in full compliance with environmental and civic governance norms.
-                                        </p>
-                                    </div>
-                                </li>
-                            </ol>
+                        <div class="text-left sm:text-right text-xs text-slate-400">
+                            <p><strong>Date:</strong> November 11, 2026</p>
+                            <p><strong>Place:</strong> Shillong, Meghalaya</p>
+                            <p class="mt-1 text-[10px] text-emerald-400"><i class="fa-solid fa-lock mr-1"></i>Official Public Record Document</p>
                         </div>
+                    </div>
+                </section>
 
-                        <!-- Formal Signature / Submission Block -->
-                        <div class="mt-10 p-6 sm:p-8 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
-                            <div class="space-y-2 text-xs sm:text-sm">
-                                <span class="font-bold text-slate-900 dark:text-white uppercase tracking-wider block">SUBMITTED ON BEHALF OF:</span>
-                                <div class="font-serif font-bold text-amber-700 dark:text-amber-400 text-lg">CONCERNED CITIZEN / CONCERNED CITIZENS OF MEGHALAYA</div>
-                                <div class="text-slate-500 dark:text-slate-400">(Authorized Representative / Designation)</div>
-                                <div class="pt-2 text-slate-600 dark:text-slate-300">
-                                    <span>Date: <strong>November 11, 2026</strong></span><br>
-                                    <span>Place: <strong>Shillong, Meghalaya</strong></span>
-                                </div>
-                            </div>
+                <!-- Footer / Copyright -->
+                <footer class="text-center text-xs text-slate-500 dark:text-slate-400 pt-4 pb-8 space-y-2 no-print">
+                    <p>© 2026 Concerned Citizens of Meghalaya. Formally Submitted to MRDA & Government of Meghalaya.</p>
+                    <p class="text-[11px]">Published for Public Interest & Transparency | Prepared for GitHub Pages & Vercel Hosting</p>
+                </footer>
 
-                            <div class="flex items-center space-x-3 no-print">
-                                <button onclick="copyDocumentText()" class="px-4 py-2 bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 font-semibold text-xs rounded-lg shadow hover:opacity-90 transition">
-                                    <i class="fa-regular fa-copy mr-1"></i> Copy Full Submission Text
-                                </button>
-                                <button onclick="window.print()" class="px-4 py-2 bg-amber-600 text-white font-semibold text-xs rounded-lg shadow hover:bg-amber-700 transition">
-                                    <i class="fa-solid fa-file-pdf mr-1"></i> Export PDF / Print
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Footer Citation note -->
-                    <footer class="pt-6 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400 space-y-1">
-                        <p>Formal Representation & Evidentiary Submission • Shillong Peak Ropeway Project</p>
-                        <p class="font-mono">Filing Date: November 11, 2026 • Verified Public Domain Record</p>
-                    </footer>
-
-                </article>
             </main>
         </div>
     </div>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-50 hidden flex items-center space-x-2 text-xs border border-slate-700">
-        <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
-        <span id="toastMsg">Text copied to clipboard!</span>
-    </div>
-
-    <!-- Interactive JavaScript -->
+    <!-- Scripts -->
     <script>
-        // Reading Progress Bar & ScrollSpy
-        window.onscroll = function() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("progress-bar").style.width = scrolled + "%";
-            
-            // ScrollSpy Table of Contents
-            let sections = document.querySelectorAll("section");
-            let navLinks = document.querySelectorAll(".toc-link");
-            
-            sections.forEach(sec => {
-                let top = window.scrollY;
-                let offset = sec.offsetTop - 120;
-                let height = sec.offsetHeight;
-                let id = sec.getAttribute("id");
-                
-                if (top >= offset && top < offset + height) {
-                    navLinks.forEach(links => {
-                        links.classList.remove("bg-amber-100", "dark:bg-slate-800", "text-amber-700", "dark:text-amber-400", "font-bold");
-                        if (links.getAttribute("href") === "#" + id) {
-                            links.classList.add("bg-amber-100", "dark:bg-slate-800", "text-amber-700", "dark:text-amber-400", "font-bold");
-                        }
-                    });
-                }
-            });
-        };
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
 
-        // Dark / Light Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const themeToggleMobile = document.getElementById('themeToggleMobile');
-        
-        function toggleTheme() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-        
-        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-        if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+        // Dark / Light Theme Switcher
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        });
 
-        // System theme initialization
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        // Initialize Theme from Preferences
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+        // Copy Text Functionality
+        document.getElementById('copy-text-btn').addEventListener('click', () => {
+            const docContent = document.getElementById('document-content').innerText;
+            navigator.clipboard.writeText(docContent).then(() => {
+                alert('Complete Representation Text copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
             });
-        }
+        });
 
-        // Search Filter Logic
-        const searchInput = document.getElementById('searchInput');
-        const searchInputMobile = document.getElementById('searchInputMobile');
-        const clearSearchBtn = document.getElementById('clearSearch');
+        // Live Document Search & Highlight
+        const searchInput = document.getElementById('search-input');
+        const clearSearchBtn = document.getElementById('clear-search');
+        const docContent = document.getElementById('document-content');
+        let originalHTML = docContent.innerHTML;
 
-        function handleSearch(e) {
-            const query = e.target.value.trim().toLowerCase();
-            const contentArea = document.getElementById('printable-area');
-            
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
             if (query.length > 0) {
                 clearSearchBtn.classList.remove('hidden');
+                performSearch(query);
             } else {
                 clearSearchBtn.classList.add('hidden');
+                resetSearch();
             }
+        });
 
-            // Text search highlighting
-            removeHighlights(contentArea);
-            if (query.length >= 3) {
-                highlightText(contentArea, query);
-            }
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            clearSearchBtn.classList.add('hidden');
+            resetSearch();
+        });
+
+        function resetSearch() {
+            docContent.innerHTML = originalHTML;
         }
 
-        function highlightText(element, query) {
-            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-            
-            function traverse(node) {
-                if (node.nodeType === 3) {
-                    const match = node.nodeValue.match(regex);
-                    if (match) {
-                        const span = document.createElement('span');
-                        span.innerHTML = node.nodeValue.replace(regex, '<mark class="highlight">$1</mark>');
-                        node.parentNode.replaceChild(span, node);
-                    }
-                } else if (node.nodeType === 1 && node.childNodes && !['SCRIPT', 'STYLE', 'INPUT', 'TEXTAREA'].includes(node.tagName)) {
-                    for (let i = 0; i < node.childNodes.length; i++) {
-                        traverse(node.childNodes[i]);
-                    }
+        function performSearch(query) {
+            resetSearch();
+            if (query.length < 2) return;
+
+            const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+            highlightNodes(docContent, regex);
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function highlightNodes(element, regex) {
+            if (element.nodeType === 3) {
+                const text = element.nodeValue;
+                if (regex.test(text)) {
+                    const span = document.createElement('span');
+                    span.innerHTML = text.replace(regex, '<mark>$1</mark>');
+                    element.parentNode.replaceChild(span, element);
+                }
+            } else if (element.nodeType === 1 && element.childNodes && !['SCRIPT', 'STYLE', 'INPUT', 'TEXTAREA'].includes(element.tagName)) {
+                for (let i = 0; i < element.childNodes.length; i++) {
+                    highlightNodes(element.childNodes[i], regex);
                 }
             }
-            traverse(element);
         }
 
-        function removeHighlights(element) {
-            const marks = element.querySelectorAll('mark.highlight');
-            marks.forEach(mark => {
-                const parent = mark.parentNode;
-                parent.replaceChild(document.createTextNode(mark.textContent), mark);
-                parent.normalize();
+        // TOC Active ScrollSpy
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.toc-link').forEach(link => {
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('bg-sky-50', 'dark:bg-slate-800', 'text-sky-600', 'dark:text-sky-400', 'font-bold');
+                        } else {
+                            link.classList.remove('bg-sky-50', 'dark:bg-slate-800', 'text-sky-600', 'dark:text-sky-400', 'font-bold');
+                        }
+                    });
+                }
             });
-        }
+        }, observerOptions);
 
-        if (searchInput) searchInput.addEventListener('input', handleSearch);
-        if (searchInputMobile) searchInputMobile.addEventListener('input', handleSearch);
-        if (clearSearchBtn) {
-            clearSearchBtn.addEventListener('click', () => {
-                searchInput.value = '';
-                if (searchInputMobile) searchInputMobile.value = '';
-                clearSearchBtn.classList.add('hidden');
-                removeHighlights(document.getElementById('printable-area'));
-            });
-        }
-
-        // Copy Full Text Function
-        function copyDocumentText() {
-            const articleText = document.getElementById('printable-area').innerText;
-            
-            // execCommand fallback for iframe sandboxes
-            const tempTextArea = document.createElement('textarea');
-            tempTextArea.value = articleText;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            
-            try {
-                document.execCommand('copy');
-                showToast('Full representation text copied to clipboard!');
-            } catch (err) {
-                showToast('Failed to copy text.');
-            }
-            document.body.removeChild(tempTextArea);
-        }
-
-        // Toast Message Handler
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toastMsg');
-            toastMsg.innerText = msg;
-            toast.classList.remove('hidden');
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 3000);
-        }
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
