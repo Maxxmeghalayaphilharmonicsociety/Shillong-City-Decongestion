@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formal Representation — ₹151-Crore Shillong Peak Ropeway Project | JAC</title>
+  <meta name="description" content="Formal representation submitted by the Joint Action Committee (JAC) placing on record institutional contradictions, statutory omissions, and evidentiary facts regarding the ₹151-Crore Shillong Peak Ropeway Project." />
+  <style>
+    :root {
+      --bg-page: #f4f6f9;
+      --bg-card: #ffffff;
+      --text-primary: #1a202c;
+      --text-secondary: #4a5568;
+      --text-muted: #718096;
+      --accent-navy: #162b4d;
+      --accent-red: #9b1c1c;
+      --border-light: #e2e8f0;
+      --border-strong: #cbd5e0;
+      --bg-callout: #f8fafc;
+      --bg-query: #fffaf0;
+      --border-query: #dd6b20;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* Top Action Bar */
+    .toolbar {
+      max-width: 920px;
+      margin: 0 auto 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      background: var(--accent-navy);
+      color: #ffffff;
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .toolbar-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      background: #ffffff;
+      color: var(--accent-navy);
+      border: none;
+      padding: 0.45rem 0.95rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn:hover {
+      background: #edf2f7;
+    }
+
+    /* Quick Navigation Pills */
+    .nav-bar {
+      max-width: 920px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-bar a {
+      background: var(--bg-card);
+      color: var(--accent-navy);
+      border: 1px solid var(--border-strong);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .nav-bar a:hover {
+      background: var(--accent-navy);
+      color: #ffffff;
+      border-color: var(--accent-navy);
+    }
+
+    /* Main Document Container */
+    .document {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 3.25rem 3.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border-top: 6px solid var(--accent-navy);
+    }
+
+    /* Document Header */
+    .doc-header {
+      text-align: center;
+      border-bottom: 2px solid var(--border-strong);
+      padding-bottom: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .doc-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-red);
+      background: #fff5f5;
+      border: 1px solid #feb2b2;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+    }
+
+    .doc-header h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.85rem;
+      line-height: 1.3;
+      color: var(--accent-navy);
+      margin-bottom: 0.65rem;
+    }
+
+    .doc-meta {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Visual Evidence Figures & Grids */
+    .figure-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .evidence-figure {
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .evidence-figure img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background-color: #e2e8f0;
+    }
+
+    .evidence-figure.hero-figure img {
+      height: 320px;
+    }
+
+    .evidence-figure figcaption {
+      padding: 0.85rem 1rem;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-light);
+      flex-grow: 1;
+    }
+
+    .evidence-figure figcaption strong {
+      color: var(--accent-navy);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Section Headings */
+    h2.section-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      color: var(--accent-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border-bottom: 2px solid var(--accent-navy);
+      padding-bottom: 0.45rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+
+    .question-block {
+      margin-top: 2.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .question-label {
+      display: inline-block;
+      background: var(--accent-navy);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    h3.question-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      margin-bottom: 1.1rem;
+      line-height: 1.35;
+    }
+
+    p {
+      margin-bottom: 1.05rem;
+      color: var(--text-primary);
+    }
+
+    /* Query Callout Box */
+    .query-box {
+      background: var(--bg-query);
+      border-left: 4px solid var(--border-query);
+      padding: 1.35rem 1.5rem;
+      margin: 1.25rem 0 1.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .query-box-header {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #9c4221;
+      margin-bottom: 0.65rem;
+    }
+
+    .query-box p:last-child,
+    .query-box ol:last-child {
+      margin-bottom: 0;
+    }
+
+    .query-highlight {
+      font-weight: 600;
+      color: #1a202c;
+    }
+
+    ol.structured-list {
+      margin: 0.85rem 0 0.5rem 1.35rem;
+    }
+
+    ol.structured-list li {
+      margin-bottom: 0.65rem;
+      padding-left: 0.25rem;
+    }
+
+    /* Evidentiary References Box */
+    .evidence-box {
+      background: var(--bg-callout);
+      border: 1px solid var(--border-light);
+      border-left: 4px solid var(--accent-navy);
+      padding: 1.35rem 1.5rem;
+      border-radius: 0 6px 6px 0;
+      margin-top: 1.25rem;
+    }
+
+    .evidence-header {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-navy);
+      margin-bottom: 0.85rem;
+    }
+
+    ul.evidence-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul.evidence-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    ul.evidence-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.evidence-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--accent-red);
+      font-weight: bold;
+    }
+
+    ul.evidence-list strong {
+      color: var(--text-primary);
+    }
+
+    a {
+      color: #1d4ed8;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      word-break: break-word;
+    }
+
+    a:hover {
+      color: #1e3a8a;
+    }
+
+    /* Demand Section */
+    .demand-box {
+      background: #fff5f5;
+      border: 1px solid #feb2b2;
+      border-left: 5px solid var(--accent-red);
+      padding: 1.5rem 1.75rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 1.25rem;
+    }
+
+    .demand-box ol {
+      margin: 0.85rem 0 0 1.35rem;
+    }
+
+    .demand-box li {
+      margin-bottom: 0.85rem;
+    }
+
+    .demand-box li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Signature Block */
+    .signature-section {
+      margin-top: 3rem;
+      padding-top: 1.75rem;
+      border-top: 2px solid var(--border-strong);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .sig-org {
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent-navy);
+      margin-bottom: 2.5rem;
+    }
+
+    .sig-line {
+      width: 280px;
+      border-top: 1.5px solid var(--text-primary);
+      padding-top: 0.45rem;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .sig-meta {
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    footer {
+      max-width: 920px;
+      margin: 1.5rem auto 0;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive Mobile Adjustments */
+    @media (max-width: 700px) {
+      body {
+        padding: 1rem 0.65rem 3rem;
+      }
+      .document {
+        padding: 1.75rem 1.35rem;
+      }
+      .doc-header h1 {
+        font-size: 1.45rem;
+      }
+      .evidence-figure.hero-figure img {
+        height: 220px;
+      }
+    }
+
+    /* Print Stylesheet for Official PDF Export */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+      .toolbar,
+      .nav-bar,
+      footer {
+        display: none !important;
+      }
+      .document {
+        box-shadow: none;
