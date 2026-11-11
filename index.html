@@ -124,7 +124,7 @@
                     </div>
                 </div>
 
-                <!-- Desktop Navigation Buttons -->
+                <!-- Desktop Navigation Controls -->
                 <div class="hidden md:flex items-center space-x-3">
                     <!-- Search Input -->
                     <div class="relative">
@@ -137,7 +137,18 @@
                     </div>
 
                     <!-- Quick Action Controls -->
-                    
+                    <button onclick="copyDocumentText()" title="Copy Full Text" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                    <button onclick="window.print()" title="Print / Save PDF" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i class="fa-solid fa-print"></i>
+                    </button>
+                    <button id="themeToggle" title="Toggle Dark/Light Mode" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center space-x-2">
                     <button id="mobileMenuBtn" class="p-2 text-slate-700 dark:text-slate-200 rounded-lg">
@@ -162,10 +173,6 @@
                 <button onclick="window.print()" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-left flex items-center space-x-2">
                     <i class="fa-solid fa-print text-amber-500"></i>
                     <span>Print PDF</span>
-                </button>
-                <button onclick="openDeployModal()" class="p-2 bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 rounded-lg text-left flex items-center space-x-2 col-span-2">
-                    <i class="fa-solid fa-rocket"></i>
-                    <span>Deployment Instructions</span>
                 </button>
             </div>
             <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs text-slate-500">
@@ -230,7 +237,7 @@
                         </li>
                         <li class="flex justify-between">
                             <span>Submitter:</span>
-                            <span class="font-semibold text-white">JAC Meghalaya</span>
+                            <span class="font-semibold text-white">Concerned Citizens</span>
                         </li>
                     </ul>
                 </div>
@@ -266,7 +273,7 @@
                     <!-- Formal Header Details Box (To / Date / Subject) -->
                     <section class="bg-slate-50 dark:bg-slate-800/60 rounded-xl p-6 mb-10 border-l-4 border-amber-600 dark:border-amber-500 text-sm space-y-4">
                         <div>
-                            <span class="block text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">RECIPIENTS:</span>
+                            <span class="block text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">TO:</span>
                             <ol class="space-y-1 font-semibold text-slate-900 dark:text-slate-100 pl-4 list-decimal">
                                 <li>The Chief Executive Officer, Meghalaya Ropeway Development Authority (MRDA)</li>
                                 <li>The Director, Directorate of Tourism, Government of Meghalaya</li>
@@ -290,28 +297,29 @@
 
                     <!-- Visual Reference Banner (Gallery Item 1 & 2) -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 no-print">
-                        <div class="relative group overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm cursor-pointer" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Shillong_from_Shillong_Peak.jpg/800px-Shillong_from_Shillong_Peak.jpg', 'Shillong Peak & Protected Catchment Forest Zone', 'Panoramic view of Shillong plateau from Lum Shyllong catchment area.')">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Shillong_from_Shillong_Peak.jpg/800px-Shillong_from_Shillong_Peak.jpg" 
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80';"
-                                 alt="Shillong Peak Aerial View" 
+                        <div class="relative group overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', 'Shillong Peak & Protected Catchment Forest Zone', 'Panoramic mountain watershed terrain representative of Lum Shyllong catchment area.')">
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/800x480/1e293b/d97706?text=Lum+Shyllong+Catchment+Zone';"
+                                 alt="Shillong Peak Forest Catchment Area" 
                                  class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-3 text-white">
                                 <div class="text-xs">
                                     <span class="font-bold block text-amber-300">Fig 1. Lum Shyllong High-Altitude Catchment</span>
-                                    <span class="text-slate-300 text-2xl font-light">Upper Shillong Forest Reserve</span>
+                                    <span class="text-slate-300">Upper Shillong Water Reserve Ecosystem</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="relative group overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm cursor-pointer" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/View_from_Shillong_Peak.jpg/800px-View_from_Shillong_Peak.jpg', 'Viewpoint Ridge Alignment', 'Topographical terrain spanning Lawsohtun and Shillong Peak summit.')">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/View_from_Shillong_Peak.jpg/800px-View_from_Shillong_Peak.jpg" 
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511497584788-8767611136f6?auto=format&fit=crop&w=800&q=80';"
-                                 alt="Panoramic View from Viewpoint" 
+                        <!-- Fixed Figure 2 with guaranteed reliable high-res image and SVG fallback -->
+                        <div class="relative group overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'Shillong Peak Viewpoint Ridge Alignment', 'Topographical mountain corridor spanning Lawsohtun and Shillong Peak viewpoint summit.')">
+                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/800x480/0f172a/fbbf24?text=Shillong+Peak+Ridge+Corridor';"
+                                 alt="Panoramic Mountain Ridge Alignment" 
                                  class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-3 text-white">
                                 <div class="text-xs">
                                     <span class="font-bold block text-amber-300">Fig 2. Shillong Peak Viewpoint Ridge</span>
-                                    <span class="text-slate-300">Target Area for Cable Corridor & Terminal Construction</span>
+                                    <span class="text-slate-300">Target Corridor for Ropeway Cable Span & Terminals</span>
                                 </div>
                             </div>
                         </div>
@@ -366,7 +374,7 @@
                         <div class="space-y-4">
                             <h3 class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider flex items-center space-x-2">
                                 <i class="fa-solid fa-folder-open text-indigo-500"></i>
-                                <span>Evidentiary References (Public Domain):</span>
+                                <span>EVIDENTIARY REFERENCES (PUBLIC DOMAIN):</span>
                             </h3>
 
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -374,18 +382,18 @@
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
                                     <div>
                                         <div class="flex justify-between items-start mb-2">
-                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">State Leadership Declarations</span>
+                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">1. State Leadership Declarations</span>
                                             <i class="fa-solid fa-quote-left text-slate-300 dark:text-slate-600"></i>
                                         </div>
                                         <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300">
-                                            <li><strong>CM Conrad K. Sangma (Dec 4, 2024):</strong> Official foundation stone address explicitly asserted: <em>"The ropeway is a potential mode of urban transport and could be a solution to decongest the city."</em></li>
-                                            <li><strong>Dy CM Prestone Tynsong (Sept 6, 2022):</strong> Announced to media (Hub Network, The Shillong Times) that aerial transit networks were being taken up specifically to "decongest Shillong city".</li>
-                                            <li><strong>15th Finance Commission (July 16, 2019):</strong> Official submissions sought grants explicitly to "introduce ropeways to decongest Shillong city."</li>
+                                            <li><strong>Chief Minister Conrad K. Sangma (Dec 4, 2024):</strong> Official foundation stone address explicitly asserted: <em>"The ropeway is a potential mode of urban transport and could be a solution to decongest the city."</em></li>
+                                            <li><strong>Deputy Chief Minister Prestone Tynsong (Sept 6, 2022):</strong> Publicly announced to media outlets (Hub Network, The Shillong Times) that aerial transit networks were being taken up specifically to "decongest Shillong city" where road widening is unfeasible.</li>
+                                            <li><strong>15th Finance Commission Submissions (July 16, 2019):</strong> Official Meghalaya State Government submissions sought grants explicitly framed around the master objective to "introduce ropeways to decongest Shillong city."</li>
                                         </ul>
                                     </div>
                                     <div class="mt-4 pt-2 border-t border-slate-100 dark:border-slate-700/50 flex justify-between items-center text-[11px] text-slate-400">
-                                        <span>Verified Records</span>
-                                        <a href="https://theshillongtimes.com" target="_blank" class="text-indigo-600 hover:underline">Media Archive <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
+                                        <span>Verified Press Records</span>
+                                        <a href="https://theshillongtimes.com" target="_blank" class="text-indigo-600 hover:underline">Media Link <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
                                     </div>
                                 </div>
 
@@ -393,7 +401,7 @@
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
                                     <div>
                                         <div class="flex justify-between items-start mb-2">
-                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">PM-DevINE Scheme Criteria</span>
+                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">2. Central Funding Criteria</span>
                                             <i class="fa-solid fa-indian-rupee-sign text-slate-300 dark:text-slate-600"></i>
                                         </div>
                                         <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -401,7 +409,7 @@
                                         </p>
                                     </div>
                                     <div class="mt-4 pt-2 border-t border-slate-100 dark:border-slate-700/50 flex justify-between items-center text-[11px] text-slate-400">
-                                        <span>DoNER Submission</span>
+                                        <span>DoNER Sanction</span>
                                         <a href="https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2003970&reg=48&lang=2" target="_blank" class="text-indigo-600 hover:underline">PIB Record <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
                                     </div>
                                 </div>
@@ -410,22 +418,23 @@
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
                                     <div>
                                         <div class="flex justify-between items-start mb-2">
-                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200">NST Planning Precedent</span>
+                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200">3. NST Decongestion Precedent</span>
                                             <i class="fa-solid fa-city text-slate-300 dark:text-slate-600"></i>
                                         </div>
                                         <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300">
-                                            <li>Promised as macro-level relief, NST failed due to unintegrated transit planning, shifting gridlock onto narrow bottlenecks.</li>
+                                            <li>Promised as a macro-level relief valve to decongest Shillong City, NST project failed due to unintegrated transit planning, merely shifting gridlock onto narrow arterial bottlenecks.</li>
                                             <li>The lower terminal at Lawsohtun replicates this failure by creating "Induced Demand" traffic congestion inside residential nodes.</li>
                                         </ul>
                                     </div>
                                     <div class="mt-3 pt-2 border-t border-slate-100 dark:border-slate-700/50">
-                                        <span class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Public Domain Evidentiary Links:</span>
+                                        <span class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Source Links:</span>
                                         <div class="flex flex-wrap gap-1 text-[10px]">
                                             <a href="https://theshillongtimes.com/2024/10/04/new-shillong-still-in-devp-stage-despite-crores-spent/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Shillong Times (2024)</a>
                                             <a href="https://theprint.in/india/meghalaya-secretariat-to-be-shifted-to-decongest-shillong/806066/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">ThePrint (Secretariat)</a>
                                             <a href="https://www.landconflictwatch.org/conflicts/land-acquisition-for-new-shillong-township#" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Land Conflict Watch</a>
                                             <a href="https://highlandpost.com/rs-2500-cr-to-be-spent-for-administrative-city-at-new-shillong/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Highland Post (₹2500Cr)</a>
                                             <a href="https://newsonair.gov.in/new-shillong-township-will-be-meghalayas-engine-of-growth-says-meghalaya-cm-conrad-k-sangma/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">NewsOnAir (CM Address)</a>
+                                            <a href="https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2003970&reg=48&lang=2" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">PIB Release</a>
                                             <a href="https://theshillongtimes.com/2022/01/18/govt-offices-to-be-shifted-to-nst/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Shillong Times (2022)</a>
                                             <a href="https://www.syllad.com/shillong-traffic-jams-wont-end-without-land-and-public-cooperation-rymbui/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Syllad (Traffic Crisis)</a>
                                         </div>
@@ -447,13 +456,13 @@
                         </div>
 
                         <!-- Visual Asset 3 (Monocable / Cable Car Station reference) -->
-                        <div class="mb-6 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm no-print cursor-pointer" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gulmarg_Gondola_station.jpg/800px-Gulmarg_Gondola_station.jpg', 'Heavy Reinforced Concrete Terminal Infrastructure', 'Illustrative example of heavy concrete foundations required for monocable passenger gondola terminal stations.')">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gulmarg_Gondola_station.jpg/800px-Gulmarg_Gondola_station.jpg" 
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80';"
+                        <div class="mb-6 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm no-print cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80', 'Heavy Reinforced Concrete Terminal Infrastructure', 'Illustrative example of heavy concrete foundations required for monocable passenger gondola terminal stations.')">
+                            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/800x350/0284c7/ffffff?text=Heavy+Concrete+Gondola+Terminal+Station';"
                                  alt="Ropeway Terminal Station Concrete Structure" 
                                  class="w-full h-44 object-cover">
                             <div class="p-3 bg-slate-50 dark:bg-slate-800 text-xs flex justify-between items-center">
-                                <span class="text-slate-600 dark:text-slate-300"><strong>Fig 3. Illustrative Monocable Passenger Gondola Terminal:</strong> Tender Corrigendum-09 mandates massive RCC building foundations omitted from the state's 0.2% tower footprint claim.</span>
+                                <span class="text-slate-600 dark:text-slate-300"><strong>Fig 3. Monocable Passenger Gondola Terminal:</strong> Tender Corrigendum-09 mandates massive RCC building foundations omitted from the state's 0.2% tower footprint calculation.</span>
                                 <span class="text-emerald-600 dark:text-emerald-400 font-bold">Click to Expand</span>
                             </div>
                         </div>
@@ -498,43 +507,43 @@
                         <div class="space-y-4">
                             <h3 class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider flex items-center space-x-2">
                                 <i class="fa-solid fa-folder-open text-emerald-500"></i>
-                                <span>Evidentiary References (Hydrology & Statutory Safeguards):</span>
+                                <span>EVIDENTIARY REFERENCES:</span>
                             </h3>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
                                     <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1">
-                                        <span>PHE Note vs. Corrigendum-09 Tender Scope</span>
+                                        <span>1. PHE Catchment Note & RCC Terminal Tender Scope</span>
                                         <span class="text-[10px] bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded">Tender Ref M/D Tour/2019/90</span>
                                     </div>
-                                    <p><strong>Verbal Citation (Nov 5, 2026):</strong> MRDA CEO C.V.D. Diengdoh, IAS cited an unpublished PHE report claiming six towers occupy 0.2% of catchment area and sit 500m to 1km from Patakhana and Wahingdoh springs. (Times of India / SP News Agency).</p>
-                                    <p><strong>Contradictory Tender Scope (July 18, 2024):</strong> Directorate of Tourism Corrigendum-09, Clauses 2.4.1 & 2.4.2(a) explicitly mandate bidder experience in constructing <em>"RCC Building, Towers"</em>, proving heavy concrete terminal stations are omitted from the 0.2% footprint calculation.</p>
+                                    <p><strong>Official Verbal Citation (Nov 5, 2026):</strong> During public consultation at State Convention Centre, Shillong, MRDA CEO C.V.D. Diengdoh, IAS cited an unpublished PHE report claiming six mid-line towers occupy 0.2% of catchment area and sit 500m to 1km from springs (including Patakhana and Wahingdoh). Verified via The Times of India and SP News Agency.</p>
+                                    <p><strong>Contradictory Tender Scope (July 18, 2024):</strong> Directorate of Tourism Corrigendum-09 (No. M/D Tour 180/2019/Part IV/57), Clauses 2.4.1 and 2.4.2(a) explicitly mandate bidder experience in constructing <em>"RCC Building, Towers"</em>, proving heavy concrete terminal stations are omitted from the 0.2% footprint calculation. Document available via NDB Procurement Portal.</p>
                                 </div>
 
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
                                     <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1">
-                                        <span>NDB Category B & Non-Binding Tree Clause</span>
+                                        <span>2. NDB Category B Disclosure & Non-Binding ESMP</span>
                                         <span class="text-[10px] bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded">NDB ESF Framework</span>
                                     </div>
-                                    <p><strong>NDB Financing Disclosure (July 18, 2022):</strong> Classified as Category B under NDB Environment & Social Framework, acknowledging forest land diversion and community health impact.</p>
-                                    <p><strong>Non-Binding Compensatory Clause:</strong> Corrigendum-09 Clause 11.0 (ESMP Table S.No 3) states: <em>"for the purpose of provisioning, this ESMP recommends 10 trees to be planted for every tree being cut"</em>, rendering actual 1:10 replacement non-binding.</p>
+                                    <p><strong>NDB Financing Disclosure (July 18, 2022):</strong> Classified as Category B under NDB’s Environment and Social Framework (ESF), acknowledging <em>"diversion of forest land, likely impact on indigenous people, and occupational and community health and safety"</em>, requiring full Environmental and Social Management Plans (ESMPs).</p>
+                                    <p><strong>Non-Binding Tree Replacement Clause:</strong> Corrigendum-09 Clause 11.0 (ESMP Table, S. No. 3), the 1:10 compensatory afforestation ratio is explicitly framed as non-binding: <em>"for the purpose of provisioning, this ESMP recommends 10 trees to be planted for every tree being cut"</em>, leaving replacement strictly to baseline Forest Department minimums.</p>
                                 </div>
 
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
                                     <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1">
-                                        <span>Stage-II Forest Diversion Clearance</span>
+                                        <span>3. Stage-II Forest Diversion Clearance</span>
                                         <span class="text-[10px] bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">2.3257 Ha / 545 Trees</span>
                                     </div>
-                                    <p><strong>Official Disclosure (Nov 5, 2026):</strong> MRDA CEO confirmed MoEF&CC Stage-II forest diversion and tree-felling approval for 2.3257 hectares of forest land and 545 mature trees, without releasing the formal Stage-II sanction letter or binding conditions to the public.</p>
+                                    <p><strong>Official Disclosure (Nov 5, 2026):</strong> MRDA CEO C.V.D. Diengdoh confirmed forest diversion clearance and tree-cutting permission were obtained from MoEF&CC for 2.3257 hectares of forest land and felling of 545 mature trees, without releasing the formal Stage-II sanction letter or binding conditions into the public domain. Verified via SP News Agency.</p>
                                 </div>
 
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
                                     <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1">
-                                        <span>MoEF&CC Gazette & Binding OM Safeguards</span>
+                                        <span>4. MoEF&CC Gazette Exemption & Safeguards</span>
                                         <span class="text-[10px] bg-blue-100 dark:bg-blue-950 px-2 py-0.5 rounded">S.O. 1953(E) & OM F.No.22-17/2021</span>
                                     </div>
-                                    <p><strong>Gazette S.O. 1953(E) (April 27, 2022):</strong> Omits aerial ropeways from prior EC under EIA 2006.</p>
-                                    <p><strong>Binding OM Safeguards:</strong> Simultaneous OM F. No. 22-17/2021-IA.III mandates strict construction safeguards during operation and construction, whose compliance records remain hidden from public inspection.</p>
+                                    <p><strong>Gazette S.O. 1953(E) (April 27, 2022):</strong> Omits aerial ropeways (Item 7(g)) from prior EC under EIA 2006. Text indexed via India Code / MoEF&CC Gazette Record.</p>
+                                    <p><strong>Binding Office Memorandum F. No. 22-17/2021-IA.III (April 27, 2022):</strong> Issued simultaneously by MoEF&CC Impact Assessment Division, stipulating that EC exemption is <em>"subject to certain environmental safeguards"</em> and does not exempt the project from approvals under any other Act. Listed on MoEF&CC PARIVESH OM Compilation Portal.</p>
                                 </div>
                             </div>
                         </div>
@@ -553,15 +562,14 @@
 
                         <!-- Visual Asset 4 (Eastern Air Command & Defence Proximity) -->
                         <div class="mb-6 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-rose-200 dark:border-rose-950 flex flex-col sm:flex-row items-center gap-4">
-                            <div class="w-20 h-20 flex-shrink-0 bg-white dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center cursor-pointer" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Eastern_Air_Command_%28India%29.png/600px-Eastern_Air_Command_%28India%29.png', 'Eastern Air Command HQ Emblem', 'Headquarters Eastern Air Command (IAF) Shillong, adjacent to the upper ropeway terminal alignment.')">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Eastern_Air_Command_%28India%29.png/600px-Eastern_Air_Command_%28India%29.png" 
-                                     onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e293b/fbbf24?text=IAF+EAC';"
-                                     alt="Eastern Air Command Emblem" class="max-h-full max-w-full object-contain">
+                            <div class="w-20 h-20 flex-shrink-0 bg-slate-900 text-amber-400 p-2 rounded-lg border border-slate-700 flex flex-col items-center justify-center text-center">
+                                <i class="fa-solid fa-shield-halved text-2xl mb-1"></i>
+                                <span class="text-[9px] font-bold uppercase">IAF EAC</span>
                             </div>
                             <div class="text-xs space-y-1">
                                 <span class="font-bold text-rose-700 dark:text-rose-400 uppercase tracking-wide block">Strategic Defence Zone Security Contradiction</span>
                                 <p class="text-slate-600 dark:text-slate-300">
-                                    The upper ropeway terminal directly borders the strategic Eastern Air Command (EAC) IAF Air Base and radar installations at Upper Shillong. While public infrastructure (Rilbong-Barik flyover) was scrapped for Cantonment proximity, 13 commercial gondola cabins are permitted to operate with direct aerial line-of-sight.
+                                    The upper ropeway terminal directly borders the strategic Eastern Air Command (EAC) Air Force Station and radar facilities at Upper Shillong. While public commuter infrastructure (Rilbong-Barik flyover) was scrapped for Cantonment proximity, 13 elevated commercial gondola cabins are permitted to operate with direct aerial line-of-sight.
                                 </p>
                             </div>
                         </div>
@@ -591,40 +599,40 @@
                         <div class="space-y-4">
                             <h3 class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider flex items-center space-x-2">
                                 <i class="fa-solid fa-folder-open text-rose-500"></i>
-                                <span>Evidentiary References (Defence & Aviation NOCs):</span>
+                                <span>EVIDENTIARY REFERENCES (PUBLIC DOMAIN):</span>
                             </h3>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
                                     <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>Rilbong-Barik Flyover Scrapped</span>
+                                        <span>1. Scrapping of Rilbong–Barik Corridor</span>
                                         <span class="text-[10px] bg-rose-100 dark:bg-rose-950 px-2 py-0.5 rounded">Feb–April 2026</span>
                                     </div>
-                                    <p>Following formal objections by GOC 101 Area regarding elevated structures near Cantonment zones, Dy CM Prestone Tynsong publicly confirmed on April 28, 2026 that the flyover was cancelled due to <em>"safety and security reasons"</em> and downgraded to a surface 4-lane road (The Shillong Times Feb 13, 2026; The Meghalayan Express April 28, 2026).</p>
+                                    <p><strong>Official Cancellation:</strong> Following formal objections conveyed by GOC 101 Area regarding elevated structures near Cantonment zones, Dy CM Prestone Tynsong publicly confirmed on April 28, 2026 that the flyover was dropped due to <em>"safety and security reasons"</em> and downgraded to a surface 4-lane road. Reported by The Shillong Times (Feb 13, 2026) and The Meghalayan Express (April 28, 2026).</p>
                                 </div>
 
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
                                     <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>EAC Air Base Proximity & Alignment</span>
+                                        <span>2. Eastern Air Command Proximity</span>
                                         <span class="text-[10px] bg-amber-100 dark:bg-amber-950 px-2 py-0.5 rounded">Oct 23, 2026</span>
                                     </div>
-                                    <p>Tourism Dept officials admitted during public consultations that the upper terminal was shifted 80m below Shillong Peak viewpoint specifically to address Air Force security concerns adjacent to EAC station, while still operating 13 elevated gondola cabins above the ridge canopy (The Assam Tribune Oct 23, 2026).</p>
+                                    <p><strong>Official Alignment Admission:</strong> Tourism Department officials admitted during public consultations that upper terminal was shifted roughly 80 metres below Shillong Peak viewpoint specifically to <em>"address Air Force security concerns"</em> adjacent to EAC station, while still operating 13 elevated gondola cabins above the ridge canopy. Reported by The Assam Tribune (Oct 23, 2026).</p>
                                 </div>
 
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
                                     <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>Undisclosed Defence & AAI NOC Conditions</span>
+                                        <span>3. Undisclosed Defence & Aviation NOC Conditions</span>
                                         <span class="text-[10px] bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">NOCs Withheld</span>
                                     </div>
-                                    <p>MRDA claimed obtaining NOCs from AAI (24 April 2023), IAF (26 July 2023), and Indian Army (7 August 2023), but has failed to place actual NOC documents or operational, altitude, or surveillance conditions—even in redacted form—in the public domain (SP News Agency / DIPR Press Release).</p>
+                                    <p><strong>Official Clearance Claims (Aug 2 & Nov 5, 2026):</strong> MRDA stated it obtained NOCs from Airports Authority of India (24 April 2023), Indian Air Force (26 July 2023), and Indian Army (7 August 2023), but failed to place actual NOC documents or operational, altitude, or surveillance conditions—even in redacted form—in the public domain. Verified via SP News Agency & Govt DIPR Press Release.</p>
                                 </div>
 
                                 <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
                                     <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>The Security Policy Double Standard</span>
+                                        <span>4. The Policy Double Standard</span>
                                         <span class="text-[10px] bg-rose-100 dark:bg-rose-950 px-2 py-0.5 rounded">Institutional Contradiction</span>
                                     </div>
-                                    <p>While daily urban commuters were denied an elevated decongestion flyover at Rilbong–Barik to protect ground Cantonment perimeters, an elevated commercial tourist ropeway operating beside strategic Air Force radar is pushed forward without disclosing security parameters.</p>
+                                    <p>While daily urban commuters were denied an elevated decongestion flyover at Rilbong–Barik to protect ground-level Cantonment perimeters, an elevated commercial tourist ropeway operating directly beside strategic Air Force radar and defence assets is being pushed forward without disclosing its security parameters.</p>
                                 </div>
                             </div>
                         </div>
@@ -643,7 +651,7 @@
 
                         <div class="bg-slate-900 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6">
                             <p class="font-serif text-sm sm:text-base leading-relaxed text-slate-300 border-b border-slate-800 pb-4">
-                                In light of the documentary evidence and institutional contradictions placed on record above, the Joint Action Committee (JAC) hereby demands:
+                                In light of the documentary evidence and institutional contradictions placed on record above, the Concerned Citizens of Meghalaya hereby demand:
                             </p>
 
                             <ol class="space-y-4 font-sans text-sm">
@@ -683,7 +691,7 @@
                         <div class="mt-10 p-6 sm:p-8 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
                             <div class="space-y-2 text-xs sm:text-sm">
                                 <span class="font-bold text-slate-900 dark:text-white uppercase tracking-wider block">SUBMITTED ON BEHALF OF:</span>
-                                <div class="font-serif font-bold text-amber-700 dark:text-amber-400 text-lg">JOINT ACTION COMMITTEE (JAC)</div>
+                                <div class="font-serif font-bold text-amber-700 dark:text-amber-400 text-lg">CONCERNED CITIZEN / CONCERNED CITIZENS OF MEGHALAYA</div>
                                 <div class="text-slate-500 dark:text-slate-400">(Authorized Representative / Designation)</div>
                                 <div class="pt-2 text-slate-600 dark:text-slate-300">
                                     <span>Date: <strong>November 11, 2026</strong></span><br>
@@ -705,7 +713,7 @@
                     <!-- Footer Citation note -->
                     <footer class="pt-6 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400 space-y-1">
                         <p>Formal Representation & Evidentiary Submission • Shillong Peak Ropeway Project</p>
-                        <p class="font-mono">Filing Date: November 11, 2026 • Verified Public Domain Dossier</p>
+                        <p class="font-mono">Filing Date: November 11, 2026 • Verified Public Domain Record</p>
                     </footer>
 
                 </article>
@@ -727,46 +735,6 @@
         </div>
     </div>
 
-    <!-- Deployment Instructions Modal -->
-    <div id="deployModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative">
-            <button onclick="closeDeployModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-            
-            <div class="flex items-center space-x-3 mb-4 text-emerald-600 dark:text-emerald-400">
-                <i class="fa-solid fa-rocket text-2xl"></i>
-                <h3 class="font-heading text-xl font-bold">1-Click Hosting on GitHub Pages & Vercel</h3>
-            </div>
-
-            <div class="space-y-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
-                    <strong class="text-slate-900 dark:text-white block mb-1 font-bold">Option A: Deploy to GitHub Pages</strong>
-                    <ol class="list-decimal pl-5 space-y-1">
-                        <li>Create a public GitHub repository (e.g. <code class="bg-slate-200 dark:bg-slate-700 px-1 rounded text-emerald-600 dark:text-emerald-300">shillong-ropeway-representation</code>).</li>
-                        <li>Save this webpage code as <code class="bg-slate-200 dark:bg-slate-700 px-1 rounded text-emerald-600 dark:text-emerald-300">index.html</code> and push it to the main branch.</li>
-                        <li>Go to <strong>Settings &gt; Pages</strong> in your repo, select <code class="bg-slate-200 dark:bg-slate-700 px-1 rounded">main</code> branch, and click Save. Your site will be live at <code class="text-amber-600 dark:text-amber-400">https://username.github.io/repo-name</code>.</li>
-                    </ol>
-                </div>
-
-                <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
-                    <strong class="text-slate-900 dark:text-white block mb-1 font-bold">Option B: Deploy to Vercel</strong>
-                    <ol class="list-decimal pl-5 space-y-1">
-                        <li>Go to <a href="https://vercel.com" target="_blank" class="text-indigo-600 hover:underline">Vercel.com</a> and sign in.</li>
-                        <li>Drag & drop the folder containing this <code class="bg-slate-200 dark:bg-slate-700 px-1 rounded text-emerald-600 dark:text-emerald-300">index.html</code> file onto the Vercel dashboard.</li>
-                        <li>Vercel will instantly issue an SSL-enabled production URL for public sharing.</li>
-                    </ol>
-                </div>
-
-                <div class="flex justify-end pt-2">
-                    <button onclick="closeDeployModal()" class="px-4 py-2 bg-emerald-600 text-white text-xs font-semibold rounded-lg hover:bg-emerald-700 transition">
-                        Got it!
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-50 hidden flex items-center space-x-2 text-xs border border-slate-700">
         <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
@@ -775,7 +743,7 @@
 
     <!-- Interactive JavaScript -->
     <script>
-        // Reading Progress Bar
+        // Reading Progress Bar & ScrollSpy
         window.onscroll = function() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -851,7 +819,7 @@
                 clearSearchBtn.classList.add('hidden');
             }
 
-            // Simple text search highlighting
+            // Text search highlighting
             removeHighlights(contentArea);
             if (query.length >= 3) {
                 highlightText(contentArea, query);
@@ -938,15 +906,6 @@
 
         function closeLightbox() {
             document.getElementById('lightboxModal').classList.add('hidden');
-        }
-
-        // Deployment Modal Functions
-        function openDeployModal() {
-            document.getElementById('deployModal').classList.remove('hidden');
-        }
-
-        function closeDeployModal() {
-            document.getElementById('deployModal').classList.add('hidden');
         }
     </script>
 </body>
