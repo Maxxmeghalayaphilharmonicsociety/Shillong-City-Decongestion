@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formal Representation & Evidentiary Submission — Shillong Peak Ropeway Project</title>
+    <title>Forensic Audit & Fact-Check Report — Shillong Peak Ropeway Project</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,62 +43,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(100, 116, 139, 0.5);
-            border-radius: 4px;
-        }
-        
-        /* Reading progress bar */
-        #progress-bar {
-            width: 0%;
-            transition: width 0.1s ease-out;
-        }
-
-        /* Search highlights */
-        mark.highlight {
-            background-color: #fef08a;
-            color: #000;
-            padding: 0.1em 0.3em;
-            border-radius: 0.2em;
-        }
-        .dark mark.highlight {
-            background-color: #854d0e;
-            color: #fff;
-        }
-
-        /* Print styles */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); }
+        ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.5); border-radius: 4px; }
+        #progress-bar { width: 0%; transition: width 0.1s ease-out; }
+        mark.highlight { background-color: #fef08a; color: #000; padding: 0.1em 0.3em; border-radius: 0.2em; }
+        .dark mark.highlight { background-color: #854d0e; color: #fff; }
         @media print {
-            body {
-                background: white !important;
-                color: black !important;
-                font-size: 11pt;
-            }
-            .no-print {
-                display: none !important;
-            }
-            .print-only {
-                display: block !important;
-            }
-            .page-break {
-                page-break-before: always;
-            }
-            .shadow-lg, .shadow-2xl, .shadow-md {
-                box-shadow: none !important;
-            }
-            .border {
-                border-color: #ccc !important;
-            }
-            a[href^="http"]:after {
-                content: " (" attr(href) ")";
-                font-size: 80%;
-            }
+            body { background: white !important; color: black !important; font-size: 11pt; }
+            .no-print { display: none !important; }
+            .shadow-lg, .shadow-2xl, .shadow-md { box-shadow: none !important; }
+            .border { border-color: #ccc !important; }
+            a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 80%; }
         }
     </style>
 </head>
@@ -106,7 +62,7 @@
 
     <!-- Reading Progress Bar -->
     <div class="fixed top-0 left-0 w-full h-1.5 bg-slate-200 dark:bg-slate-800 z-50 no-print">
-        <div id="progress-bar" class="h-full bg-amber-600 dark:bg-amber-500"></div>
+        <div id="progress-bar" class="h-full bg-emerald-600 dark:bg-emerald-500"></div>
     </div>
 
     <!-- Navigation Bar -->
@@ -115,19 +71,19 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Brand / Doc Header -->
                 <div class="flex items-center space-x-3">
-                    <div class="p-2 bg-slate-900 text-amber-500 rounded-lg dark:bg-amber-500 dark:text-slate-950">
-                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    <div class="p-2 bg-slate-900 text-emerald-400 rounded-lg dark:bg-emerald-500 dark:text-slate-950">
+                        <i class="fa-solid fa-file-shield text-xl"></i>
                     </div>
                     <div>
-                        <span class="block text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">Official Record Filing</span>
-                        <a href="index.html" class="font-heading font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:text-amber-500 transition">Shillong Peak Ropeway Submission</a>
+                        <span class="block text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">Audit Dossier</span>
+                        <a href="index.html" class="font-heading font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:text-emerald-500 transition">Forensic Audit & Fact-Check</a>
                     </div>
                 </div>
 
                 <!-- Desktop Navigation Controls -->
                 <div class="hidden md:flex items-center space-x-3">
                     <!-- Back to Home Link -->
-                    <a href="index.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:text-amber-500 transition flex items-center space-x-1.5">
+                    <a href="index.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:text-emerald-500 transition flex items-center space-x-1.5">
                         <i class="fa-solid fa-house text-xs"></i>
                         <span>Home</span>
                     </a>
@@ -135,8 +91,8 @@
                     <!-- Search Input -->
                     <div class="relative">
                         <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-sm"></i>
-                        <input type="text" id="searchInput" placeholder="Search record text..." 
-                            class="pl-9 pr-8 py-1.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200 w-44 focus:w-60 transition-all">
+                        <input type="text" id="searchInput" placeholder="Search audit text..." 
+                            class="pl-9 pr-8 py-1.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-800 dark:text-slate-200 w-44 focus:w-60 transition-all">
                         <button id="clearSearch" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
@@ -144,23 +100,23 @@
 
                     <!-- Font Size Adjustment -->
                     <div class="flex items-center bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg p-0.5">
-                        <button onclick="adjustFontSize(-1)" title="Decrease Text Size" class="px-2 py-1 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 text-xs font-bold transition">
+                        <button onclick="adjustFontSize(-1)" title="Decrease Text Size" class="px-2 py-1 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 text-xs font-bold transition">
                             A-
                         </button>
                         <span class="text-[10px] text-slate-400 px-1 border-x border-slate-300 dark:border-slate-700">Font</span>
-                        <button onclick="adjustFontSize(1)" title="Increase Text Size" class="px-2 py-1 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 text-xs font-bold transition">
+                        <button onclick="adjustFontSize(1)" title="Increase Text Size" class="px-2 py-1 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 text-xs font-bold transition">
                             A+
                         </button>
                     </div>
 
                     <!-- Quick Action Controls -->
-                    <button onclick="copyDocumentText()" title="Copy Full Text" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <button onclick="copyDocumentText()" title="Copy Full Text" class="p-2 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
                         <i class="fa-regular fa-copy"></i>
                     </button>
-                    <button onclick="window.print()" title="Print / Save PDF" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <button onclick="window.print()" title="Print / Save PDF" class="p-2 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
                         <i class="fa-solid fa-print"></i>
                     </button>
-                    <button id="themeToggle" title="Toggle Dark/Light Mode" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <button id="themeToggle" title="Toggle Dark/Light Mode" class="p-2 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
                         <i class="fa-solid fa-moon dark:hidden"></i>
                         <i class="fa-solid fa-sun hidden dark:inline"></i>
                     </button>
@@ -182,16 +138,16 @@
         <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 space-y-3">
             <div class="relative">
                 <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400"></i>
-                <input type="text" id="searchInputMobile" placeholder="Search record..." 
+                <input type="text" id="searchInputMobile" placeholder="Search audit report..." 
                     class="w-full pl-9 pr-3 py-2 text-sm rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
             </div>
             <div class="grid grid-cols-2 gap-2 text-sm">
                 <button onclick="copyDocumentText()" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-left flex items-center space-x-2">
-                    <i class="fa-regular fa-copy text-amber-500"></i>
+                    <i class="fa-regular fa-copy text-emerald-500"></i>
                     <span>Copy Text</span>
                 </button>
                 <button onclick="window.print()" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-left flex items-center space-x-2">
-                    <i class="fa-solid fa-print text-amber-500"></i>
+                    <i class="fa-solid fa-print text-emerald-500"></i>
                     <span>Print PDF</span>
                 </button>
             </div>
@@ -209,319 +165,399 @@
             <!-- Sidebar Navigation (Desktop) -->
             <aside class="hidden lg:block lg:col-span-3 space-y-6 sticky top-24 h-fit no-print">
                 <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <h3 class="text-xs uppercase tracking-wider font-bold text-slate-400 dark:text-slate-500 mb-4">Document Outline</h3>
+                    <h3 class="text-xs uppercase tracking-wider font-bold text-slate-400 dark:text-slate-500 mb-4">Report Sections</h3>
                     <nav class="space-y-1 text-sm font-medium" id="toc">
-                        <a href="#meta-header" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-file-contract text-amber-500 w-5"></i> Meta Header & Recipients
+                        <a href="#executive-summary" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-file-contract text-emerald-500 w-5"></i> Executive Summary
                         </a>
-                        <a href="#preamble" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-book-open text-blue-500 w-5"></i> Preamble
+                        <a href="#fact-check-matrix" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-table-cells text-blue-500 w-5"></i> Fact-Check Matrix
                         </a>
-                        <a href="#question-1" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-circle-question text-indigo-500 w-5"></i> Question 1: Decongestion & NST
+                        <a href="#sec-1-eia" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-tree text-emerald-600 w-5"></i> 1. EIA Appraisal
                         </a>
-                        <a href="#question-2" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-droplet text-emerald-500 w-5"></i> Question 2: Hydrology & EIA
+                        <a href="#sec-2-mobility" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-car text-indigo-500 w-5"></i> 2. Decongestion Claim
                         </a>
-                        <a href="#question-3" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-shield-halved text-rose-500 w-5"></i> Question 3: Defence Security
+                        <a href="#sec-3-cofinancing" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-building-columns text-amber-500 w-5"></i> 3. NDB vs. PM-DevINE
                         </a>
-                        <a href="#closing-demands" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-gavel text-amber-600 w-5"></i> Closing Demands & Signatures
+                        <a href="#sec-4-ropeway-act" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-scale-balanced text-rose-500 w-5"></i> 4. Ropeway Act, 2022
+                        </a>
+                        <a href="#sec-5-byelaws-cost" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-calculator text-purple-500 w-5"></i> 5. Bye-Laws, Cost & Water
+                        </a>
+                        <a href="#verified-sources" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-link text-sky-500 w-5"></i> Verified Sources (11)
                         </a>
                     </nav>
                 </div>
 
                 <!-- Fast Specs Metadata Card -->
                 <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-5 rounded-2xl shadow-md border border-slate-700">
-                    <div class="flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <span>Filing Highlights</span>
+                    <div class="flex items-center space-x-2 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Audit Highlights</span>
                     </div>
                     <ul class="text-xs space-y-2.5 text-slate-300">
                         <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Filing Date:</span>
-                            <span class="font-semibold text-white">Nov 11, 2026</span>
+                            <span>Published:</span>
+                            <span class="font-semibold text-white">Nov 14, 2026</span>
                         </li>
                         <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Project Outlay:</span>
-                            <span class="font-semibold text-amber-400">₹151 Crore</span>
+                            <span>Cost Outlay:</span>
+                            <span class="font-semibold text-emerald-400">₹151.00 Crore</span>
                         </li>
                         <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Central Grant:</span>
-                            <span class="font-semibold text-white">₹70+ Cr (PM-DevINE)</span>
+                            <span>Co-Financing:</span>
+                            <span class="font-semibold text-white">NDB + PM-DevINE</span>
                         </li>
                         <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Forest Clearance:</span>
-                            <span class="font-semibold text-rose-400">2.3257 Ha / 545 Trees</span>
+                            <span>Water Extraction:</span>
+                            <span class="font-semibold text-rose-400">211.5 KLD</span>
                         </li>
                         <li class="flex justify-between">
-                            <span>Submitter:</span>
-                            <span class="font-semibold text-white">Concerned Citizens</span>
+                            <span>Corridor:</span>
+                            <span class="font-semibold text-white">Lawsohtun → Peak</span>
                         </li>
                     </ul>
                 </div>
             </aside>
 
-            <!-- Main Legal Representation Document -->
+            <!-- Main Audit Dossier Article Container -->
             <main class="lg:col-span-9 space-y-10">
+                <article id="printable-area" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-6 sm:p-10 md:p-14 relative space-y-10">
 
-                <!-- MAIN DOCUMENT PAPER CONTAINER -->
-                <article id="printable-area" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-6 sm:p-10 md:p-14 relative">
-                    
-                    <!-- Official Stamp Header Badge -->
-                    <div class="flex flex-wrap items-center justify-between gap-4 pb-8 mb-8 border-b border-slate-200 dark:border-slate-800">
-                        <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-200 border border-rose-300 dark:border-rose-800">
-                            <span class="w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-400 animate-pulse mr-2"></span>
-                            OFFICIAL EVIDENTIARY RECORD FILING
+                    <!-- Hero Dossier Header -->
+                    <section id="executive-summary" class="space-y-6">
+                        <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-200 dark:border-slate-800">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-200 border border-rose-300 dark:border-rose-800">
+                                <span class="w-2 h-2 rounded-full bg-rose-600 animate-pulse mr-2"></span>
+                                PUBLIC AUDIT & FACT-CHECK DOSSIER
+                            </span>
+                            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                                PUBLISHED: NOVEMBER 14, 2026
+                            </span>
                         </div>
-                        <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
-                            REF NO: MRDA/EIDP/EVID-2026/11
-                        </div>
-                    </div>
 
-                    <!-- Title Header Section -->
-                    <header id="meta-header" class="mb-10 text-center sm:text-left">
-                        <h1 class="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4 tracking-tight">
-                            FORMAL REPRESENTATION AND EVIDENTIARY SUBMISSION
-                        </h1>
-                        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium tracking-wide uppercase">
-                            Submitted under Public Trust Doctrine and Environmental Governance Frameworks
-                        </p>
-                    </header>
+                        <header class="space-y-4">
+                            <h1 class="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                                Forensic Audit & Fact-Check Report: Shillong Peak Ropeway Project
+                            </h1>
+                            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-serif leading-relaxed">
+                                Independent cross-verification of internal project files, statutory notifications, and official November 2026 public consultation statements against publicly accessible records from the <strong>Ministry of Environment, Forest and Climate Change (MoEF&CC)</strong>[cite: 1], the <strong>New Development Bank (NDB)</strong>[cite: 1], the <strong>Ministry of DoNER</strong>[cite: 1], and the <strong>Government of Meghalaya</strong>[cite: 1].
+                            </p>
+                        </header>
 
-                    <!-- Formal Header Details Box (To / Date / Subject) -->
-                    <section class="bg-slate-50 dark:bg-slate-800/60 rounded-xl p-6 mb-10 border-l-4 border-amber-600 dark:border-amber-500 text-sm space-y-4">
-                        <div>
-                            <span class="block text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">TO:</span>
-                            <ol class="space-y-1 font-semibold text-slate-900 dark:text-slate-100 pl-4 list-decimal">
-                                <li>The Chief Executive Officer, Meghalaya Ropeway Development Authority (MRDA)</li>
-                                <li>The Director, Directorate of Tourism, Government of Meghalaya</li>
-                                <li>The District Magistrate / Deputy Commissioner, East Khasi Hills District</li>
-                            </ol>
+                        <!-- Executive Audit Conclusion Callout -->
+                        <div class="p-6 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-emerald-600 dark:border-emerald-500 space-y-3">
+                            <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Executive Audit Conclusion</h2>
+                            <p class="text-sm sm:text-base font-serif text-slate-700 dark:text-slate-300 leading-relaxed">
+                                A forensic audit comparing internal project documents against official public-domain filings confirms <strong>major institutional contradictions</strong>[cite: 1]. Public records verify that the 955-meter ropeway underwent federal Environmental Impact Assessment (EIA) appraisal under <strong>Schedule Activity 7(g)</strong> in 2021[cite: 1], was formally pitched to both domestic urban planners and multilateral lenders as a road-traffic and greenhouse-gas emissions reduction measure[cite: 1], and faces direct statutory, co-financing, hydrological, and building-code conflicts[cite: 1].
+                            </p>
                         </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-slate-200 dark:border-slate-700">
+
+                        <!-- 4 Key Red-Flag Metric Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <div class="rounded-xl border border-red-200 dark:border-red-900 bg-red-50/40 dark:bg-red-950/20 p-5 space-y-2">
+                                <div class="flex justify-between items-center text-xs font-mono font-bold text-red-800 dark:text-red-300">
+                                    <span>COST ESCALATION</span>
+                                    <span>+80.7%</span>
+                                </div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono">₹151.00 Cr</div>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">Up from ₹83.56 Cr (2021 Form-1) and ₹108.06 Cr (2022 MIG Report), with broken cost-sheet arithmetic[cite: 1].</p>
+                            </div>
+
+                            <div class="rounded-xl border border-amber-200 dark:border-amber-900 bg-amber-50/50 dark:bg-amber-950/20 p-5 space-y-2">
+                                <div class="flex justify-between items-center text-xs font-mono font-bold text-amber-900 dark:text-amber-300">
+                                    <span>CO-FINANCING SPLIT</span>
+                                    <span>CONFLICT</span>
+                                </div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono">₹80.89 + ₹70.11 Cr</div>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">NDB Sovereign Loan + PM-DevINE Grant implicates PM-DevINE Para 2.2 & 7.1.5(ii) non-duplication rules[cite: 1].</p>
+                            </div>
+
+                            <div class="rounded-xl border border-sky-200 dark:border-sky-900 bg-sky-50/50 dark:bg-sky-950/20 p-5 space-y-2">
+                                <div class="flex justify-between items-center text-xs font-mono font-bold text-sky-900 dark:text-sky-300">
+                                    <span>WATER EXTRACTION</span>
+                                    <span>80% WARNING</span>
+                                </div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono">211.5 KLD</div>
+    <p class="text-xs text-slate-600 dark:text-slate-400">211,500 L/day planned at Lum Shyllong recharge zone despite 80% community spring-depletion warnings[cite: 1].</p>
+                            </div>
+
+                            <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5 space-y-2">
+                                <div class="flex justify-between items-center text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
+                                    <span>STATUTORY GAPS</span>
+                                    <span>ACT 14/2022</span>
+                                </div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono">4 Core Mandates</div>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">Pre-planning Vision Paper, 30-day draft licence notice, District Committee, & Sec. 36 ROW orders[cite: 1].</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 my-10">
+
+                    <!-- Interactive Fact-Check Matrix Section -->
+                    <section id="fact-check-matrix" class="space-y-6">
+                        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
                             <div>
-                                <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">DATE:</span>
-                                <span class="font-semibold text-slate-900 dark:text-slate-100">November 11, 2026</span>
+                                <span class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Interactive Audit Ledger</span>
+                                <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white mt-1">Official Claims vs. Public-Domain Record</h2>
                             </div>
-                            <div class="md:col-span-2">
-                                <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">SUBJECT:</span>
-                                <span class="font-semibold text-slate-900 dark:text-slate-100 leading-snug block">
-                                    Evidentiary Submission Regarding Public Statements on the Justification for Decongestion, Environmental Impact Assessment (EIA) Exemptions in Protected Forests, and Security Contradictions of the Proposed Shillong Peak Ropeway Project
-                                </span>
+                            
+                            <!-- Search & Filter Controls -->
+                            <div class="w-full lg:w-85 no-print space-y-3">
+                                <div class="relative">
+                                    <input id="matrix-search" type="text" placeholder="Search (e.g. 7(g), PM-DevINE, 211.5 KLD)..." 
+                                        class="w-full pl-9 pr-4 py-2 text-xs bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-800 dark:text-slate-200">
+                                    <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                                </div>
+                                <div class="flex flex-wrap gap-1.5 text-xs" id="filter-pills">
+                                    <button data-filter="all" class="filter-btn active px-2.5 py-1 rounded-md font-semibold bg-emerald-600 text-white transition">All (6)</button>
+                                    <button data-filter="environment" class="filter-btn px-2.5 py-1 rounded-md font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition">Environment</button>
+                                    <button data-filter="finance" class="filter-btn px-2.5 py-1 rounded-md font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition">Finance</button>
+                                    <button data-filter="statutory" class="filter-btn px-2.5 py-1 rounded-md font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition">Statutory</button>
+                                    <button data-filter="mobility" class="filter-btn px-2.5 py-1 rounded-md font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition">Mobility</button>
+                                </div>
                             </div>
+                        </div>
+
+                        <!-- Fact Cards Grid -->
+                        <div id="fact-cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
+                            <!-- Card 1 -->
+                            <article data-category="environment" class="fact-card rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5 flex flex-col justify-between space-y-4">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="px-2 py-0.5 font-mono font-bold uppercase bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-200 rounded">Verified False Claim</span>
+                                        <span class="font-mono text-slate-500">MoEF&amp;CC • Sept 2021[cite: 1]</span>
+                                    </div>
+                                    <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white">1. Environmental Impact Assessment (EIA) Requirement</h3>
+                                    <div class="space-y-2 text-xs font-serif">
+                                        <div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                                            <strong class="font-sans text-slate-500 block mb-1">Official Nov 2026 Statement:</strong>
+                                            <p class="text-slate-700 dark:text-slate-300">Asserted that an EIA was never applicable or required for the Shillong Peak Ropeway project[cite: 1].</p>
+                                        </div>
+                                        <div class="p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg border border-emerald-200 dark:border-emerald-900">
+                                            <strong class="font-sans text-emerald-800 dark:text-emerald-300 block mb-1">Verified Public Record:</strong>
+                                            <p class="text-slate-800 dark:text-slate-200">Appraised at 66th &amp; 73rd EAC Meetings under Schedule Item 7(g) of EIA Notification, 2006; 2022 MIG Report lists EIA Clearances as Approval #1[cite: 1].</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-3 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center text-xs">
+                                    <a href="#sec-1-eia" class="font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">Read Full Analysis →</a>
+                                    <a href="https://environmentclearance.nic.in/writereaddata/Form-1A/Minutes/0710202129440102FinalMOM73rdEACMeeting.pdf" target="_blank" class="font-mono text-slate-400 hover:text-slate-600">73rd MoM ↗</a>
+                                </div>
+                            </article>
+
+                            <!-- Card 2 -->
+                            <article data-category="mobility" class="fact-card rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5 flex flex-col justify-between space-y-4">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="px-2 py-0.5 font-mono font-bold uppercase bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-200 rounded">Verified False Claim</span>
+                                        <span class="font-mono text-slate-500">Urban Policy • NDB[cite: 1]</span>
+                                    </div>
+                                    <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white">2. Traffic Decongestion &amp; Emissions Justification</h3>
+                                    <div class="space-y-2 text-xs font-serif">
+                                        <div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                                            <strong class="font-sans text-slate-500 block mb-1">Official Nov 2026 Statement:</strong>
+                                            <p class="text-slate-700 dark:text-slate-300">Claimed traffic decongestion was never a project justification or part of policy documents[cite: 1].</p>
+                                        </div>
+                                        <div class="p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg border border-emerald-200 dark:border-emerald-900">
+                                            <strong class="font-sans text-emerald-800 dark:text-emerald-300 block mb-1">Verified Public Record:</strong>
+                                            <p class="text-slate-800 dark:text-slate-200">2022 MIG Report, Shillong Urban Mobility Policy (2024), and NDB Filing (July 2022) all pitch GHG &amp; road-trip reduction—while Table 12 adds 258–305 car bays in Lawsohtun[cite: 1].</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-3 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center text-xs">
+                                    <a href="#sec-2-mobility" class="font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">Read Full Analysis →</a>
+                                    <a href="https://megurban.gov.in/documents/Final%20Draft%20-%20Shillong%20Urban%20Mobility%20Policy.pdf" target="_blank" class="font-mono text-slate-400 hover:text-slate-600">Mobility Policy ↗</a>
+                                </div>
+                            </article>
+
+                            <!-- Card 3 -->
+                            <article data-category="finance" class="fact-card rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5 flex flex-col justify-between space-y-4">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="px-2 py-0.5 font-mono font-bold uppercase bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-200 rounded">Regulatory Conflict</span>
+                                        <span class="font-mono text-slate-500">PM-DevINE Para 2.2[cite: 1]</span>
+                                    </div>
+                                    <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white">3. NDB Sovereign Loan + PM-DevINE Grant Co-Financing</h3>
+                                    <div class="space-y-2 text-xs font-serif">
+                                        <div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                                            <strong class="font-sans text-slate-500 block mb-1">Current Funding Structure:</strong>
+                                            <p class="text-slate-700 dark:text-slate-300">₹151 Cr split into ₹80.89 Cr NDB loan and ₹70.11 Cr PM-DevINE grant[cite: 1].</p>
+                                        </div>
+                                        <div class="p-3 bg-amber-50 dark:bg-amber-950/30 rounded-lg border border-amber-200 dark:border-amber-900">
+                                            <strong class="font-sans text-amber-800 dark:text-amber-300 block mb-1">Verified Public Record:</strong>
+                                            <p class="text-slate-800 dark:text-slate-200">PM-DevINE Section 2.2, 7.1.5(ii) Negative List, &amp; Annexure-C bar funding projects already covered under other schemes without EIMC approval[cite: 1].</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-3 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center text-xs">
+                                    <a href="#sec-3-cofinancing" class="font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">Read Full Analysis →</a>
+                                    <a href="https://www.mdoner.gov.in/static/uploads/2025/10/fe99388a3b6f75148327cb4cafa2a1d0.pdf" target="_blank" class="font-mono text-slate-400 hover:text-slate-600">PM-DevINE PDF ↗</a>
+                                </div>
+                            </article>
+
+                            <!-- Card 4 -->
+                            <article data-category="statutory" class="fact-card rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5 flex flex-col justify-between space-y-4">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="px-2 py-0.5 font-mono font-bold uppercase bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-200 rounded">Statutory Breach</span>
+                                        <span class="font-mono text-slate-500">Act No. 14 of 2022[cite: 1]</span>
+                                    </div>
+                                    <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white">4. Meghalaya Ropeway Act, 2022 Pre-Construction Rules</h3>
+                                    <div class="space-y-2 text-xs font-serif">
+                                        <div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                                            <strong class="font-sans text-slate-500 block mb-1">Statutory Mandate:</strong>
+                                            <p class="text-slate-700 dark:text-slate-300">Mandates pre-planning Vision Paper with traditional heads, 30-day draft licence notices, &amp; DC compensation orders[cite: 1].</p>
+                                        </div>
+                                        <div class="p-3 bg-red-50 dark:bg-red-950/30 rounded-lg border border-red-200 dark:border-red-900">
+                                            <strong class="font-sans text-red-800 dark:text-red-300 block mb-1">Audit Finding:</strong>
+                                            <p class="text-slate-800 dark:text-slate-200">Sections 3(2), 26, 29, 30, 34, &amp; 36 compliance records for the 19,100 sq. m. aerial corridor remain unproduced[cite: 1].</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-3 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center text-xs">
+                                    <a href="#sec-4-ropeway-act" class="font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">View Section Table →</a>
+                                    <a href="https://indiacode.ecourtsindia.com/meghalaya-ropeway-act-2022-act-no-14-2022/" target="_blank" class="font-mono text-slate-400 hover:text-slate-600">Bare Act ↗</a>
+                                </div>
+                            </article>
+
+                            <!-- Card 5 -->
+                            <article data-category="statutory finance" class="fact-card rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5 flex flex-col justify-between space-y-4">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="px-2 py-0.5 font-mono font-bold uppercase bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-200 rounded">Code &amp; Cost Error</span>
+                                        <span class="font-mono text-slate-500">Gazette Sept 11, 2025[cite: 1]</span>
+                                    </div>
+                                    <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white">5. Building Bye-Laws (2025), FSI &amp; Cost Sheet Errors</h3>
+                                    <div class="space-y-2 text-xs font-serif">
+                                        <div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                                            <strong class="font-sans text-slate-500 block mb-1">Project Design &amp; Budget:</strong>
+                                            <p class="text-slate-700 dark:text-slate-300">LTP G+4 (20m) &amp; UTP G+3; cost escalated +80.7% to ₹151 Cr with blank tax/consultancy entries[cite: 1].</p>
+                                        </div>
+                                        <div class="p-3 bg-amber-50 dark:bg-amber-950/30 rounded-lg border border-amber-200 dark:border-amber-900">
+                                            <strong class="font-sans text-amber-800 dark:text-amber-300 block mb-1">Verified Public Record:</strong>
+                                            <p class="text-slate-800 dark:text-slate-200">2025 Bye-Laws exclude State Govt projects from self-certification; MIG Cost Sheet leaves GST blank while implying a 19.5% fee[cite: 1].</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-3 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center text-xs">
+                                    <a href="#sec-5-byelaws-cost" class="font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">Read Full Analysis →</a>
+                                    <a href="https://megpns.gov.in/gazette/2025/09/11-09-25-IIA.pdf" target="_blank" class="font-mono text-slate-400 hover:text-slate-600">Gazette PDF ↗</a>
+                                </div>
+                            </article>
+
+                            <!-- Card 6 -->
+                            <article data-category="environment" class="fact-card rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5 flex flex-col justify-between space-y-4">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="px-2 py-0.5 font-mono font-bold uppercase bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-200 rounded">Hydrological Risk</span>
+                                        <span class="font-mono text-slate-500">OM PLR.33/2022[cite: 1]</span>
+                                    </div>
+                                    <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white">6. Lum Shyllong Spring Extraction &amp; PM Gati Shakti</h3>
+                                    <div class="space-y-2 text-xs font-serif">
+                                        <div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                                            <strong class="font-sans text-slate-500 block mb-1">Demand &amp; Spring Data:</strong>
+                                            <p class="text-slate-700 dark:text-slate-300">Table 17: 80% of respondents warned of spring damage; Table 14 extracts 211.5 KLD[cite: 1].</p>
+                                        </div>
+                                        <div class="p-3 bg-sky-50 dark:bg-sky-950/30 rounded-lg border border-sky-200 dark:border-sky-900">
+                                            <strong class="font-sans text-sky-800 dark:text-sky-300 block mb-1">Verified Public Record:</strong>
+                                            <p class="text-slate-800 dark:text-slate-200">211.5 KLD assumes 20,000 daily riders vs. Table 3's 1,528–3,276 riders; projects &gt;₹10 Cr require mandatory GIS vetting[cite: 1].</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-3 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center text-xs">
+                                    <a href="#sec-5-byelaws-cost" class="font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">View Data Charts →</a>
+                                    <a href="https://highlandpost.com/prove-the-water-is-safe-first/" target="_blank" class="font-mono text-slate-400 hover:text-slate-600">Highland Post ↗</a>
+                                </div>
+                            </article>
                         </div>
                     </section>
 
-                    <!-- PREAMBLE -->
-                    <section id="preamble" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <span class="p-2 bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded-lg text-sm font-bold">SECTION 1</span>
-                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">PREAMBLE</h2>
+                    <hr class="border-slate-200 dark:border-slate-800 my-10">
+
+                    <!-- SECTION 1: EIA -->
+                    <section id="sec-1-eia" class="space-y-6 scroll-mt-24">
+                        <div class="flex items-center space-x-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+                            <span class="p-2 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-lg text-sm font-bold font-mono">01</span>
+                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Environmental Clearance (EIA) &amp; Regulatory Appraisal</h2>
                         </div>
-                        
-                        <div class="font-serif text-slate-700 dark:text-slate-300 leading-relaxed text-base sm:text-lg space-y-4 bg-slate-50/50 dark:bg-slate-800/30 p-6 rounded-xl border border-slate-200/80 dark:border-slate-800">
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm font-serif">
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-2">
+                                <strong class="font-sans text-xs uppercase font-bold text-slate-400 block">Official Claim (Nov 2026)</strong>
+                                <p class="text-slate-700 dark:text-slate-300">During the November 2026 public consultations, state representatives asserted that an Environmental Impact Assessment (EIA) was never applicable or required for the ropeway project[cite: 1].</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-2">
+                                <strong class="font-sans text-xs uppercase font-bold text-slate-400 block">Internal Document Finding</strong>
+                                <p class="text-slate-700 dark:text-slate-300">Page 32 of the November 2022 MIG Public Consultation Report explicitly lists "EIA Clearances" as the very first mandatory statutory approval required before construction can begin[cite: 1].</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900 space-y-2">
+                                <strong class="font-sans text-xs uppercase font-bold text-emerald-700 dark:text-emerald-400 block">Public-Domain Fact-Check</strong>
+                                <p class="text-slate-800 dark:text-slate-200">Official MoEF&amp;CC records on the PARIVESH portal confirm the 955-meter Proposed Shillong Peak Ropeway was appraised at 66th &amp; 73rd EAC Meetings under Schedule Item 7(g) of EIA Notification, 2006[cite: 1].</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900 text-sm text-slate-800 dark:text-slate-200 font-serif">
+                            <strong class="font-sans font-bold text-amber-900 dark:text-amber-300 block mb-1">Critical Legal &amp; Technical Nuance:</strong> While initial Environmental Clearance and Stage-I/II Forest Clearance were processed for the baseline 2021 scope (₹83.56 crore), major changes in project cost (escalating to ₹151 crore), massive multi-story commercial construction at both terminals (G+4 and G+3), and unresolved community spring objections trigger mandatory scrutiny[cite: 1].
+                        </div>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 my-10">
+
+                    <!-- SECTION 2: MOBILITY -->
+                    <section id="sec-2-mobility" class="space-y-6 scroll-mt-24">
+                        <div class="flex items-center space-x-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+                            <span class="p-2 bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 rounded-lg text-sm font-bold font-mono">02</span>
+                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">The "Decongestion" &amp; Urban Mobility Contradiction</h2>
+                        </div>
+
+                        <div class="font-serif text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base leading-relaxed">
                             <p>
-                                This representation is submitted to place on official record glaring institutional contradictions, statutory violations, and documented facts regarding the <strong class="text-amber-700 dark:text-amber-400 font-semibold">₹151-Crore Shillong Peak Ropeway Project</strong>[cite: 2].
+                                <strong>Official Claim vs. Internal DPR:</strong> Officials stated at the November 2026 consultation that traffic decongestion was never part of the project rationale or policy documentation[cite: 1]. Yet Page 30 of the 2022 MIG Report explicitly states the project will <em>"reduce the number of vehicle movement from Shillong town to Shillong Peak... reducing significantly the source of emission."</em>[cite: 1]
                             </p>
-                            <p>
-                                For years, the state leadership, cabinet ministers, and central funding submissions justified this project to the public as an urban transit solution meant to decongest Shillong. Administrative records, however, expose a troubling contradiction: the project imposes massive concrete construction within vital forest and water catchment areas while sidestepping mandatory environmental impact assessments, genuine public consultations, and essential security clearances.
-                            </p>
-                            <p>
-                                Accordingly, I present Three Core Questions backed by verified records and the government’s own public admissions, requiring an immediate, formal written response from the concerned authorities.
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800">
+                                    <strong class="font-sans text-xs uppercase text-emerald-600 dark:text-emerald-400 block mb-1">Shillong Urban Mobility Policy (2024)</strong>
+                                    <p class="text-xs text-slate-600 dark:text-slate-300">Section 6.2 explicitly integrates ropeways and cable cars as alternative public transit interventions to relieve congestion across Shillong's steep terrain[cite: 1].</p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800">
+                                    <strong class="font-sans text-xs uppercase text-emerald-600 dark:text-emerald-400 block mb-1">NDB Sovereign Loan Filing (July 18, 2022)</strong>
+                                    <p class="text-xs text-slate-600 dark:text-slate-300">The New Development Bank disclosure officially committed that <em>"The Project will also contribute to reduced greenhouse gas emissions through replacement of road travels by the ropeway."</em>[cite: 1]</p>
+                                </div>
+                            </div>
+                            <p class="p-4 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900 text-xs sm:text-sm text-slate-800 dark:text-slate-200">
+                                <strong>Infrastructure Reality on the Ground:</strong> Despite this public transit framing, Table 12 of the 2022 MIG Report allocates <strong>258 to 305 four-wheeler parking spaces</strong> at the Lower Terminal Point in Lawsohtun, concentrating tourist vehicular traffic inside residential neighborhoods[cite: 1].
                             </p>
                         </div>
                     </section>
 
                     <hr class="border-slate-200 dark:border-slate-800 my-10">
 
-                    <!-- QUESTION 1 -->
-                    <section id="question-1" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 rounded-lg text-xs font-bold uppercase tracking-wider">QUESTION 1</span>
-                            <h2 class="font-heading text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                                On the Justification for Decongestion, Central Funding Mandates, and Replicating the New Shillong Township (NST) Failure
-                            </h2>
+                    <!-- SECTION 3: CO-FINANCING -->
+                    <section id="sec-3-cofinancing" class="space-y-6 scroll-mt-24">
+                        <div class="flex items-center space-x-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+                            <span class="p-2 bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 rounded-lg text-sm font-bold font-mono">03</span>
+                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Co-Financing &amp; Non-Duplication Rules (NDB vs. PM-DevINE)</h2>
                         </div>
 
-                        <!-- Formal Question Text Box -->
-                        <div class="bg-indigo-50/40 dark:bg-indigo-950/20 border-l-4 border-indigo-600 dark:border-indigo-400 p-6 rounded-r-xl mb-6 font-serif text-slate-800 dark:text-slate-200 leading-relaxed space-y-4">
+                        <div class="font-serif text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base leading-relaxed">
                             <p>
-                                For decades, the New Shillong Township (NST) was sold to the public on one big promise: to decongest Shillong by shifting offices and traffic out of the city. Thousands of crores of public money have been poured into NST, yet it stands today as a massive warning of failed planning. Old Shillong is more choked and unlivable than ever, and NST itself is already descending into gridlock because the government focused only on pouring concrete and erecting massive office complexes without basic civic services or integrated transit routes in place.
+                                Public reporting confirms the <strong>₹151 crore</strong> project is co-financed through <strong>₹80.89 crore</strong> from the <strong>New Development Bank (NDB)</strong> and <strong>₹70.11 crore</strong> from the <strong>Ministry of DoNER's PM-DevINE scheme</strong>[cite: 1]. Cross-checking this against PM-DevINE guidelines exposes a direct compliance conflict[cite: 1]:
                             </p>
-                            <p>
-                                Now, we are watching the exact same script play out with the Shillong Peak Ropeway. For years, from the 2019 15th Finance Commission submissions to public assurances by our Chief Minister and Deputy Chief Minister, aerial ropeways were pitched to the public and sanctioned over ₹70 crore in central funding under the banner of 'decongesting Shillong city.' Yet today, when questioned by residents, the administration stands before us and publicly denies that this ropeway was ever meant for city decongestion, admitting it is purely a tourist facility.
-                            </p>
-                            <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-indigo-200 dark:border-indigo-900 font-sans text-indigo-950 dark:text-indigo-200 font-medium">
-                                <span class="block text-xs uppercase font-bold text-indigo-600 dark:text-indigo-400 mb-1">Formal Core Interrogation:</span>
-                                "So my question to the administration is simple: Having spent thousands of crores on NST only to worsen gridlock on both ends, and having now publicly abandoned the very 'decongestion' justification / promise used to justify and fund this ropeway, why and by what moral or administrative right, should the government proceed with this Ropeway project here at Lum Shyllong at all when the administration has already miserably failed to deliver on decongesting the city?"
-                            </div>
-                        </div>
-
-                        <!-- Evidentiary References Grid for Q1 -->
-                        <div class="space-y-4">
-                            <h3 class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider flex items-center space-x-2">
-                                <i class="fa-solid fa-folder-open text-indigo-500"></i>
-                                <span>EVIDENTIARY REFERENCES (PUBLIC DOMAIN):</span>
-                            </h3>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <!-- Ref 1 -->
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex justify-between items-start mb-2">
-                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">1. State Leadership Declarations</span>
-                                            <i class="fa-solid fa-quote-left text-slate-300 dark:text-slate-600"></i>
-                                        </div>
-                                        <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300">
-                                            <li><strong>Chief Minister Conrad K. Sangma (Dec 4, 2024):</strong> Official foundation stone address explicitly asserted: <em>"The ropeway is a potential mode of urban transport and could be a solution to decongest the city."</em></li>
-                                            <li><strong>Deputy Chief Minister Prestone Tynsong (Sept 6, 2022):</strong> Publicly announced to media outlets (Hub Network, The Shillong Times) that aerial transit networks were being taken up specifically to "decongest Shillong city" where road widening is unfeasible.</li>
-                                            <li><strong>15th Finance Commission Submissions (July 16, 2019):</strong> Official Meghalaya State Government submissions sought grants explicitly framed around the master objective to "introduce ropeways to decongest Shillong city."</li>
-                                        </ul>
-                                    </div>
-                                    <div class="mt-4 pt-2 border-t border-slate-100 dark:border-slate-700/50 flex justify-between items-center text-[11px] text-slate-400">
-                                        <span>Verified Press Records</span>
-                                        <a href="https://theshillongtimes.com" target="_blank" class="text-indigo-600 hover:underline">Media Link <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                                    </div>
-                                </div>
-
-                                <!-- Ref 2 -->
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex justify-between items-start mb-2">
-                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">2. Central Funding Criteria</span>
-                                            <i class="fa-solid fa-indian-rupee-sign text-slate-300 dark:text-slate-600"></i>
-                                        </div>
-                                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                                            Sanctioned with over <strong>₹70 Crore</strong> in central funding under PM-DevINE (Ministry of DoNER), the project brief relies on alternative urban transit criteria to reduce vehicular load on central hill routes.
-                                        </p>
-                                    </div>
-                                    <div class="mt-4 pt-2 border-t border-slate-100 dark:border-slate-700/50 flex justify-between items-center text-[11px] text-slate-400">
-                                        <span>DoNER Sanction</span>
-                                        <a href="https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2003970&reg=48&lang=2" target="_blank" class="text-indigo-600 hover:underline">PIB Record <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                                    </div>
-                                </div>
-
-                                <!-- Ref 3 -->
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex justify-between items-start mb-2">
-                                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200">3. NST Decongestion Precedent</span>
-                                            <i class="fa-solid fa-city text-slate-300 dark:text-slate-600"></i>
-                                        </div>
-                                        <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300">
-                                            <li>Promised as a macro-level relief valve to decongest Shillong City, NST project failed due to unintegrated transit planning, merely shifting gridlock onto narrow arterial bottlenecks.</li>
-                                            <li>The lower terminal at Lawsohtun replicates this failure by creating "Induced Demand" traffic congestion inside residential nodes.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="mt-3 pt-2 border-t border-slate-100 dark:border-slate-700/50">
-                                        <span class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Source Links:</span>
-                                        <div class="flex flex-wrap gap-1 text-[10px]">
-                                            <a href="https://theshillongtimes.com/2024/10/04/new-shillong-still-in-devp-stage-despite-crores-spent/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Shillong Times (2024)</a>
-                                            <a href="https://theprint.in/india/meghalaya-secretariat-to-be-shifted-to-decongest-shillong/806066/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">ThePrint (Secretariat)</a>
-                                            <a href="https://www.landconflictwatch.org/conflicts/land-acquisition-for-new-shillong-township#" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Land Conflict Watch</a>
-                                            <a href="https://highlandpost.com/rs-2500-cr-to-be-spent-for-administrative-city-at-new-shillong/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Highland Post (₹2500Cr)</a>
-                                            <a href="https://newsonair.gov.in/new-shillong-township-will-be-meghalayas-engine-of-growth-says-meghalaya-cm-conrad-k-sangma/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">NewsOnAir (CM Address)</a>
-                                            <a href="https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2003970&reg=48&lang=2" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">PIB Release</a>
-                                            <a href="https://theshillongtimes.com/2022/01/18/govt-offices-to-be-shifted-to-nst/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Shillong Times (2022)</a>
-                                            <a href="https://www.syllad.com/shillong-traffic-jams-wont-end-without-land-and-public-cooperation-rymbui/" target="_blank" class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 rounded hover:underline">Syllad (Traffic Crisis)</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <hr class="border-slate-200 dark:border-slate-800 my-10">
-
-                    <!-- QUESTION 2 -->
-                    <section id="question-2" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-lg text-xs font-bold uppercase tracking-wider">QUESTION 2</span>
-                            <h2 class="font-heading text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                                Hiding Behind the 2022 EIA Exemption While Ignoring Heavy Concrete Terminals & Water Catchment Risks
-                            </h2>
-                        </div>
-
-                        <!-- Formal Question Text Box -->
-                        <div class="bg-emerald-50/40 dark:bg-emerald-950/20 border-l-4 border-emerald-600 dark:border-emerald-400 p-6 rounded-r-xl mb-6 font-serif text-slate-800 dark:text-slate-200 leading-relaxed space-y-4">
-                            <p>
-                                The administration labels this project "eco-friendly" by pointing to overhead cables and a 0.2% footprint for six mid-line towers, while relying on the April 27, 2022 amendment (S.O. 1953(E)) to the EIA Notification, 2006 to bypass a comprehensive EIA and statutory public hearing. 
-                            </p>
-                            <p>
-                                However, measuring only the mid-line towers ignores the diversion of <strong>2.3257 hectares of forest</strong>, the felling of <strong>545 mature trees</strong>, and the massive reinforced concrete (RCC) terminal buildings explicitly mandated in the Directorate of Tourism's own tender documents inside Upper Shillong’s vital water catchment.
-                            </p>
-
-                            <div class="pt-2 font-sans">
-                                <p class="font-semibold text-slate-900 dark:text-white mb-3">
-                                    So my question to the administration is: 
-                                    On what independent, peer-reviewed hydrological basis/data does the government claim that Shillong’s spring sources, specifically Patakhana and Wahingdoh, will remain safe from concrete excavation and catchment disruption, and why has the administration not made public the complete records of the following:
-                                </p>
-                                
-                                <ol class="space-y-3 pl-2 text-sm text-slate-700 dark:text-slate-300 font-sans">
-                                    <li class="bg-white dark:bg-slate-900 p-3.5 rounded-lg border border-emerald-200 dark:border-emerald-900">
-                                        <strong class="text-emerald-700 dark:text-emerald-400 block mb-1">1. The full Public Health Engineering (PHE) water catchment report:</strong>
-                                        Officials verbally cited this report on November 5, 2026 to claim a "0.2% footprint" for the six towers, yet have never published the study or explained why it omits the RCC terminal buildings explicitly listed in Tender Corrigendum-09 (Clauses 2.4.1 and 2.4.2(a));
-                                    </li>
-                                    <li class="bg-white dark:bg-slate-900 p-3.5 rounded-lg border border-emerald-200 dark:border-emerald-900">
-                                        <strong class="text-emerald-700 dark:text-emerald-400 block mb-1">2. The complete New Development Bank (NDB) Environment and Social Management Plan (ESMP):</strong>
-                                        Only a two-page Project Summary and scattered tender excerpts, such as S. No. 3 of Corrigendum-09, which treats 1:10 compensatory afforestation merely as a "recommendation" for "provisioning" rather than a binding rule, are public, while the full ESMP required under NDB’s Environment and Social Framework remains undisclosed;
-                                    </li>
-                                    <li class="bg-white dark:bg-slate-900 p-3.5 rounded-lg border border-emerald-200 dark:border-emerald-900">
-                                        <strong class="text-emerald-700 dark:text-emerald-400 block mb-1">3. The Stage-II MoEF&CC forest diversion approval and conditions:</strong>
-                                        Officials confirmed obtaining MoEF&CC forest diversion and tree-felling approval (2.3257 ha / 545 trees), yet the formal Stage-II clearance letter and its legally binding conditions have not been placed in the public domain; and
-                                    </li>
-                                    <li class="bg-white dark:bg-slate-900 p-3.5 rounded-lg border border-emerald-200 dark:border-emerald-900">
-                                        <strong class="text-emerald-700 dark:text-emerald-400 block mb-1">4. The mandatory environmental safeguard compliance records under OM F. No. 22-17/2021-IA.III:</strong>
-                                        While MoEF&CC exempted aerial ropeways from prior Environmental Clearance in April 2022 (S.O. 1953(E)), it simultaneously issued this Office Memorandum binding project proponents to strict construction safeguards, whose compliance records remain hidden from public inspection?
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-
-                        <!-- Evidentiary References Grid Q2 -->
-                        <div class="space-y-4">
-                            <h3 class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider flex items-center space-x-2">
-                                <i class="fa-solid fa-folder-open text-emerald-500"></i>
-                                <span>EVIDENTIARY REFERENCES:</span>
-                            </h3>
-
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-3">
-                                    <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1.5">
-                                        <span>1. PHE Catchment Note & RCC Terminal Scope</span>
-                                        <span class="text-[10px] bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded">Tender Ref M/D Tour/2019/90</span>
-                                    </div>
-                                    <p class="leading-relaxed"><strong>Official Verbal Citation (Nov 5, 2026):</strong> During the public consultation at the State Convention Centre, Shillong, Meghalaya Ropeway Development Authority (MRDA) CEO C.V.D. Diengdoh, IAS cited an unpublished PHE Department report claiming the six mid-line towers occupy 0.2% of the total catchment area and sit 500m to 1 km away from springs (including Patakhana and Wahingdoh)[cite: 5]. Coverage verified via <a href="https://timesofindia.indiatimes.com/city/guwahati/shillong-ropeway-to-have-negligible-impact-on-catchment-area-govt/articleshow/135583235.cms" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">The Times of India <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> and <a href="https://spnewsagency.com/meghalaya-govt-reiterates-environmental-safeguards-of-shillong-peak-ropeway-project/" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">SP News Agency <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>.</p>
-                                    <p class="leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-2"><strong>Contradictory Tender Scope (July 18, 2024):</strong> Directorate of Tourism, Government of Meghalaya, Corrigendum-09 (No. M/D Tour 180/2019/Part IV/57, Tender Ref No. M/D Tour/2019/90), Clauses 2.4.1 and 2.4.2(a) explicitly mandate bidder experience in constructing "RCC Building, Towers", proving heavy reinforced concrete terminal stations are part of the physical footprint omitted from the 0.2% calculation. Document available via <a href="https://www.ndb.int/wp-content/uploads/2024/05/Corrigendum9-1.pdf" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">New Development Bank Procurement Portal (Corrigendum-09 PDF) <i class="fa-solid fa-file-pdf text-[9px]"></i></a>.</p>
+                                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 text-xs space-y-1">
+                                    <strong class="font-sans uppercase text-slate-900 dark:text-white block mb-1">1. New Development Bank Disclosure</strong>
+                                    <p>Approved July 18, 2022 (USD 79.05M total loan package), the NDB project summary explicitly lists the Shillong Peak ropeway under Component (iii)[cite: 1].</p>
                                 </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-3">
-                                    <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1.5">
-                                        <span>2. NDB Category B & Non-Binding ESMP</span>
-                                        <span class="text-[10px] bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded">NDB ESF Framework</span>
-                                    </div>
-                                    <p class="leading-relaxed"><strong>NDB Sovereign Financing Disclosure (July 18, 2022):</strong> Under the Meghalaya Ecotourism Infrastructure Development Project (Project Summary for Public Disclosure), the project is classified as Category B under NDB’s Environment and Social Framework (ESF)[cite: 5], explicitly acknowledging "diversion of forest land, likely impact on indigenous people, and occupational and community health and safety", requiring full Environmental and Social Management Plans (ESMPs).</p>
-                                    <p class="leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-2"><strong>Non-Binding Tree Replacement Clause:</strong> In Directorate of Tourism <a href="https://www.ndb.int/wp-content/uploads/2024/05/Corrigendum9-1.pdf" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">Corrigendum-09 (July 18, 2024) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>, Technical Specification Clause 11.0 (ESMP Table, S. No. 3), the 1:10 compensatory afforestation ratio is explicitly framed as non-binding: "for the purpose of provisioning, this ESMP recommends 10 trees to be planted for every tree being cut", leaving actual replacement strictly to baseline Forest Department minimums.</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-3">
-                                    <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1.5">
-                                        <span>3. Stage-II Forest Diversion Clearance</span>
-                                        <span class="text-[10px] bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">2.3257 Ha / 545 Trees</span>
-                                    </div>
-                                    <p class="leading-relaxed"><strong>Official Disclosure (Nov 5, 2026):</strong> MRDA CEO C.V.D. Diengdoh confirmed that forest diversion clearance and tree-cutting permission were obtained from the Ministry of Environment, Forest and Climate Change (MoEF&CC) for 2.3257 hectares of forest land and the felling of 545 mature trees, without releasing the formal Stage-II sanction letter or its binding conditions into the public domain[cite: 5]. Verified via <a href="https://spnewsagency.com/meghalaya-govt-reiterates-environmental-safeguards-of-shillong-peak-ropeway-project/" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">SP News Agency <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>.</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-3">
-                                    <div class="flex items-center justify-between font-bold text-emerald-700 dark:text-emerald-400 border-b pb-1.5">
-                                        <span>4. MoEF&CC Gazette Exemption & Safeguards</span>
-                                        <span class="text-[10px] bg-blue-100 dark:bg-blue-950 px-2 py-0.5 rounded">S.O. 1953(E) & OM F.No.22-17/2021</span>
-                                    </div>
-                                    <p class="leading-relaxed"><strong>Gazette Notification S.O. 1953(E) (April 27, 2022):</strong> Issued by MoEF&CC, omitting Aerial Ropeways (Item 7(g)) from prior Environmental Clearance under the EIA Notification, 2006. Text indexed via India Code / MoEF&CC Gazette Record.</p>
-                                    <p class="leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-2"><strong>Binding Office Memorandum F. No. 22-17/2021-IA.III (April 27, 2022):</strong> Issued simultaneously by MoEF&CC Impact Assessment Division, stipulating that exemption from prior EC is "subject to certain environmental safeguards" and does not exempt the project from statutory protections under any other Act.</p>
+                                <div class="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900 text-xs space-y-1">
+                                    <strong class="font-sans uppercase text-amber-900 dark:text-amber-300 block mb-1">2. PM-DevINE Non-Duplication Mandate</strong>
+                                    <p>Under Section 2.2 and Section 7.1.5(ii) (Negative List), central grants are barred for projects funded by other line ministries without formal EIMC bifurcation approval[cite: 1].</p>
                                 </div>
                             </div>
                         </div>
@@ -529,168 +565,224 @@
 
                     <hr class="border-slate-200 dark:border-slate-800 my-10">
 
-                    <!-- QUESTION 3 -->
-                    <section id="question-3" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 rounded-lg text-xs font-bold uppercase tracking-wider">QUESTION 3</span>
-                            <h2 class="font-heading text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                                On Traffic Contradictions and the Double Standard on Military Security
-                            </h2>
+                    <!-- SECTION 4: ROPEWAY ACT -->
+                    <section id="sec-4-ropeway-act" class="space-y-6 scroll-mt-24">
+                        <div class="flex items-center space-x-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+                            <span class="p-2 bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 rounded-lg text-sm font-bold font-mono">04</span>
+                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Statutory Compliance Under the Meghalaya Ropeway Act, 2022</h2>
                         </div>
 
-                        <!-- Strategic Security Note Box -->
-                        <div class="mb-6 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-rose-200 dark:border-rose-950 flex flex-col sm:flex-row items-center gap-4">
-                            <div class="w-16 h-16 flex-shrink-0 bg-slate-900 text-amber-400 p-2 rounded-lg border border-slate-700 flex flex-col items-center justify-center text-center">
-                                <i class="fa-solid fa-shield-halved text-2xl"></i>
-                            </div>
-                            <div class="text-xs space-y-1">
-                                <span class="font-bold text-rose-700 dark:text-rose-400 uppercase tracking-wide block">Strategic Defence Zone Security Contradiction</span>
-                                <p class="text-slate-600 dark:text-slate-300">
-                                    The upper ropeway terminal directly borders the strategic Eastern Air Command (EAC) Air Force Station and radar facilities at Upper Shillong. While public commuter infrastructure (Rilbong-Barik flyover) was scrapped for Cantonment proximity, 13 elevated commercial gondola cabins are permitted to operate with direct aerial line-of-sight.
-                                </p>
-                            </div>
+                        <p class="text-sm font-serif text-slate-700 dark:text-slate-300 leading-relaxed">
+                            The <strong>Meghalaya Ropeway Act, 2022 (Act No. 14 of 2022)</strong>, notified on September 27, 2022, imposes binding pre-construction safeguards across 65 sections[cite: 1]:
+                        </p>
+
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+                            <table class="w-full text-left border-collapse text-xs">
+                                <thead>
+                                    <tr class="bg-slate-900 text-white font-mono uppercase">
+                                        <th class="py-3 px-4 w-44">Provision</th>
+                                        <th class="py-3 px-4">Legal Requirement in Public Act</th>
+                                        <th class="py-3 px-4">Audit Finding / Compliance Gap</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900 font-sans">
+                                    <tr>
+                                        <td class="py-3.5 px-4 font-mono font-bold text-slate-900 dark:text-white align-top">Section 3(2) &amp; 2(k)</td>
+                                        <td class="py-3.5 px-4 text-slate-700 dark:text-slate-300 align-top">Requires a Vision Paper at planning stage in consultation with Local Authority (Syiem, Lyngdoh, Rangbah Shnong)[cite: 1].</td>
+                                        <td class="py-3.5 px-4 text-slate-800 dark:text-slate-200 align-top bg-rose-50/50 dark:bg-rose-950/20">Consultation occurred reactively during 2026 disputes rather than via a statutory Vision Paper[cite: 1].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3.5 px-4 font-mono font-bold text-slate-900 dark:text-white align-top">Sections 26, 29 &amp; 30</td>
+                                        <td class="py-3.5 px-4 text-slate-700 dark:text-slate-300 align-top">Requires publishing draft licence, allowing 30 days for objections, and serving notice on landowners[cite: 1].</td>
+                                        <td class="py-3.5 px-4 text-slate-800 dark:text-slate-200 align-top bg-rose-50/50 dark:bg-rose-950/20">Publicly verifiable 30-day draft notices and individual ROW notices remain unproduced[cite: 1].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3.5 px-4 font-mono font-bold text-slate-900 dark:text-white align-top">Sections 34 &amp; 35</td>
+                                        <td class="py-3.5 px-4 text-slate-700 dark:text-slate-300 align-top">Mandates gazetted constitution of a District Project Committee chaired by DC[cite: 1].</td>
+                                        <td class="py-3.5 px-4 text-slate-800 dark:text-slate-200 align-top bg-rose-50/50 dark:bg-rose-950/20">Traditional bodies and the Joint Action Committee have been excluded from formal governance[cite: 1].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3.5 px-4 font-mono font-bold text-slate-900 dark:text-white align-top">Section 36(2)–(4)</td>
+                                        <td class="py-3.5 px-4 text-slate-700 dark:text-slate-300 align-top">Executing works over property requires written order and prior payment of compensation/annual rent[cite: 1].</td>
+                                        <td class="py-3.5 px-4 text-slate-800 dark:text-slate-200 align-top bg-rose-50/50 dark:bg-rose-950/20">The 19,100 sq. m. aerial corridor traverses community forests without Section 36 compensation orders[cite: 1].</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 my-10">
+
+                    <!-- SECTION 5: BYE-LAWS & COST -->
+                    <section id="sec-5-byelaws-cost" class="space-y-6 scroll-mt-24">
+                        <div class="flex items-center space-x-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+                            <span class="p-2 bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 rounded-lg text-sm font-bold font-mono">05</span>
+                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Building Bye-Laws, Cost Anomalies &amp; Geospatial Vetting</h2>
                         </div>
 
-                        <!-- Formal Question Text Box -->
-                        <div class="bg-rose-50/40 dark:bg-rose-950/20 border-l-4 border-rose-600 dark:border-rose-400 p-6 rounded-r-xl mb-6 font-serif text-slate-800 dark:text-slate-200 leading-relaxed space-y-4">
-                            <p>
-                                In February and April 2026, the state government formally scrapped its flagship <strong>Rilbong–Barik flyover</strong> previously promoted as Shillong’s "single largest traffic decongestion intervention" after Defence authorities (GOC 101 Area) objected that an elevated corridor near Cantonment boundaries posed an unacceptable security risk.
-                            </p>
-                            <p>
-                                Yet, for a commercial tourist ropeway directly bordering the strategic <strong>Eastern Air Command (EAC) Air Force Station</strong> and radar facilities at Upper Shillong, the administration claims that simply placing the upper terminal 80 metres below the viewpoint resolves all security concerns.
-                            </p>
+                        <div class="space-y-6 text-sm font-serif text-slate-700 dark:text-slate-300">
+                            <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-2">
+                                <h3 class="font-sans font-bold text-base text-slate-900 dark:text-white">A. Building Bye-Law Violations (Gazette Sept 11, 2025)</h3>
+                                <p class="leading-relaxed">Under the Meghalaya Building (Second Amendment) Bye-Laws, 2025, expedited self-certification applies strictly to low/medium-risk buildings, and <strong>Clause J.2(f) explicitly excludes State Government projects</strong>[cite: 1]. Yet the Lower Terminal proposes a G+4 commercial complex (20m height, 10,000 sq. m.) and the Upper Terminal proposes a G+3 structure (4,800 sq. m.) inside a protected forest zone, requiring full statutory scrutiny[cite: 1].</p>
+                            </div>
 
-                            <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-rose-200 dark:border-rose-900 font-sans space-y-3 text-slate-900 dark:text-slate-100">
+                            <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-3">
+                                <h3 class="font-sans font-bold text-base text-slate-900 dark:text-white">B. Cost Escalation (+80.7%) &amp; Broken Arithmetic (MIG Report pp. 33–34)</h3>
+                                <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+                                    <li><strong>Escalation Timeline:</strong> Appraised at ₹83.56 Cr in 2021, ₹108.06 Cr in Nov 2022, and ₹151.00 Cr by 2026[cite: 1].</li>
+                                    <li><strong>Blank &amp; Contradictory Rows:</strong> GST, ropeway cost, and consultancy rows are left blank while implying a phantom 19.5% consultancy fee (₹19.57 Cr)[cite: 1].</li>
+                                </ul>
+                            </div>
+
+                            <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-2">
+                                <h3 class="font-sans font-bold text-base text-slate-900 dark:text-white">C. Hydrological Risks &amp; PM Gati Shakti GIS Mandate</h3>
+                                <p class="leading-relaxed">Table 17 confirms <strong>80% of consulted residents</strong> flagged threats to natural springs, yet Table 14 plans for <strong>211.5 KLD (211,500 L/day)</strong> water extraction at Lum Shyllong based on an unsupported 20,000 daily passenger figure[cite: 1]. Furthermore, projects &gt;₹10 Cr require mandatory GIS layer integration on the <strong>PM Gati Shakti</strong> National Master Plan[cite: 1].</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 my-10">
+
+                    <!-- VERIFIED SOURCES DIRECTORY -->
+                    <section id="verified-sources" class="space-y-6 scroll-mt-24">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+                            <div>
+                                <span class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Primary Evidence Archive</span>
+                                <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1">Verified Public-Domain Sources (11 Direct Links)</h2>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
+                                All Links Verified Public
+                            </span>
+                        </div>
+
+                        <div class="space-y-4 text-xs">
+                            <!-- Source 1 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                                 <div>
-                                    <span class="block text-xs uppercase font-bold text-rose-600 dark:text-rose-400 mb-1">Core Security Question A:</span>
-                                    "How can the government justify sacrificing a vital public commuter flyover at Rilbong–Barik on military security grounds while simultaneously operating 13 elevated passenger cabins with an unobstructed aerial line-of-sight overlooking sensitive Air Force and Army installations at Upper Shillong?"
+                                    <a href="https://environmentclearance.nic.in/writereaddata/Form-1A/Minutes/0710202129440102FinalMOM73rdEACMeeting.pdf" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        1. Minutes of the 73rd EAC (Infra-2) Meeting — Shillong Peak Ropeway Appraisal[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://environmentclearance.nic.in/writereaddata/Form-1A/Minutes/0710202129440102FinalMOM73rdEACMeeting.pdf</span>
                                 </div>
-                                <div class="pt-2 border-t border-slate-100 dark:border-slate-800">
-                                    <span class="block text-xs uppercase font-bold text-rose-600 dark:text-rose-400 mb-1">Core Security Question B:</span>
-                                    "And why has the administration failed to place the exact security conditions attached to the IAF (26 July 2023), Indian Army (7 August 2023), and AAI (24 April 2023) No Objection Certificates, even in redacted form, in the public domain?"
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Evidentiary References Grid Q3 -->
-                        <div class="space-y-4">
-                            <h3 class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider flex items-center space-x-2">
-                                <i class="fa-solid fa-folder-open text-rose-500"></i>
-                                <span>EVIDENTIARY REFERENCES (PUBLIC DOMAIN):</span>
-                            </h3>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>1. Scrapping of Rilbong–Barik Flyover</span>
-                                        <span class="text-[10px] bg-rose-100 dark:bg-rose-950 px-2 py-0.5 rounded">Feb–April 2026</span>
-                                    </div>
-                                    <p class="leading-relaxed"><strong>Official Cancellation:</strong> Following formal objections conveyed by the General Officer Commanding (GOC), 101 Area regarding elevated structures near Cantonment zones, Deputy Chief Minister Prestone Tynsong publicly confirmed on April 28, 2026 that the Rilbong–Barik flyover was dropped due to "safety and security reasons" and downgraded to a surface four-lane road[cite: 5]. Reported by <a href="https://theshillongtimes.com/2026/02/13/defence-blocks-govts-rilbong-barik-flyover-plan-over-security-concerns/" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">The Shillong Times (Feb 13, 2026) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> and <a href="https://themeghalayanexpress.com/flyover-proposal-dropped-over-security-reasons/" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">The Meghalayan Express (April 28, 2026) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>.</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>2. Eastern Air Command & Aerial Elevation</span>
-                                        <span class="text-[10px] bg-amber-100 dark:bg-amber-950 px-2 py-0.5 rounded">Oct 23, 2026</span>
-                                    </div>
-                                    <p class="leading-relaxed"><strong>Official Alignment Admission:</strong> Tourism Department officials admitted during public consultations that the upper terminal had to be shifted roughly 80 metres below the Shillong Peak viewpoint specifically to "address Air Force security concerns" adjacent to the Eastern Air Command (EAC) station, while still operating 13 elevated gondola cabins above the ridge canopy[cite: 5]. Reported by <a href="https://assamtribune.com/north-east/meghalaya-targets-oct-2028-completion-for-rs-151-cr-shillong-peak-ropeway-1621025" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">The Assam Tribune (Oct 23, 2026) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>.</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>3. Undisclosed Defence & Aviation NOC Conditions</span>
-                                        <span class="text-[10px] bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">NOCs Withheld</span>
-                                    </div>
-                                    <p class="leading-relaxed"><strong>Official Clearance Claims (Aug 2 & Nov 5, 2026):</strong> MRDA stated it obtained NOCs from the Airports Authority of India (24 April 2023), Indian Air Force (26 July 2023), and Indian Army (7 August 2023), but has failed to place the actual NOC documents or any operational, altitude, or surveillance conditions—even in redacted form—in the public domain[cite: 5]. Verified via <a href="https://spnewsagency.com/meghalaya-govt-reiterates-environmental-safeguards-of-shillong-peak-ropeway-project/" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">SP News Agency <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> and <a href="https://meghalaya.gov.in/meghalaya/sites/default/files/press_release/Press_Release_DIPR_216.pdf" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">Government of Meghalaya DIPR Press Release <i class="fa-solid fa-file-pdf text-[9px]"></i></a>.</p>
-                                </div>
-
-                                <div class="bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs space-y-2">
-                                    <div class="flex items-center justify-between font-bold text-rose-700 dark:text-rose-400 border-b pb-1">
-                                        <span>4. The Policy Double Standard</span>
-                                        <span class="text-[10px] bg-rose-100 dark:bg-rose-950 px-2 py-0.5 rounded">Institutional Contradiction</span>
-                                    </div>
-                                    <p class="leading-relaxed">While daily urban commuters were denied an elevated decongestion flyover at Rilbong–Barik to protect ground-level Cantonment perimeters, an elevated commercial tourist ropeway operating directly beside strategic Air Force radar and defence assets is being pushed forward without disclosing its security parameters.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <hr class="border-slate-200 dark:border-slate-800 my-10">
-
-                    <!-- CLOSING DEMAND SECTION -->
-                    <section id="closing-demands" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 rounded-lg text-xs font-bold uppercase tracking-wider">CLOSING DEMAND</span>
-                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
-                                DEMAND FOR FORMAL CLARIFICATION AND STATUTORY COMPLIANCE
-                            </h2>
-                        </div>
-
-                        <div class="bg-slate-900 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6">
-                            <p class="font-serif text-sm sm:text-base leading-relaxed text-slate-300 border-b border-slate-800 pb-4">
-                                In light of the documentary evidence and institutional contradictions placed on record above, the Concerned Citizens of Meghalaya hereby demand:
-                            </p>
-
-                            <ol class="space-y-4 font-sans text-sm">
-                                <li class="flex items-start space-x-3 bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-                                    <div class="w-7 h-7 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs flex-shrink-0">1</div>
-                                    <div>
-                                        <strong class="text-amber-400 block text-base mb-1">Point-by-Point Written Clarification:</strong>
-                                        <p class="text-slate-300 leading-relaxed">
-                                            A formal, written, point-by-point response addressing each of the Three Interlinked Core Questions detailed in this representation, placed on official record without generic or evasive assurances.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li class="flex items-start space-x-3 bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-                                    <div class="w-7 h-7 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs flex-shrink-0">2</div>
-                                    <div>
-                                        <strong class="text-amber-400 block text-base mb-1">Full Public Disclosure of Primary Records:</strong>
-                                        <p class="text-slate-300 leading-relaxed">
-                                            Immediate publication in the public domain of the complete Detailed Project Report (DPR), the Traffic Impact Assessment (TIA) for the Lawsohtun–Madan Laban corridor, the full Public Health Engineering (PHE) water catchment report alongside an independent baseline Hydro-geological Survey, the complete New Development Bank (NDB) Environment and Social Management Plan (ESMP), the Stage-II MoEF&CC forest diversion conditions, OM F. No. 22-17/2021-IA.III compliance records, the Defence & Aviation NOCs (AAI, IAF, and Indian Army—even in redacted form), and the PM GatiShakti geospatial compliance filings.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li class="flex items-start space-x-3 bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-                                    <div class="w-7 h-7 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs flex-shrink-0">3</div>
-                                    <div>
-                                        <strong class="text-amber-400 block text-base mb-1">Immediate Moratorium on Civil Works:</strong>
-                                        <p class="text-slate-300 leading-relaxed">
-                                            A complete suspension of all tree-felling, excavation, and civil construction activities until all withheld statutory clearances and environmental studies are publicly disclosed and a genuine, comprehensive public consultation and independent hydrological evaluation are conducted in full compliance with environmental and civic governance norms.
-                                        </p>
-                                    </div>
-                                </li>
-                            </ol>
-                        </div>
-
-                        <!-- Formal Signature / Submission Block -->
-                        <div class="mt-10 p-6 sm:p-8 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
-                            <div class="space-y-2 text-xs sm:text-sm">
-                                <span class="font-bold text-slate-900 dark:text-white uppercase tracking-wider block">SUBMITTED ON BEHALF OF:</span>
-                                <div class="font-serif font-bold text-amber-700 dark:text-amber-400 text-lg">CONCERNED CITIZEN / CONCERNED CITIZENS OF MEGHALAYA</div>
-                                <div class="text-slate-500 dark:text-slate-400">(Authorized Representative / Designation)</div>
-                                <div class="pt-2 text-slate-600 dark:text-slate-300">
-                                    <span>Date: <strong>November 11, 2026</strong></span><br>
-                                    <span>Place: <strong>Shillong, Meghalaya</strong></span>
-                                </div>
+                                <button onclick="copyCitation('https://environmentclearance.nic.in/writereaddata/Form-1A/Minutes/0710202129440102FinalMOM73rdEACMeeting.pdf')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
                             </div>
 
-                            <div class="flex items-center space-x-3 no-print">
-                                <button onclick="copyDocumentText()" class="px-4 py-2 bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 font-semibold text-xs rounded-lg shadow hover:opacity-90 transition">
-                                    <i class="fa-regular fa-copy mr-1"></i> Copy Full Submission Text
-                                </button>
-                                <button onclick="window.print()" class="px-4 py-2 bg-amber-600 text-white font-semibold text-xs rounded-lg shadow hover:bg-amber-700 transition">
-                                    <i class="fa-solid fa-file-pdf mr-1"></i> Export PDF / Print
-                                </button>
+                            <!-- Source 2 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <a href="https://environmentclearance.nic.in/writereaddata/Form-1A/Agenda/1506202173919446Agenda66thMeetingEACInfra2.pdf" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        2. Agenda for the 66th EAC (Infra-2) Meeting[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://environmentclearance.nic.in/writereaddata/Form-1A/Agenda/1506202173919446Agenda66thMeetingEACInfra2.pdf</span>
+                                </div>
+                                <button onclick="copyCitation('https://environmentclearance.nic.in/writereaddata/Form-1A/Agenda/1506202173919446Agenda66thMeetingEACInfra2.pdf')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
+                            </div>
+
+                            <!-- Source 3 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <a href="https://www.ndb.int/project/meghalaya-ecotourism-infrastructure-development-project/" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        3. New Development Bank (NDB) — Meghalaya Ecotourism Infrastructure Development Project Disclosure[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://www.ndb.int/project/meghalaya-ecotourism-infrastructure-development-project/</span>
+                                </div>
+                                <button onclick="copyCitation('https://www.ndb.int/project/meghalaya-ecotourism-infrastructure-development-project/')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
+                            </div>
+
+                            <!-- Source 4 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <a href="https://www.mdoner.gov.in/static/uploads/2025/10/fe99388a3b6f75148327cb4cafa2a1d0.pdf" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        4. Ministry of DoNER — PM-DevINE Scheme Guidelines &amp; Negative List[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://www.mdoner.gov.in/static/uploads/2025/10/fe99388a3b6f75148327cb4cafa2a1d0.pdf</span>
+                                </div>
+                                <button onclick="copyCitation('https://www.mdoner.gov.in/static/uploads/2025/10/fe99388a3b6f75148327cb4cafa2a1d0.pdf')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
+                            </div>
+
+                            <!-- Source 5 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <a href="https://indiacode.ecourtsindia.com/meghalaya-ropeway-act-2022-act-no-14-2022/" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        5. The Meghalaya Ropeway Act, 2022 (Act No. 14 of 2022) — Bare Act[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://indiacode.ecourtsindia.com/meghalaya-ropeway-act-2022-act-no-14-2022/</span>
+                                </div>
+                                <button onclick="copyCitation('https://indiacode.ecourtsindia.com/meghalaya-ropeway-act-2022-act-no-14-2022/')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
+                            </div>
+
+                            <!-- Source 6 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <a href="https://meglaw.gov.in/notifications-2022.html" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        6. Govt of Meghalaya Law Department — 2022 Gazette Index[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://meglaw.gov.in/notifications-2022.html</span>
+                                </div>
+                                <button onclick="copyCitation('https://meglaw.gov.in/notifications-2022.html')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
+                            </div>
+
+                            <!-- Source 7 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <a href="https://megpns.gov.in/gazette/2025/09/11-09-25-IIA.pdf" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        7. Gazette of Meghalaya (Sept 11, 2025) — Building Bye-Laws &amp; PM Gati Shakti OM[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://megpns.gov.in/gazette/2025/09/11-09-25-IIA.pdf</span>
+                                </div>
+                                <button onclick="copyCitation('https://megpns.gov.in/gazette/2025/09/11-09-25-IIA.pdf')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
+                            </div>
+
+                            <!-- Source 8 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <a href="https://megurban.gov.in/laws/Meghalaya%20Building%20(2nd%20Amendment)%20Byelaws.pdf" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        8. Meghalaya Urban Affairs — Building (2nd Amendment) Bye-Laws, 2025[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://megurban.gov.in/laws/Meghalaya%20Building%20(2nd%20Amendment)%20Byelaws.pdf</span>
+                                </div>
+                                <button onclick="copyCitation('https://megurban.gov.in/laws/Meghalaya%20Building%20(2nd%20Amendment)%20Byelaws.pdf')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
+                            </div>
+
+                            <!-- Source 9 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <a href="https://megurban.gov.in/documents/Final%20Draft%20-%20Shillong%20Urban%20Mobility%20Policy.pdf" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        9. Meghalaya Urban Affairs — Shillong Urban Mobility Policy (Final Draft)[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://megurban.gov.in/documents/Final%20Draft%20-%20Shillong%20Urban%20Mobility%20Policy.pdf</span>
+                                </div>
+                                <button onclick="copyCitation('https://megurban.gov.in/documents/Final%20Draft%20-%20Shillong%20Urban%20Mobility%20Policy.pdf')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
+                            </div>
+
+                            <!-- Source 10 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <a href="https://www.morungexpress.com/meghalayas-rs-151-crore-shillong-peak-ropeway-targets-october-2028-completion" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        10. The Morung Express — Rs 151 Crore Shillong Peak Ropeway Targets October 2028 Completion[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://www.morungexpress.com/meghalayas-rs-151-crore-shillong-peak-ropeway-targets-october-2028-completion</span>
+                                </div>
+                                <button onclick="copyCitation('https://www.morungexpress.com/meghalayas-rs-151-crore-shillong-peak-ropeway-targets-october-2028-completion')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
+                            </div>
+
+                            <!-- Source 11 -->
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <a href="https://highlandpost.com/prove-the-water-is-safe-first/" target="_blank" class="font-bold text-slate-900 dark:text-white hover:underline text-sm block mb-1">
+                                        11. Highland Post — Prove The Water Is Safe First: Shillong Peak Ropeway Funding &amp; Springs[cite: 1]
+                                    </a>
+                                    <span class="font-mono text-slate-500">https://highlandpost.com/prove-the-water-is-safe-first/</span>
+                                </div>
+                                <button onclick="copyCitation('https://highlandpost.com/prove-the-water-is-safe-first/')" class="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md font-mono text-[11px] hover:bg-slate-100 dark:hover:bg-slate-800">Copy URL</button>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Footer Citation note -->
+                    <!-- Footer Note -->
                     <footer class="pt-6 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400 space-y-1">
-                        <p>Formal Representation & Evidentiary Submission • Shillong Peak Ropeway Project</p>
-                        <p class="font-mono">Filing Date: November 11, 2026 • Verified Public Domain Record</p>
+                        <p>Forensic Audit &amp; Fact-Check Report • Shillong Peak Ropeway Project</p>
+                        <p class="font-mono">Published: November 14, 2026 • Verified Public-Domain Record</p>
                     </footer>
 
                 </article>
@@ -701,7 +793,7 @@
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-50 hidden flex items-center space-x-2 text-xs border border-slate-700">
         <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
-        <span id="toastMsg">Text copied to clipboard!</span>
+        <span id="toastMsg">Action completed successfully!</span>
     </div>
 
     <!-- Interactive JavaScript -->
@@ -725,9 +817,9 @@
                 
                 if (top >= offset && top < offset + height) {
                     navLinks.forEach(links => {
-                        links.classList.remove("bg-amber-100", "dark:bg-slate-800", "text-amber-700", "dark:text-amber-400", "font-bold");
+                        links.classList.remove("bg-emerald-100", "dark:bg-slate-800", "text-emerald-700", "dark:text-emerald-400", "font-bold");
                         if (links.getAttribute("href") === "#" + id) {
-                            links.classList.add("bg-amber-100", "dark:bg-slate-800", "text-amber-700", "dark:text-amber-400", "font-bold");
+                            links.classList.add("bg-emerald-100", "dark:bg-slate-800", "text-emerald-700", "dark:text-emerald-400", "font-bold");
                         }
                     });
                 }
@@ -736,20 +828,12 @@
 
         // Font Size Adjustment Logic
         let currentFontSizeLevel = 0;
-        const fontClasses = ['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl'];
-        
         function adjustFontSize(delta) {
             const printableArea = document.getElementById('printable-area');
             const paragraphs = printableArea.querySelectorAll('p, li, span.block');
-            
             currentFontSizeLevel = Math.max(-2, Math.min(3, currentFontSizeLevel + delta));
-            
             paragraphs.forEach(el => {
-                if (delta > 0) {
-                    el.style.fontSize = `${100 + currentFontSizeLevel * 10}%`;
-                } else {
-                    el.style.fontSize = `${100 + currentFontSizeLevel * 10}%`;
-                }
+                el.style.fontSize = `${100 + currentFontSizeLevel * 10}%`;
             });
             showToast(`Document font size adjusted (${currentFontSizeLevel > 0 ? '+' : ''}${currentFontSizeLevel * 10}%)`);
         }
@@ -767,11 +851,9 @@
                 localStorage.setItem('theme', 'dark');
             }
         }
-        
         if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
         if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
 
-        // System theme initialization
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -782,27 +864,53 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
+
+        // Fact-Check Matrix Filtering & Search
+        const searchInput = document.getElementById('searchInput');
+        const matrixSearch = document.getElementById('matrix-search');
+        const searchInputMobile = document.getElementById('searchInputMobile');
+        const clearSearchBtn = document.getElementById('clearSearch');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const factCards = document.querySelectorAll('.fact-card');
+        let activeCategory = 'all';
+
+        function filterFactCards() {
+            const query = (matrixSearch ? matrixSearch.value : '').trim().toLowerCase();
+            factCards.forEach(card => {
+                const categories = card.getAttribute('data-category') || '';
+                const text = card.textContent.toLowerCase();
+                const matchesCategory = activeCategory === 'all' || categories.includes(activeCategory);
+                const matchesSearch = !query || text.includes(query);
+                card.style.display = (matchesCategory && matchesSearch) ? 'flex' : 'none';
             });
         }
 
-        // Search Filter Logic
-        const searchInput = document.getElementById('searchInput');
-        const searchInputMobile = document.getElementById('searchInputMobile');
-        const clearSearchBtn = document.getElementById('clearSearch');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-emerald-600', 'text-white');
+                    b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                });
+                btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                btn.classList.add('bg-emerald-600', 'text-white');
+                activeCategory = btn.getAttribute('data-filter');
+                filterFactCards();
+            });
+        });
 
-        function handleSearch(e) {
+        if (matrixSearch) matrixSearch.addEventListener('input', filterFactCards);
+
+        // Sitewide text highlighting search
+        function handleGlobalSearch(e) {
             const query = e.target.value.trim().toLowerCase();
             const contentArea = document.getElementById('printable-area');
-            
             if (query.length > 0) {
                 clearSearchBtn.classList.remove('hidden');
             } else {
                 clearSearchBtn.classList.add('hidden');
             }
-
-            // Text search highlighting
             removeHighlights(contentArea);
             if (query.length >= 3) {
                 highlightText(contentArea, query);
@@ -811,7 +919,6 @@
 
         function highlightText(element, query) {
             const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-            
             function traverse(node) {
                 if (node.nodeType === 3) {
                     const match = node.nodeValue.match(regex);
@@ -838,8 +945,8 @@
             });
         }
 
-        if (searchInput) searchInput.addEventListener('input', handleSearch);
-        if (searchInputMobile) searchInputMobile.addEventListener('input', handleSearch);
+        if (searchInput) searchInput.addEventListener('input', handleGlobalSearch);
+        if (searchInputMobile) searchInputMobile.addEventListener('input', handleGlobalSearch);
         if (clearSearchBtn) {
             clearSearchBtn.addEventListener('click', () => {
                 searchInput.value = '';
@@ -849,34 +956,42 @@
             });
         }
 
-        // Copy Full Text Function
+        // Copy Full Text
         function copyDocumentText() {
             const articleText = document.getElementById('printable-area').innerText;
-            
-            // execCommand fallback for iframe sandboxes
             const tempTextArea = document.createElement('textarea');
             tempTextArea.value = articleText;
             document.body.appendChild(tempTextArea);
             tempTextArea.select();
-            
             try {
                 document.execCommand('copy');
-                showToast('Full representation text copied to clipboard!');
+                showToast('Full audit report text copied to clipboard!');
             } catch (err) {
                 showToast('Failed to copy text.');
             }
             document.body.removeChild(tempTextArea);
         }
 
-        // Toast Message Handler
+        function copyCitation(url) {
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = url;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+                showToast('Source URL copied to clipboard!');
+            } catch (err) {
+                showToast('Failed to copy URL.');
+            }
+            document.body.removeChild(tempTextArea);
+        }
+
         function showToast(msg) {
             const toast = document.getElementById('toast');
             const toastMsg = document.getElementById('toastMsg');
             toastMsg.innerText = msg;
             toast.classList.remove('hidden');
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 3000);
+            setTimeout(() => { toast.classList.add('hidden'); }, 3000);
         }
     </script>
 </body>
