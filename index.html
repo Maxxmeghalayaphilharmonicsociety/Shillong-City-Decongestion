@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formal Representation & Evidentiary Submission — Shillong Peak Ropeway Project</title>
+    <title>Shillong Peak Ropeway Watch | Central Civic Portal</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,18 +12,6 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        legal: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            gold: '#d97706',
-                            crimson: '#dc2626',
-                            emerald: '#059669',
-                            navy: '#1e3a8a'
-                        }
-                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Merriweather', 'Georgia', 'serif'],
@@ -34,12 +22,10 @@
         }
     </script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -49,10 +35,7 @@
         #progress-bar { width: 0%; transition: width 0.1s ease-out; }
         mark.highlight { background-color: #fef08a; color: #000; padding: 0.1em 0.3em; border-radius: 0.2em; }
         .dark mark.highlight { background-color: #854d0e; color: #fff; }
-        @media print {
-            body { background: white !important; color: black !important; font-size: 11pt; }
-            .no-print { display: none !important; }
-        }
+        @media print { .no-print { display: none !important; } }
     </style>
 </head>
 <body class="bg-slate-100 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-200">
@@ -62,371 +45,100 @@
         <div id="progress-bar" class="h-full bg-amber-600 dark:bg-amber-500"></div>
     </div>
 
-    <!-- Navigation Bar with Subpage Menu -->
+    <!-- Navigation Header -->
     <nav class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur border-b border-slate-200 dark:border-slate-800 shadow-sm no-print">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Brand / Doc Header -->
                 <div class="flex items-center space-x-3">
                     <div class="p-2 bg-slate-900 text-amber-500 rounded-lg dark:bg-amber-500 dark:text-slate-950">
                         <i class="fa-solid fa-scale-balanced text-xl"></i>
                     </div>
                     <div>
-                        <span class="block text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">Official Record Filing</span>
-                        <a href="index.html" class="font-heading font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:text-amber-500 transition">Shillong Peak Ropeway Submission</a>
+                        <span class="block text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">Civic Portal</span>
+                        <a href="index.html" class="font-heading font-bold text-sm sm:text-base text-slate-900 dark:text-white">Shillong Peak Ropeway Watch</a>
                     </div>
                 </div>
 
-                <!-- Desktop Navigation Controls & Subpage Links -->
+                <!-- Desktop Subpage Menu & Controls -->
                 <div class="hidden md:flex items-center space-x-3">
-                    <!-- Subpage Links -->
-                    <div class="flex items-center space-x-2 border-r border-slate-300 dark:border-slate-700 pr-3">
-                        <a href="audit_report.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-emerald-950 hover:text-emerald-300 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition">
-                            <i class="fa-solid fa-file-shield text-emerald-500 mr-1"></i> Audit Report
-                        </a>
-                        <a href="questions.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-amber-950 hover:text-amber-300 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition">
-                            <i class="fa-solid fa-circle-question text-amber-500 mr-1"></i> Questions
-                        </a>
+                    <div class="flex items-center space-x-1.5 border-r border-slate-300 dark:border-slate-700 pr-3">
+                        <a href="index.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 shadow-sm">Home</a>
+                        <a href="audit_reports.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-emerald-950 hover:text-emerald-300 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition">Audit Reports</a>
+                        <a href="questions.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-amber-950 hover:text-amber-300 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition">Questions</a>
                     </div>
 
                     <!-- Search Input -->
                     <div class="relative">
                         <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-sm"></i>
-                        <input type="text" id="searchInput" placeholder="Search record text..." 
-                            class="pl-9 pr-8 py-1.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200 w-36 focus:w-52 transition-all">
-                        <button id="clearSearch" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
+                        <input type="text" id="searchInput" placeholder="Search site..." class="pl-9 pr-8 py-1.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200 w-32 focus:w-48 transition-all">
+                        <button id="clearSearch" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 text-xs"><i class="fa-solid fa-xmark"></i></button>
                     </div>
 
-                    <!-- Font Size Adjustment -->
+                    <!-- Font Sizing & Theme Toggle -->
                     <div class="flex items-center bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg p-0.5">
-                        <button onclick="adjustFontSize(-1)" title="Decrease Text Size" class="px-2 py-1 text-slate-600 dark:text-slate-300 hover:text-amber-500 text-xs font-bold transition">A-</button>
+                        <button onclick="adjustFontSize(-1)" class="px-2 py-1 text-slate-600 dark:text-slate-300 text-xs font-bold">A-</button>
                         <span class="text-[10px] text-slate-400 px-1 border-x border-slate-300 dark:border-slate-700">Font</span>
-                        <button onclick="adjustFontSize(1)" title="Increase Text Size" class="px-2 py-1 text-slate-600 dark:text-slate-300 hover:text-amber-500 text-xs font-bold transition">A+</button>
+                        <button onclick="adjustFontSize(1)" class="px-2 py-1 text-slate-600 dark:text-slate-300 text-xs font-bold">A+</button>
                     </div>
-
-                    <!-- Quick Action Controls -->
-                    <button onclick="copyDocumentText()" title="Copy Full Text" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-500 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition"><i class="fa-regular fa-copy"></i></button>
-                    <button onclick="window.print()" title="Print / Save PDF" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-500 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition"><i class="fa-solid fa-print"></i></button>
-                    <button id="themeToggle" title="Toggle Dark/Light Mode" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-500 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-moon dark:hidden"></i>
-                        <i class="fa-solid fa-sun hidden dark:inline"></i>
+                    <button onclick="window.print()" title="Print" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-500 rounded-lg"><i class="fa-solid fa-print"></i></button>
+                    <button id="themeToggle" title="Toggle Theme" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-500 rounded-lg">
+                        <i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline"></i>
                     </button>
                 </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center space-x-2">
-                    <button id="mobileMenuBtn" class="p-2 text-slate-700 dark:text-slate-200 rounded-lg"><i class="fa-solid fa-bars text-xl"></i></button>
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="p-2 text-slate-700 dark:text-slate-200"><i class="fa-solid fa-bars text-xl"></i></button>
                 </div>
             </div>
         </div>
-
-        <!-- Mobile Menu Dropdown -->
         <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 space-y-3">
-            <div class="grid grid-cols-2 gap-2">
-                <a href="audit_report.html" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-semibold flex items-center space-x-2">
-                    <i class="fa-solid fa-file-shield text-emerald-500"></i><span>Audit Report</span>
-                </a>
-                <a href="questions.html" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-semibold flex items-center space-x-2">
-                    <i class="fa-solid fa-circle-question text-amber-500"></i><span>Questions</span>
-                </a>
-            </div>
-            <div class="relative">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400"></i>
-                <input type="text" id="searchInputMobile" placeholder="Search record..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
-            </div>
-            <div class="grid grid-cols-2 gap-2 text-sm">
-                <button onclick="copyDocumentText()" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center space-x-2"><i class="fa-regular fa-copy text-amber-500"></i><span>Copy Text</span></button>
-                <button onclick="window.print()" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center space-x-2"><i class="fa-solid fa-print text-amber-500"></i><span>Print PDF</span></button>
+            <div class="grid grid-cols-3 gap-2 text-center text-xs font-semibold">
+                <a href="index.html" class="p-2 bg-amber-500 text-slate-950 rounded-lg">Home</a>
+                <a href="audit_reports.html" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">Reports</a>
+                <a href="questions.html" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">Questions</a>
             </div>
         </div>
     </nav>
 
-    <!-- Page Container -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- Main Landing Content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div id="printable-area" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-8 sm:p-12 space-y-8">
+            <div class="text-center space-y-3">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-200">CENTRAL CIVIC REPOSITORY</span>
+                <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Shillong Peak Ropeway Project Portal</h1>
+                <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Independent evidentiary submissions, forensic audit reports, and statutory compliance cross-verifications for the ₹151 Crore Shillong Peak Ropeway Project.</p>
+            </div>
 
-            <!-- Sidebar Navigation (Desktop) -->
-            <aside class="hidden lg:block lg:col-span-3 space-y-6 sticky top-24 h-fit no-print">
-                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
-                    <h3 class="text-xs uppercase tracking-wider font-bold text-slate-400 dark:text-slate-500 mb-2">Portal Navigation</h3>
-                    <div class="space-y-1.5 text-xs font-semibold">
-                        <a href="audit_report.html" class="flex items-center justify-between p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 transition">
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-file-shield"></i> Forensic Audit Report</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                        <a href="questions.html" class="flex items-center justify-between p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 hover:bg-amber-100 transition">
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question"></i> Formal Representation</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+                <a href="audit_reports.html" class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 hover:border-emerald-500 transition group">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="p-3 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-lg"><i class="fa-solid fa-file-shield text-lg"></i></div>
+                        <h2 class="font-heading text-lg font-bold group-hover:text-emerald-500 transition">Forensic Audit Reports</h2>
                     </div>
-                </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Examines MoEF&amp;CC environmental clearance appraisals, NDB sovereign loan terms, PM-DevINE non-duplication rules, and building bye-law violations.</p>
+                </a>
 
-                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <h3 class="text-xs uppercase tracking-wider font-bold text-slate-400 dark:text-slate-500 mb-4">Document Outline</h3>
-                    <nav class="space-y-1 text-sm font-medium" id="toc">
-                        <a href="#meta-header" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-file-contract text-amber-500 w-5"></i> Meta Header & Recipients
-                        </a>
-                        <a href="#preamble" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-book-open text-blue-500 w-5"></i> Preamble
-                        </a>
-                        <a href="#question-1" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-circle-question text-indigo-500 w-5"></i> Question 1: Decongestion & NST
-                        </a>
-                        <a href="#question-2" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-droplet text-emerald-500 w-5"></i> Question 2: Hydrology & EIA
-                        </a>
-                        <a href="#question-3" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-shield-halved text-rose-500 w-5"></i> Question 3: Defence Security
-                        </a>
-                        <a href="#closing-demands" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-gavel text-amber-600 w-5"></i> Closing Demands & Signatures
-                        </a>
-                    </nav>
-                </div>
-
-                <!-- Fast Specs Metadata Card -->
-                <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-5 rounded-2xl shadow-md border border-slate-700">
-                    <div class="flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <span>Filing Highlights</span>
+                <a href="questions.html" class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 hover:border-amber-500 transition group">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="p-3 bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 rounded-lg"><i class="fa-solid fa-circle-question text-lg"></i></div>
+                        <h2 class="font-heading text-lg font-bold group-hover:text-amber-500 transition">Formal Representation</h2>
                     </div>
-                    <ul class="text-xs space-y-2.5 text-slate-300">
-                        <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Filing Date:</span>
-                            <span class="font-semibold text-white">Nov 11, 2026</span>
-                        </li>
-                        <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Project Outlay:</span>
-                            <span class="font-semibold text-amber-400">₹151 Crore</span>
-                        </li>
-                        <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Central Grant:</span>
-                            <span class="font-semibold text-white">₹70+ Cr (PM-DevINE)</span>
-                        </li>
-                        <li class="flex justify-between border-b border-slate-700/60 pb-1.5">
-                            <span>Forest Clearance:</span>
-                            <span class="font-semibold text-rose-400">2.3257 Ha / 545 Trees</span>
-                        </li>
-                        <li class="flex justify-between">
-                            <span>Submitter:</span>
-                            <span class="font-semibold text-white">Concerned Citizens</span>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-
-            <!-- Main Legal Representation Document -->
-            <main class="lg:col-span-9 space-y-10">
-
-                <article id="printable-area" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-6 sm:p-10 md:p-14 relative">
-                    
-                    <!-- Official Stamp Header Badge -->
-                    <div class="flex flex-wrap items-center justify-between gap-4 pb-8 mb-8 border-b border-slate-200 dark:border-slate-800">
-                        <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-200 border border-rose-300 dark:border-rose-800">
-                            <span class="w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-400 animate-pulse mr-2"></span>
-                            OFFICIAL EVIDENTIARY RECORD FILING
-                        </div>
-                        <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
-                            REF NO: MRDA/EIDP/EVID-2026/11
-                        </div>
-                    </div>
-
-                    <!-- Title Header Section -->
-                    <header id="meta-header" class="mb-10 text-center sm:text-left">
-                        <h1 class="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4 tracking-tight">
-                            FORMAL REPRESENTATION AND EVIDENTIARY SUBMISSION
-                        </h1>
-                        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium tracking-wide uppercase">
-                            Submitted under Public Trust Doctrine and Environmental Governance Frameworks
-                        </p>
-                    </header>
-
-                    <!-- Formal Header Details Box -->
-                    <section class="bg-slate-50 dark:bg-slate-800/60 rounded-xl p-6 mb-10 border-l-4 border-amber-600 dark:border-amber-500 text-sm space-y-4">
-                        <div>
-                            <span class="block text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">TO:</span>
-                            <ol class="space-y-1 font-semibold text-slate-900 dark:text-slate-100 pl-4 list-decimal">
-                                <li>The Chief Executive Officer, Meghalaya Ropeway Development Authority (MRDA)</li>
-                                <li>The Director, Directorate of Tourism, Government of Meghalaya</li>
-                                <li>The District Magistrate / Deputy Commissioner, East Khasi Hills District</li>
-                            </ol>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-slate-200 dark:border-slate-700">
-                            <div>
-                                <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">DATE:</span>
-                                <span class="font-semibold text-slate-900 dark:text-slate-100">November 11, 2026</span>
-                            </div>
-                            <div class="md:col-span-2">
-                                <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">SUBJECT:</span>
-                                <span class="font-semibold text-slate-900 dark:text-slate-100 leading-snug block">
-                                    Evidentiary Submission Regarding Public Statements on the Justification for Decongestion, Environmental Impact Assessment (EIA) Exemptions in Protected Forests, and Security Contradictions of the Proposed Shillong Peak Ropeway Project
-                                </span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- PREAMBLE -->
-                    <section id="preamble" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <span class="p-2 bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded-lg text-sm font-bold">SECTION 1</span>
-                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">PREAMBLE</h2>
-                        </div>
-                        
-                        <div class="font-serif text-slate-700 dark:text-slate-300 leading-relaxed text-base sm:text-lg space-y-4 bg-slate-50/50 dark:bg-slate-800/30 p-6 rounded-xl border border-slate-200/80 dark:border-slate-800">
-                            <p>
-                                This representation is submitted to place on official record glaring institutional contradictions, statutory violations, and documented facts regarding the <strong class="text-amber-700 dark:text-amber-400 font-semibold">₹151-Crore Shillong Peak Ropeway Project</strong>[cite: 2].
-                            </p>
-                            <p>
-                                For years, the state leadership, cabinet ministers, and central funding submissions justified this project to the public as an urban transit solution meant to decongest Shillong. Administrative records, however, expose a troubling contradiction: the project imposes massive concrete construction within vital forest and water catchment areas while sidestepping mandatory environmental impact assessments, genuine public consultations, and essential security clearances.
-                            </p>
-                            <p>
-                                Accordingly, I present Three Core Questions backed by verified records and the government’s own public admissions, requiring an immediate, formal written response from the concerned authorities.
-                            </p>
-                        </div>
-                    </section>
-
-                    <hr class="border-slate-200 dark:border-slate-800 my-10">
-
-                    <!-- QUESTION 1 -->
-                    <section id="question-1" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 rounded-lg text-xs font-bold uppercase tracking-wider">QUESTION 1</span>
-                            <h2 class="font-heading text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                                On the Justification for Decongestion, Central Funding Mandates, and Replicating the New Shillong Township (NST) Failure
-                            </h2>
-                        </div>
-
-                        <div class="bg-indigo-50/40 dark:bg-indigo-950/20 border-l-4 border-indigo-600 dark:border-indigo-400 p-6 rounded-r-xl mb-6 font-serif text-slate-800 dark:text-slate-200 leading-relaxed space-y-4">
-                            <p>
-                                For decades, the New Shillong Township (NST) was sold to the public on one big promise: to decongest Shillong by shifting offices and traffic out of the city. Thousands of crores of public money have been poured into NST, yet it stands today as a massive warning of failed planning. Old Shillong is more choked and unlivable than ever, and NST itself is already descending into gridlock because the government focused only on pouring concrete and erecting massive office complexes without basic civic services or integrated transit routes in place.
-                            </p>
-                            <p>
-                                Now, we are watching the exact same script play out with the Shillong Peak Ropeway. For years, from the 2019 15th Finance Commission submissions to public assurances by our Chief Minister and Deputy Chief Minister, aerial ropeways were pitched to the public and sanctioned over ₹70 crore in central funding under the banner of 'decongesting Shillong city.' Yet today, when questioned by residents, the administration stands before us and publicly denies that this ropeway was ever meant for city decongestion, admitting it is purely a tourist facility.
-                            </p>
-                            <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-indigo-200 dark:border-indigo-900 font-sans text-indigo-950 dark:text-indigo-200 font-medium">
-                                <span class="block text-xs uppercase font-bold text-indigo-600 dark:text-indigo-400 mb-1">Formal Core Interrogation:</span>
-                                "So my question to the administration is simple: Having spent thousands of crores on NST only to worsen gridlock on both ends, and having now publicly abandoned the very 'decongestion' justification / promise used to justify and fund this ropeway, why and by what moral or administrative right, should the government proceed with this Ropeway project here at Lum Shyllong at all when the administration has already miserably failed to deliver on decongesting the city?"
-                            </div>
-                        </div>
-                    </section>
-
-                    <hr class="border-slate-200 dark:border-slate-800 my-10">
-
-                    <!-- QUESTION 2 -->
-                    <section id="question-2" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-lg text-xs font-bold uppercase tracking-wider">QUESTION 2</span>
-                            <h2 class="font-heading text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                                Hiding Behind the 2022 EIA Exemption While Ignoring Heavy Concrete Terminals & Water Catchment Risks
-                            </h2>
-                        </div>
-
-                        <div class="bg-emerald-50/40 dark:bg-emerald-950/20 border-l-4 border-emerald-600 dark:border-emerald-400 p-6 rounded-r-xl mb-6 font-serif text-slate-800 dark:text-slate-200 leading-relaxed space-y-4">
-                            <p>
-                                The administration labels this project "eco-friendly" by pointing to overhead cables and a 0.2% footprint for six mid-line towers, while relying on the April 27, 2022 amendment (S.O. 1953(E)) to the EIA Notification, 2006 to bypass a comprehensive EIA and statutory public hearing. 
-                            </p>
-                            <p>
-                                However, measuring only the mid-line towers ignores the diversion of <strong>2.3257 hectares of forest</strong>, the felling of <strong>545 mature trees</strong>, and the massive reinforced concrete (RCC) terminal buildings explicitly mandated in the Directorate of Tourism's own tender documents inside Upper Shillong’s vital water catchment.
-                            </p>
-                        </div>
-                    </section>
-
-                    <hr class="border-slate-200 dark:border-slate-800 my-10">
-
-                    <!-- QUESTION 3 -->
-                    <section id="question-3" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 rounded-lg text-xs font-bold uppercase tracking-wider">QUESTION 3</span>
-                            <h2 class="font-heading text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                                On Traffic Contradictions and the Double Standard on Military Security
-                            </h2>
-                        </div>
-
-                        <div class="bg-rose-50/40 dark:bg-rose-950/20 border-l-4 border-rose-600 dark:border-rose-400 p-6 rounded-r-xl mb-6 font-serif text-slate-800 dark:text-slate-200 leading-relaxed space-y-4">
-                            <p>
-                                In February and April 2026, the state government formally scrapped its flagship <strong>Rilbong–Barik flyover</strong> previously promoted as Shillong’s "single largest traffic decongestion intervention" after Defence authorities (GOC 101 Area) objected that an elevated corridor near Cantonment boundaries posed an unacceptable security risk.
-                            </p>
-                            <p>
-                                Yet, for a commercial tourist ropeway directly bordering the strategic <strong>Eastern Air Command (EAC) Air Force Station</strong> and radar facilities at Upper Shillong, the administration claims that simply placing the upper terminal 80 metres below the viewpoint resolves all security concerns.
-                            </p>
-                        </div>
-                    </section>
-
-                    <hr class="border-slate-200 dark:border-slate-800 my-10">
-
-                    <!-- CLOSING DEMANDS -->
-                    <section id="closing-demands" class="mb-12 scroll-mt-24">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <span class="px-3 py-1 bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 rounded-lg text-xs font-bold uppercase tracking-wider">CLOSING DEMAND</span>
-                            <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
-                                DEMAND FOR FORMAL CLARIFICATION AND STATUTORY COMPLIANCE
-                            </h2>
-                        </div>
-
-                        <div class="bg-slate-900 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6">
-                            <p class="font-serif text-sm sm:text-base leading-relaxed text-slate-300 border-b border-slate-800 pb-4">
-                                In light of the documentary evidence and institutional contradictions placed on record above, the Concerned Citizens of Meghalaya hereby demand:
-                            </p>
-                            <ol class="space-y-4 font-sans text-sm">
-                                <li class="flex items-start space-x-3 bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-                                    <div class="w-7 h-7 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs flex-shrink-0">1</div>
-                                    <div>
-                                        <strong class="text-amber-400 block text-base mb-1">Point-by-Point Written Clarification</strong>
-                                        <p class="text-slate-300">A formal, written, point-by-point response addressing each of the Three Interlinked Core Questions detailed in this representation.</p>
-                                    </div>
-                                </li>
-                                <li class="flex items-start space-x-3 bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-                                    <div class="w-7 h-7 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs flex-shrink-0">2</div>
-                                    <div>
-                                        <strong class="text-amber-400 block text-base mb-1">Full Public Disclosure of Records</strong>
-                                        <p class="text-slate-300">Immediate publication of the complete DPR, Traffic Impact Assessment, PHE water catchment report, NDB ESMP, and Defence NOCs.</p>
-                                    </div>
-                                </li>
-                            </ol>
-                        </div>
-                    </section>
-
-                    <footer class="pt-6 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400 space-y-1">
-                        <p>Formal Representation & Evidentiary Submission • Shillong Peak Ropeway Project</p>
-                        <p class="font-mono">Filing Date: November 11, 2026 • Verified Public Domain Record</p>
-                    </footer>
-
-                </article>
-            </main>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Presents core interlinked questions regarding traffic decongestion promises vs. NST failure, hydrological spring risks, and defence security double standards.</p>
+                </a>
+            </div>
         </div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-50 hidden flex items-center space-x-2 text-xs border border-slate-700">
-        <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
-        <span id="toastMsg">Text copied to clipboard!</span>
-    </div>
+    </main>
 
     <script>
-        window.onscroll = function() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        window.onscroll = () => {
+            let winScroll = document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             document.getElementById("progress-bar").style.width = (winScroll / height) * 100 + "%";
         };
         function adjustFontSize(delta) {
             document.getElementById('printable-area').style.fontSize = delta > 0 ? '105%' : '100%';
         }
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-        });
-        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
-        });
-        function copyDocumentText() {
-            navigator.clipboard.writeText(document.getElementById('printable-area').innerText);
-            let t = document.getElementById('toast');
-            t.classList.remove('hidden');
-            setTimeout(() => t.classList.add('hidden'), 2500);
-        }
+        document.getElementById('themeToggle').addEventListener('click', () => document.documentElement.classList.toggle('dark'));
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('hidden'));
     </script>
 </body>
 </html>
