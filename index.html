@@ -1,243 +1,257 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formal Representation & Evidentiary Submission — Shillong Peak Ropeway Project</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        legal: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            gold: '#d97706',
-                            crimson: '#dc2626',
-                            emerald: '#059669',
-                            navy: '#1e3a8a'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Merriweather', 'Georgia', 'serif'],
-                        heading: ['Cinzel', 'serif']
-                    }
-                }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shillong Ropeway Watch | Civic Transparency & Public Record Verification Portal</title>
+  <meta name="description" content="Independent public portal hosting forensic audits, evidentiary filings, and statutory compliance reviews for the ₹151 Crore Shillong Peak Ropeway Project." />
+  <link rel="canonical" href="https://www.shillongropewaywatch.in/" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Playfair Display / Merriweather (Editorial Serif), Inter (UI Sans), JetBrains Mono (Citations & Figures) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Merriweather', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink: {
+              950: '#090d16',
+              900: '#0f172a',
+              800: '#1e293b',
+              700: '#334155',
+            },
+            forest: {
+              950: '#052e16',
+              900: '#14532d',
+              800: '#166534',
+              700: '#15803d',
+              100: '#dcfce7',
+              50: '#f0fdf4',
+            },
+            paper: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
             }
+          }
         }
-    </script>
+      }
+    }
+  </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <style>
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); }
-        ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.5); border-radius: 4px; }
-        #progress-bar { width: 0%; transition: width 0.1s ease-out; }
-        mark.highlight { background-color: #fef08a; color: #000; padding: 0.1em 0.3em; border-radius: 0.2em; }
-        .dark mark.highlight { background-color: #854d0e; color: #fff; }
-        @media print {
-            body { background: white !important; color: black !important; font-size: 11pt; }
-            .no-print { display: none !important; }
-        }
-    </style>
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+    .editorial-rule {
+      border-top: 3px solid #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      height: 6px;
+    }
+  </style>
 </head>
-<body class="bg-slate-100 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-200">
+<body class="antialiased selection:bg-amber-200 selection:text-ink-900">
 
-    <!-- Reading Progress Bar -->
-    <div class="fixed top-0 left-0 w-full h-1.5 bg-slate-200 dark:bg-slate-800 z-50 no-print">
-        <div id="progress-bar" class="h-full bg-amber-600 dark:bg-amber-500"></div>
+  <!-- Top Parent Portal Bar -->
+  <div class="bg-ink-950 text-slate-300 border-b border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 font-mono">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-white font-semibold">shillongropewaywatch.in</span>
+        <span class="text-slate-600">/</span>
+        <span class="text-amber-400 font-medium">portal-home</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="hidden md:inline text-slate-400">Public Interest Civic Audit &amp; Record Repository</span>
+        <span class="text-emerald-400 font-semibold">Active Dossier</span>
+      </div>
     </div>
+  </div>
 
-    <!-- Navigation Bar with Subpage Menu -->
-    <nav class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur border-b border-slate-200 dark:border-slate-800 shadow-sm no-print">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Brand / Doc Header -->
-                <div class="flex items-center space-x-3">
-                    <div class="p-2 bg-slate-900 text-amber-500 rounded-lg dark:bg-amber-500 dark:text-slate-950">
-                        <i class="fa-solid fa-scale-balanced text-xl"></i>
-                    </div>
-                    <div>
-                        <span class="block text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">Official Record Filing</span>
-                        <a href="index.html" class="font-heading font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:text-amber-600 transition">Shillong Peak Ropeway Submission</a>
-                    </div>
-                </div>
-
-                <!-- Desktop Navigation Menu & Controls -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <!-- Subpage Navigation Link -->
-                    <div class="flex items-center space-x-1 border-r border-slate-300 dark:border-slate-700 pr-4">
-                        <a href="audit_report.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 transition">
-                            <i class="fa-solid fa-file-shield text-emerald-600 dark:text-emerald-400"></i>
-                            Forensic Audit Report
-                        </a>
-                    </div>
-
-                    <!-- Search Input -->
-                    <div class="relative">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-sm"></i>
-                        <input type="text" id="searchInput" placeholder="Search record text..." 
-                            class="pl-9 pr-8 py-1.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200 w-36 focus:w-52 transition-all">
-                        <button id="clearSearch" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
-
-                    <!-- Font Size Adjustment -->
-                    <div class="flex items-center bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg p-0.5">
-                        <button onclick="adjustFontSize(-1)" title="Decrease Text Size" class="px-2 py-1 text-slate-600 dark:text-slate-300 hover:text-amber-600 text-xs font-bold transition">A-</button>
-                        <span class="text-[10px] text-slate-400 px-1 border-x border-slate-300 dark:border-slate-700">Font</span>
-                        <button onclick="adjustFontSize(1)" title="Increase Text Size" class="px-2 py-1 text-slate-600 dark:text-slate-300 hover:text-amber-600 text-xs font-bold transition">A+</button>
-                    </div>
-
-                    <!-- Quick Actions -->
-                    <button onclick="copyDocumentText()" title="Copy Full Text" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition"><i class="fa-regular fa-copy"></i></button>
-                    <button onclick="window.print()" title="Print / Save PDF" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition"><i class="fa-solid fa-print"></i></button>
-                    <button id="themeToggle" title="Toggle Dark/Light Mode" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-moon dark:hidden"></i>
-                        <i class="fa-solid fa-sun hidden dark:inline"></i>
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center space-x-2">
-                    <button id="mobileMenuBtn" class="p-2 text-slate-700 dark:text-slate-200 rounded-lg"><i class="fa-solid fa-bars text-xl"></i></button>
-                </div>
+  <!-- Masthead Header with Subpage Menu -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <!-- Brand Identity -->
+        <div class="flex items-center gap-3.5">
+          <div class="shrink-0 w-11 h-11 rounded-xl bg-forest-900 text-white flex items-center justify-center shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8M14 7h7v7" />
+            </svg>
+          </div>
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <a href="index.html" class="text-lg sm:text-xl font-extrabold tracking-tight text-ink-900 uppercase">
+                Shillong Ropeway Watch
+              </a>
+              <span class="px-2 py-0.5 text-[11px] font-mono font-semibold uppercase tracking-wider bg-emerald-50 text-emerald-800 rounded-md border border-emerald-200">
+                Main Portal
+              </span>
             </div>
+            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+              Civic Transparency, Environmental Oversight &amp; Statutory Compliance Archive
+            </p>
+          </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 space-y-3">
-            <a href="audit_report.html" class="flex items-center space-x-2 p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-200 text-xs font-semibold">
-                <i class="fa-solid fa-file-shield text-emerald-600"></i>
-                <span>View Forensic Audit & Fact-Check Report</span>
+        <!-- Subpage Navigation Menu -->
+        <nav class="flex flex-wrap items-center gap-2.5">
+          <a href="index.html" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold text-white bg-ink-900 shadow-sm transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            Home
+          </a>
+          <a href="audit_report.html" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold text-ink-800 bg-paper-100 hover:bg-slate-200 border border-slate-300 transition-colors">
+            <svg class="w-4 h-4 text-forest-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Forensic Audit Report
+          </a>
+          <a href="questions.html" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold text-ink-800 bg-paper-100 hover:bg-slate-200 border border-slate-300 transition-colors">
+            <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Formal Representation &amp; Questions
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+
+    <!-- Hero Section -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 lg:p-12">
+        <div class="flex flex-wrap items-center gap-2.5 mb-5">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-forest-50 text-forest-800 border border-forest-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+            Public Interest Civic Repository
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-slate-100 text-slate-700 border border-slate-200">
+            CORRIDOR: LAWSOHTUN / RIAT LABAN → SHILLONG PEAK
+          </span>
+        </div>
+
+        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-ink-900 leading-tight tracking-tight mb-5">
+          Shillong Peak Ropeway Project: Accountability &amp; Evidence Portal
+        </h1>
+        
+        <p class="text-base sm:text-lg text-slate-600 max-w-4xl leading-relaxed mb-8">
+          Welcome to the central archival repository for the <strong>₹151 Crore Shillong Peak Ropeway Project</strong>. This portal provides independent citizens, researchers, and public authorities with transparent access to cross-verified project files, environmental impact appraisals, co-financing disclosures, and formal representations.
+        </p>
+
+        <div class="editorial-rule my-6"></div>
+
+        <!-- Call to Action Subpage Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <!-- Subpage Card 1 -->
+          <div class="rounded-xl border border-slate-200 bg-paper-50 p-6 flex flex-col justify-between hover:border-forest-700 transition-all shadow-xs">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 text-xs font-mono font-bold uppercase bg-forest-100 text-forest-900 rounded-md">Dossier 01</span>
+                <span class="text-xs font-mono text-slate-500">11 Primary Sources</span>
+              </div>
+              <h2 class="font-serif text-xl font-bold text-ink-900 mb-2">Forensic Audit &amp; Fact-Check Report</h2>
+              <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                Independent verification of MoEF&amp;CC appraisal records, NDB loan agreements, PM-DevINE guidelines, and building bye-laws against official statements.
+              </p>
+            </div>
+            <a href="audit_report.html" class="inline-flex items-center justify-between px-4 py-2.5 rounded-lg bg-forest-900 text-white font-semibold text-sm hover:bg-forest-800 transition-colors">
+              <span>Open Audit Report</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </a>
-            <div class="relative">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400"></i>
-                <input type="text" id="searchInputMobile" placeholder="Search record..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
+          </div>
+
+          <!-- Subpage Card 2 -->
+          <div class="rounded-xl border border-slate-200 bg-paper-50 p-6 flex flex-col justify-between hover:border-amber-600 transition-all shadow-xs">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 text-xs font-mono font-bold uppercase bg-amber-100 text-amber-900 rounded-md">Dossier 02</span>
+                <span class="text-xs font-mono text-slate-500">Official Submission</span>
+              </div>
+              <h2 class="font-serif text-xl font-bold text-ink-900 mb-2">Formal Representation &amp; Questions</h2>
+              <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                Structured evidentiary submission addressing traffic decongestion claims, water catchment risks at Lum Shyllong, and military security double standards.
+              </p>
             </div>
-            <div class="grid grid-cols-2 gap-2 text-sm">
-                <button onclick="copyDocumentText()" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center space-x-2"><i class="fa-regular fa-copy text-amber-500"></i><span>Copy Text</span></button>
-                <button onclick="window.print()" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center space-x-2"><i class="fa-solid fa-print text-amber-500"></i><span>Print PDF</span></button>
-            </div>
+            <a href="questions.html" class="inline-flex items-center justify-between px-4 py-2.5 rounded-lg bg-ink-900 text-white font-semibold text-sm hover:bg-ink-800 transition-colors">
+              <span>Open Questions &amp; Representation</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
-    </nav>
+      </div>
+    </section>
 
-    <!-- Page Container -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <!-- Sidebar Navigation -->
-            <aside class="hidden lg:block lg:col-span-3 space-y-6 sticky top-24 h-fit no-print">
-                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
-                    <h3 class="text-xs uppercase tracking-wider font-bold text-slate-400 dark:text-slate-500 mb-3">Portal Navigation</h3>
-                    <a href="audit_report.html" class="flex items-center justify-between p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/70 dark:hover:bg-emerald-900 text-emerald-900 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800 text-xs font-bold transition">
-                        <span class="flex items-center gap-2"><i class="fa-solid fa-file-shield"></i> Forensic Audit Report</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
+    <!-- Key Metrics / Overview Section -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+        <span class="text-xs font-mono font-bold uppercase text-slate-500 block mb-1">Total Project Outlay</span>
+        <div class="text-2xl sm:text-3xl font-extrabold text-ink-900 font-mono">₹151.00 Cr</div>
+        <p class="text-xs text-slate-500 mt-2">Up 80.7% from initial 2021 MoEF&amp;CC Form-1 baseline.</p>
+      </div>
 
-                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <h3 class="text-xs uppercase tracking-wider font-bold text-slate-400 dark:text-slate-500 mb-4">Document Outline</h3>
-                    <nav class="space-y-1 text-sm font-medium" id="toc">
-                        <a href="#meta-header" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Meta Header & Recipients</a>
-                        <a href="#preamble" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Preamble</a>
-                        <a href="#question-1" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Q1: Decongestion & NST</a>
-                        <a href="#question-2" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Q2: Hydrology & EIA</a>
-                        <a href="#question-3" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Q3: Defence Security</a>
-                        <a href="#closing-demands" class="toc-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Closing Demands</a>
-                    </nav>
-                </div>
-            </aside>
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+        <span class="text-xs font-mono font-bold uppercase text-slate-500 block mb-1">Co-Financing Split</span>
+        <div class="text-2xl sm:text-3xl font-extrabold text-ink-900 font-mono">NDB + PM-DevINE</div>
+        <p class="text-xs text-slate-500 mt-2">₹80.89 Cr sovereign loan &amp; ₹70.11 Cr central grant.</p>
+      </div>
 
-            <!-- Main Document Content -->
-            <main class="lg:col-span-9 space-y-10">
-                <article id="printable-area" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-6 sm:p-10 md:p-14 relative">
-                    <header id="meta-header" class="mb-8">
-                        <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-200 mb-4">Official Evidentiary Record Filing</div>
-                        <h1 class="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight mb-3">FORMAL REPRESENTATION AND EVIDENTIARY SUBMISSION</h1>
-                        <p class="text-xs sm:text-sm text-slate-500 uppercase tracking-wide">Submitted under Public Trust Doctrine and Environmental Governance Frameworks</p>
-                    </header>
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+        <span class="text-xs font-mono font-bold uppercase text-slate-500 block mb-1">Forest Impact</span>
+        <div class="text-2xl sm:text-3xl font-extrabold text-ink-900 font-mono">2.33 Hectares</div>
+        <p class="text-xs text-slate-500 mt-2">Stage-II clearance involving 545 mature trees in catchment.</p>
+      </div>
 
-                    <section class="bg-slate-50 dark:bg-slate-800/60 rounded-xl p-6 mb-8 border-l-4 border-amber-600 text-sm space-y-3">
-                        <div><strong class="text-amber-700 dark:text-amber-400 text-xs uppercase">TO:</strong> MRDA CEO, Director of Tourism, District Magistrate East Khasi Hills</div>
-                        <div><strong class="text-slate-500 text-xs uppercase">DATE:</strong> November 11, 2026</div>
-                        <div><strong class="text-slate-500 text-xs uppercase">SUBJECT:</strong> Evidentiary Submission Regarding Public Statements on the Justification for Decongestion, EIA Exemptions, and Security Contradictions of the Shillong Peak Ropeway Project.</div>
-                    </section>
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+        <span class="text-xs font-mono font-bold uppercase text-slate-500 block mb-1">Water Extraction</span>
+        <div class="text-2xl sm:text-3xl font-extrabold text-ink-900 font-mono">211.5 KLD</div>
+        <p class="text-xs text-slate-500 mt-2">Planned daily extraction at Lum Shyllong recharge zone.</p>
+      </div>
+    </section>
 
-                    <section id="preamble" class="mb-10">
-                        <h2 class="font-heading text-xl font-bold mb-3">Preamble</h2>
-                        <p class="font-serif text-slate-700 dark:text-slate-300 leading-relaxed">This representation places on record institutional contradictions and statutory violations regarding the ₹151-Crore Shillong Peak Ropeway Project. While pitched as a decongestion solution, the project imposes concrete construction within sensitive forest and water catchment areas.</p>
-                    </section>
+  </main>
 
-                    <section id="question-1" class="mb-10">
-                        <h2 class="font-heading text-xl font-bold mb-3">Question 1: Decongestion & New Shillong Township (NST) Failure</h2>
-                        <p class="font-serif text-slate-700 dark:text-slate-300 leading-relaxed mb-4">Why should the government proceed with this ropeway when its primary justification (decongestion) mirrors the failed promises of NST?</p>
-                    </section>
-
-                    <section id="question-2" class="mb-10">
-                        <h2 class="font-heading text-xl font-bold mb-3">Question 2: Hydrology & EIA Exemption</h2>
-                        <p class="font-serif text-slate-700 dark:text-slate-300 leading-relaxed mb-4">How can the project claim a 0.2% footprint while building heavy RCC terminal structures inside Upper Shillong’s vital water catchments and spring recharge zones?</p>
-                    </section>
-
-                    <section id="question-3" class="mb-10">
-                        <h2 class="font-heading text-xl font-bold mb-3">Question 3: Military Security & Cantonment Double Standards</h2>
-                        <p class="font-serif text-slate-700 dark:text-slate-300 leading-relaxed mb-4">Why was the Rilbong-Barik flyover scrapped over Army security concerns while 13 elevated commercial gondola cabins overlook the Eastern Air Command radar station?</p>
-                    </section>
-
-                    <section id="closing-demands" class="mb-6">
-                        <h2 class="font-heading text-xl font-bold mb-3">Closing Demands</h2>
-                        <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                            <li>Point-by-point written clarification to all core questions.</li>
-                            <li>Full public disclosure of DPR, hydrological studies, NDB ESMP, and Defence NOCs.</li>
-                            <li>Immediate moratorium on civil works and tree felling pending independent review.</li>
-                        </ul>
-                    </section>
-                </article>
-            </main>
+  <!-- Footer -->
+  <footer class="bg-ink-950 text-slate-300 border-t border-slate-800 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-800">
+        <div>
+          <div class="flex items-center gap-2.5 mb-2">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span class="text-white font-extrabold tracking-tight uppercase text-lg">Shillong Ropeway Watch</span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-2xl">
+            Civic Transparency Portal: <span class="font-mono text-slate-300">https://www.shillongropewaywatch.in/</span>. All statutory citations and financial records are anchored to public domain evidence.
+          </p>
         </div>
-    </div>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-50 hidden flex items-center space-x-2 text-xs">
-        <i class="fa-solid fa-circle-check text-emerald-400"></i>
-        <span id="toastMsg">Action completed!</span>
-    </div>
+        <div class="flex items-center gap-3">
+          <a href="audit_report.html" class="px-4 py-2.5 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold text-xs transition-colors">
+            Audit Report
+          </a>
+          <a href="questions.html" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs transition-colors">
+            Questions &amp; Representation
+          </a>
+        </div>
+      </div>
 
-    <script>
-        window.onscroll = function() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            document.getElementById("progress-bar").style.width = (winScroll / height) * 100 + "%";
-        };
-        function adjustFontSize(delta) {
-            document.getElementById('printable-area').style.fontSize = delta > 0 ? '105%' : '100%';
-        }
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-        });
-        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
-        });
-        function copyDocumentText() {
-            navigator.clipboard.writeText(document.getElementById('printable-area').innerText);
-            let t = document.getElementById('toast');
-            t.classList.remove('hidden');
-            setTimeout(() => t.classList.add('hidden'), 2500);
-        }
-    </script>
+      <div class="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-500">
+        <p>Public Interest Civic Audit • Lawsohtun–Riat Laban to Lum Shyllong Corridor</p>
+        <p class="font-mono">Last Verified: November 14, 2026</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
