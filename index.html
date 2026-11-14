@@ -63,15 +63,15 @@
                 <div class="hidden md:flex items-center space-x-3">
                     <div class="flex items-center space-x-1.5 border-r border-slate-300 dark:border-slate-700 pr-3">
                         <a href="index.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 shadow-sm">Home</a>
-                        <a href="audit_report.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-emerald-950 hover:text-emerald-300 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition">Audit Reports</a>
+                        <a href="audit_reports.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-emerald-950 hover:text-emerald-300 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition">Audit Reports</a>
                         <a href="questions.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-amber-950 hover:text-amber-300 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition">Questions</a>
                     </div>
 
                     <!-- Search Input -->
                     <div class="relative">
                         <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-sm"></i>
-                        <input type="text" id="searchInput" placeholder="Search site..." class="pl-9 pr-8 py-1.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200 w-32 focus:w-48 transition-all">
-                        <button id="clearSearch" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 text-xs"><i class="fa-solid fa-xmark"></i></button>
+                        <input type="text" id="searchInput" placeholder="Search site..." class="pl-9 pr-8 py-1.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200 w-36 focus:w-52 transition-all">
+                        <button id="clearSearch" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs"><i class="fa-solid fa-xmark"></i></button>
                     </div>
 
                     <!-- Font Sizing & Theme Toggle -->
@@ -91,9 +91,13 @@
             </div>
         </div>
         <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 space-y-3">
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400"></i>
+                <input type="text" id="searchInputMobile" placeholder="Search site..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
+            </div>
             <div class="grid grid-cols-3 gap-2 text-center text-xs font-semibold">
                 <a href="index.html" class="p-2 bg-amber-500 text-slate-950 rounded-lg">Home</a>
-                <a href="audit_report.html" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">Reports</a>
+                <a href="audit_reports.html" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">Reports</a>
                 <a href="questions.html" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">Questions</a>
             </div>
         </div>
@@ -109,7 +113,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
-                <a href="audit_report.html" class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 hover:border-emerald-500 transition group">
+                <a href="audit_reports.html" class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 hover:border-emerald-500 transition group">
                     <div class="flex items-center space-x-3 mb-3">
                         <div class="p-3 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-lg"><i class="fa-solid fa-file-shield text-lg"></i></div>
                         <h2 class="font-heading text-lg font-bold group-hover:text-emerald-500 transition">Forensic Audit Reports</h2>
@@ -128,17 +132,87 @@
         </div>
     </main>
 
+    <!-- Interactive JavaScript -->
     <script>
+        // Reading Progress Bar
         window.onscroll = () => {
             let winScroll = document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             document.getElementById("progress-bar").style.width = (winScroll / height) * 100 + "%";
         };
+
+        // Font Sizing Logic
         function adjustFontSize(delta) {
-            document.getElementById('printable-area').style.fontSize = delta > 0 ? '105%' : '100%';
+            const area = document.getElementById('printable-area');
+            area.style.fontSize = delta > 0 ? '105%' : '100%';
         }
+
+        // Theme & Mobile Menu Toggles
         document.getElementById('themeToggle').addEventListener('click', () => document.documentElement.classList.toggle('dark'));
+        const mobileThemeToggle = document.getElementById('themeToggleMobile');
+        if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', () => document.documentElement.classList.toggle('dark'));
         document.getElementById('mobileMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('hidden'));
+
+        // Search Filter & Highlighting Logic
+        const searchInput = document.getElementById('searchInput');
+        const searchInputMobile = document.getElementById('searchInputMobile');
+        const clearSearchBtn = document.getElementById('clearSearch');
+
+        function handleSearch(e) {
+            const query = e.target.value.trim().toLowerCase();
+            const contentArea = document.getElementById('printable-area');
+            
+            if (query.length > 0) {
+                clearSearchBtn.classList.remove('hidden');
+            } else {
+                clearSearchBtn.classList.add('hidden');
+            }
+
+            removeHighlights(contentArea);
+            if (query.length >= 3) {
+                highlightText(contentArea, query);
+            }
+        }
+
+        function highlightText(element, query) {
+            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            
+            function traverse(node) {
+                if (node.nodeType === 3) {
+                    const match = node.nodeValue.match(regex);
+                    if (match) {
+                        const span = document.createElement('span');
+                        span.innerHTML = node.nodeValue.replace(regex, '<mark class="highlight">$1</mark>');
+                        node.parentNode.replaceChild(span, node);
+                    }
+                } else if (node.nodeType === 1 && node.childNodes && !['SCRIPT', 'STYLE', 'INPUT', 'TEXTAREA'].includes(node.tagName)) {
+                    for (let i = 0; i < node.childNodes.length; i++) {
+                        traverse(node.childNodes[i]);
+                    }
+                }
+            }
+            traverse(element);
+        }
+
+        function removeHighlights(element) {
+            const marks = element.querySelectorAll('mark.highlight');
+            marks.forEach(mark => {
+                const parent = mark.parentNode;
+                parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                parent.normalize();
+            });
+        }
+
+        if (searchInput) searchInput.addEventListener('input', handleSearch);
+        if (searchInputMobile) searchInputMobile.addEventListener('input', handleSearch);
+        if (clearSearchBtn) {
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                if (searchInputMobile) searchInputMobile.value = '';
+                clearSearchBtn.classList.add('hidden');
+                removeHighlights(document.getElementById('printable-area'));
+            });
+        }
     </script>
 </body>
 </html>
