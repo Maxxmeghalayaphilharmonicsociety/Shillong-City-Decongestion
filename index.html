@@ -34,7 +34,9 @@
         ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.5); border-radius: 4px; }
         #progress-bar { width: 0%; transition: width 0.1s ease-out; }
         mark.highlight { background-color: #fef08a; color: #000; padding: 0.1em 0.3em; border-radius: 0.2em; }
+        mark.highlight.current { background-color: #f59e0b; color: #000; font-weight: bold; box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.5); }
         .dark mark.highlight { background-color: #854d0e; color: #fff; }
+        .dark mark.highlight.current { background-color: #d97706; color: #fff; }
         @media print { .no-print { display: none !important; } }
     </style>
 </head>
@@ -67,11 +69,17 @@
                         <a href="questions.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-amber-950 hover:text-amber-300 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition">Questions</a>
                     </div>
 
-                    <!-- Search Input -->
-                    <div class="relative">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-sm"></i>
-                        <input type="text" id="searchInput" placeholder="Search site..." class="pl-9 pr-8 py-1.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200 w-36 focus:w-52 transition-all">
-                        <button id="clearSearch" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs"><i class="fa-solid fa-xmark"></i></button>
+                    <!-- Search Input with Find Next Button -->
+                    <div class="flex items-center space-x-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-full px-2 py-0.5">
+                        <div class="relative flex items-center">
+                            <i class="fa-solid fa-magnifying-glass absolute left-2.5 text-slate-400 text-xs"></i>
+                            <input type="text" id="searchInput" placeholder="Search site..." class="pl-7 pr-6 py-1 text-xs rounded-l-full bg-transparent focus:outline-none text-slate-800 dark:text-slate-200 w-28 focus:w-36 transition-all">
+                            <button id="clearSearch" class="hidden absolute right-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <button id="findNextBtn" disabled title="Find Next Occurrence" class="px-2.5 py-1 bg-amber-600 hover:bg-amber-700 disabled:opacity-40 disabled:hover:bg-amber-600 text-white rounded-full text-[11px] font-semibold transition flex items-center space-x-1">
+                            <span>Next</span>
+                            <span id="matchCount" class="text-[10px] bg-black/20 px-1 rounded">0/0</span>
+                        </button>
                     </div>
 
                     <!-- Font Sizing & Theme Toggle -->
@@ -91,9 +99,12 @@
             </div>
         </div>
         <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 space-y-3">
-            <div class="relative">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400"></i>
-                <input type="text" id="searchInputMobile" placeholder="Search site..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
+            <div class="flex items-center space-x-2">
+                <div class="relative flex-1">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+                    <input type="text" id="searchInputMobile" placeholder="Search site..." class="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
+                </div>
+                <button id="findNextBtnMobile" class="px-3 py-1.5 bg-amber-600 text-white rounded-lg text-xs font-semibold">Next <span id="matchCountMobile">0/0</span></button>
             </div>
             <div class="grid grid-cols-3 gap-2 text-center text-xs font-semibold">
                 <a href="index.html" class="p-2 bg-amber-500 text-slate-950 rounded-lg">Home</a>
@@ -153,24 +164,48 @@
         if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', () => document.documentElement.classList.toggle('dark'));
         document.getElementById('mobileMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('hidden'));
 
-        // Search Filter & Highlighting Logic
+        // Search & Find Next Logic
         const searchInput = document.getElementById('searchInput');
         const searchInputMobile = document.getElementById('searchInputMobile');
         const clearSearchBtn = document.getElementById('clearSearch');
+        const findNextBtn = document.getElementById('findNextBtn');
+        const findNextBtnMobile = document.getElementById('findNextBtnMobile');
+        const matchCount = document.getElementById('matchCount');
+        const matchCountMobile = document.getElementById('matchCountMobile');
+
+        let currentMatchIndex = -1;
+        let matches = [];
 
         function handleSearch(e) {
             const query = e.target.value.trim().toLowerCase();
             const contentArea = document.getElementById('printable-area');
             
+            // Sync mobile/desktop input values
+            if (e.target === searchInput && searchInputMobile) searchInputMobile.value = e.target.value;
+            if (e.target === searchInputMobile && searchInput) searchInput.value = e.target.value;
+
             if (query.length > 0) {
                 clearSearchBtn.classList.remove('hidden');
             } else {
                 clearSearchBtn.classList.add('hidden');
+                resetSearchState();
             }
 
             removeHighlights(contentArea);
-            if (query.length >= 3) {
+            if (query.length >= 2) {
                 highlightText(contentArea, query);
+                matches = contentArea.querySelectorAll('mark.highlight');
+                if (matches.length > 0) {
+                    currentMatchIndex = 0;
+                    updateCurrentMatch();
+                    findNextBtn.removeAttribute('disabled');
+                } else {
+                    currentMatchIndex = -1;
+                    updateCounter();
+                    findNextBtn.setAttribute('disabled', 'true');
+                }
+            } else {
+                resetSearchState();
             }
         }
 
@@ -203,14 +238,52 @@
             });
         }
 
+        function findNext() {
+            if (matches.length === 0) return;
+            matches[currentMatchIndex].classList.remove('current');
+            currentMatchIndex = (currentMatchIndex + 1) % matches.length;
+            updateCurrentMatch();
+        }
+
+        function updateCurrentMatch() {
+            matches.forEach(m => m.classList.remove('current'));
+            const activeMatch = matches[currentMatchIndex];
+            activeMatch.classList.add('current');
+            activeMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            updateCounter();
+        }
+
+        function updateCounter() {
+            const countText = matches.length > 0 ? `${currentMatchIndex + 1}/${matches.length}` : '0/0';
+            matchCount.innerText = countText;
+            if (matchCountMobile) matchCountMobile.innerText = countText;
+        }
+
+        function resetSearchState() {
+            removeHighlights(document.getElementById('printable-area'));
+            matches = [];
+            currentMatchIndex = -1;
+            matchCount.innerText = '0/0';
+            if (matchCountMobile) matchCountMobile.innerText = '0/0';
+            findNextBtn.setAttribute('disabled', 'true');
+        }
+
         if (searchInput) searchInput.addEventListener('input', handleSearch);
         if (searchInputMobile) searchInputMobile.addEventListener('input', handleSearch);
+        
+        if (searchInput) {
+            searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') findNext(); });
+        }
+
+        if (findNextBtn) findNextBtn.addEventListener('click', findNext);
+        if (findNextBtnMobile) findNextBtnMobile.addEventListener('click', findNext);
+
         if (clearSearchBtn) {
             clearSearchBtn.addEventListener('click', () => {
                 searchInput.value = '';
                 if (searchInputMobile) searchInputMobile.value = '';
                 clearSearchBtn.classList.add('hidden');
-                removeHighlights(document.getElementById('printable-area'));
+                resetSearchState();
             });
         }
     </script>
