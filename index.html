@@ -37,7 +37,15 @@
         mark.highlight.current { background-color: #f59e0b; color: #000; font-weight: bold; box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.5); }
         .dark mark.highlight { background-color: #854d0e; color: #fff; }
         .dark mark.highlight.current { background-color: #d97706; color: #fff; }
-        @media print { .no-print { display: none !important; } }
+
+        /* Print styling for clean article PDF export */
+        @media print {
+            body { background: white !important; color: black !important; font-size: 11pt; }
+            .no-print { display: none !important; }
+            nav, header, .hero-cards { display: none !important; }
+            #printable-article { border: none !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; background: white !important; color: black !important; width: 100% !important; }
+            a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 80%; }
+        }
     </style>
 </head>
 <body class="bg-slate-100 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-200">
@@ -88,7 +96,7 @@
                         <span class="text-[10px] text-slate-400 px-1 border-x border-slate-300 dark:border-slate-700">Font</span>
                         <button onclick="adjustFontSize(1)" class="px-2 py-1 text-slate-600 dark:text-slate-300 text-xs font-bold">A+</button>
                     </div>
-                    <button onclick="window.print()" title="Print" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-500 rounded-lg"><i class="fa-solid fa-print"></i></button>
+                    <button onclick="window.print()" title="Print Full Page" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-500 rounded-lg"><i class="fa-solid fa-print"></i></button>
                     <button id="themeToggle" title="Toggle Theme" class="p-2 text-slate-600 dark:text-slate-300 hover:text-amber-500 rounded-lg">
                         <i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline"></i>
                     </button>
@@ -119,14 +127,14 @@
         <div id="printable-area" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-8 sm:p-12 space-y-12">
             
             <!-- Hero Section -->
-            <div class="text-center space-y-3 border-b border-slate-200 dark:border-slate-800 pb-10">
+            <div class="text-center space-y-3 border-b border-slate-200 dark:border-slate-800 pb-10 hero-cards">
                 <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-200">CENTRAL CIVIC REPOSITORY</span>
                 <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Shillong Peak Ropeway Project Portal</h1>
                 <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Independent evidentiary submissions, forensic audit reports, and statutory compliance cross-verifications for the ₹151 Crore Shillong Peak Ropeway Project.</p>
             </div>
 
             <!-- Subpage Navigation Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 hero-cards">
                 <a href="audit_reports.html" class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 hover:border-emerald-500 transition group shadow-sm">
                     <div class="flex items-center space-x-3 mb-3">
                         <div class="p-3 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-lg"><i class="fa-solid fa-file-shield text-lg"></i></div>
@@ -144,13 +152,19 @@
                 </a>
             </div>
 
-            <!-- Article Section -->
-            <article class="space-y-8 pt-8 border-t border-slate-200 dark:border-slate-800">
-                <div class="space-y-4 text-center">
-                    <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200 uppercase tracking-widest">Special Feature Report</span>
-                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white leading-snug">
-                        🌲 The Battle for Lum Shyllong: Inside the Crisis Over Shillong’s Fragile Water Catchment
-                    </h2>
+            <!-- Article Section with PDF Export ID -->
+            <article id="printable-article" class="space-y-8 pt-8 border-t border-slate-200 dark:border-slate-800">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+                    <div class="space-y-2">
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200 uppercase tracking-widest">Special Feature Report</span>
+                        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white leading-snug">
+                            🌲 The Battle for Lum Shyllong: Inside the Crisis Over Shillong’s Fragile Water Catchment
+                        </h2>
+                    </div>
+                    <button onclick="printArticleOnly()" title="Download Article as PDF" class="no-print px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-semibold shadow-md transition flex items-center space-x-2 shrink-0">
+                        <i class="fa-solid fa-file-pdf text-sm"></i>
+                        <span>Download Article PDF</span>
+                    </button>
                 </div>
 
                 <div class="font-serif text-slate-700 dark:text-slate-300 space-y-6 text-sm sm:text-base leading-relaxed bg-gradient-to-br from-slate-50 to-emerald-50/30 dark:from-slate-800/40 dark:to-slate-900 p-6 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
@@ -205,8 +219,8 @@
                             <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
                                 <strong class="font-bold text-emerald-600 dark:text-emerald-400 block">1. National Green Tribunal (Eastern Zone Bench) Judgment</strong>
                                 <ul class="list-disc pl-5 space-y-1.5 text-slate-600 dark:text-slate-400">
-                                    <li><strong>Original Court Portal:</strong> Access case filings and orders on the <a href="https://greentribunal.gov.in/" target="_blank" class="text-emerald-500 hover:underline font-semibold">National Green Tribunal Portal</a>.</li>
-                                    <li><strong>Press Report &amp; Detailed Breakdown:</strong> Read <a href="https://highlandpost.com/man-who-went-to-ngt-to-save-lawsohtun-now-defends-ropeway/" target="_blank" class="text-emerald-500 hover:underline font-semibold">Highland Post Coverage</a> examining the legal history and defense of the Lawsohtun catchment zone.</li>
+                                    <li><strong>Original Court Portal:</strong> Access case filings and orders on the <a href="https://greentribunal.gov.in/" target="_blank" class="text-emerald-500 hover:underline font-semibold">National Green Tribunal Portal</a>[cite: 1].</li>
+                                    <li><strong>Press Report &amp; Detailed Breakdown:</strong> Read <a href="https://highlandpost.com/man-who-went-to-ngt-to-save-lawsohtun-now-defends-ropeway/" target="_blank" class="text-emerald-500 hover:underline font-semibold">Highland Post Coverage</a> examining the legal history and defense of the Lawsohtun catchment zone[cite: 1].</li>
                                 </ul>
                             </div>
 
@@ -214,9 +228,9 @@
                             <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
                                 <strong class="font-bold text-emerald-600 dark:text-emerald-400 block">2. Meghalaya Institute of Governance (MIG) &amp; Official Project Documentation</strong>
                                 <ul class="list-disc pl-5 space-y-1.5 text-slate-600 dark:text-slate-400">
-                                    <li><strong>Original MIG Consultation &amp; ESMP Document (PDF):</strong> View the official <a href="https://migshillong.org/wp-content/uploads/2025/07/13_Construction-of-Shillong-Peak-Ropeway_compressed.pdf" target="_blank" class="text-emerald-500 hover:underline font-semibold">MIG Public Consultation &amp; ESMP Document (PDF)</a> covering consultations and environmental management plans.</li>
-                                    <li><strong>Official Tourism Department Press Release (PDF):</strong> View the <a href="https://meghalaya.gov.in/sites/default/files/press_release/Press_Release_467.pdf" target="_blank" class="text-emerald-500 hover:underline font-semibold">Govt of Meghalaya Press Release (PDF)</a> detailing the RITES DPR, NDB funding, and planned commercial amenities.</li>
-                                    <li><strong>Press Analysis of DPR Buildings:</strong> Read the investigative report in <a href="https://highlandpost.com/ropeway-project-tagged-with-several-big-buildings/" target="_blank" class="text-emerald-500 hover:underline font-semibold">Highland Post</a> regarding multi-storey terminal structures.</li>
+                                    <li><strong>Original MIG Consultation &amp; ESMP Document (PDF):</strong> View the official <a href="https://migshillong.org/wp-content/uploads/2025/07/13_Construction-of-Shillong-Peak-Ropeway_compressed.pdf" target="_blank" class="text-emerald-500 hover:underline font-semibold">MIG Public Consultation &amp; ESMP Document (PDF)</a> covering consultations and environmental management plans[cite: 1].</li>
+                                    <li><strong>Official Tourism Department Press Release (PDF):</strong> View the <a href="https://meghalaya.gov.in/sites/default/files/press_release/Press_Release_467.pdf" target="_blank" class="text-emerald-500 hover:underline font-semibold">Govt of Meghalaya Press Release (PDF)</a> detailing the RITES DPR, NDB funding, and planned commercial amenities[cite: 1].</li>
+                                    <li><strong>Press Analysis of DPR Buildings:</strong> Read the investigative report in <a href="https://highlandpost.com/ropeway-project-tagged-with-several-big-buildings/" target="_blank" class="text-emerald-500 hover:underline font-semibold">Highland Post</a> regarding multi-storey terminal structures[cite: 1].</li>
                                 </ul>
                             </div>
 
@@ -224,9 +238,9 @@
                             <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
                                 <strong class="font-bold text-emerald-600 dark:text-emerald-400 block">3. Khasi Hills Autonomous District Council (KHADC) Sealing &amp; FIR Reports</strong>
                                 <ul class="list-disc pl-5 space-y-1.5 text-slate-600 dark:text-slate-400">
-                                    <li><strong>Site Closure &amp; Police FIR Report:</strong> Read <a href="https://highlandpost.com/govt-vs-khadc-over-shillong-peak-project-fir-filed-after-site-closure/" target="_blank" class="text-emerald-500 hover:underline font-semibold">Highland Post Coverage</a> detailing the Madan Laban site sealing and Tourism Department FIR.</li>
-                                    <li><strong>Lock Breaking &amp; District Magistrate Order:</strong> Read <a href="https://highlandpost.com/jac-stance-remains-firm-govt-breaks-khadc-locks-on-ropeway-site/" target="_blank" class="text-emerald-500 hover:underline font-semibold">Highland Post Coverage</a> covering the order to break KHADC seals and JAC responses.</li>
-                                    <li><strong>Trading Licence Jurisdiction Statement:</strong> Read <a href="https://highlandpost.com/no-licence-no-business-on-shillong-ropeway-dont-confuse-land-with-licence-says-chen/" target="_blank" class="text-emerald-500 hover:underline font-semibold">Highland Post Interview</a> citing KHADC Executive Member Denzil Chen on Section 7A of the Trading by Non-Tribals Regulation.</li>
+                                    <li><strong>Site Closure &amp; Police FIR Report:</strong> Read <a href="https://highlandpost.com/govt-vs-khadc-over-shillong-peak-project-fir-filed-after-site-closure/" target="_blank" class="text-emerald-500 hover:underline font-semibold">Highland Post Coverage</a> detailing the Madan Laban site sealing and Tourism Department FIR[cite: 1].</li>
+                                    <li><strong>Lock Breaking &amp; District Magistrate Order:</strong> Read <a href="https://highlandpost.com/jac-stance-remains-firm-govt-breaks-khadc-locks-on-ropeway-site/" target="_blank" class="text-emerald-500 hover:underline font-semibold">Highland Post Coverage</a> covering the order to break KHADC seals and JAC responses[cite: 1].</li>
+                                    <li><strong>Trading Licence Jurisdiction Statement:</strong> Read <a href="https://highlandpost.com/no-licence-no-business-on-shillong-ropeway-dont-confuse-land-with-licence-says-chen/" target="_blank" class="text-emerald-500 hover:underline font-semibold">Highland Post Interview</a> citing KHADC Executive Member Denzil Chen on Section 7A of the Trading by Non-Tribals Regulation[cite: 1].</li>
                                 </ul>
                             </div>
 
@@ -234,9 +248,9 @@
                             <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
                                 <strong class="font-bold text-emerald-600 dark:text-emerald-400 block">4. Government Consultations &amp; Ministerial Statements</strong>
                                 <ul class="list-disc pl-5 space-y-1.5 text-slate-600 dark:text-slate-400">
-                                    <li><strong>Public Consultation &amp; Technical Safeguards:</strong> Read <a href="https://www.indiatodayne.in/meghalaya/story/meghalaya-government-holds-public-consultation-on-shillong-peak-ropeway-project-1471745-2026-11-05" target="_blank" class="text-emerald-500 hover:underline font-semibold">India Today NE Report</a> covering Tourism Commissioner Cyril V. Diengdoh on funding and European CEN standards.</li>
-                                    <li><strong>Ministerial Stance Against Relocation:</strong> Read <a href="https://theshillongtimes.com/2026/11/06/state-govt-firm-on-ropeway-project/" target="_blank" class="text-emerald-500 hover:underline font-semibold">The Shillong Times Report (Nov 6)</a> on Tourism Minister Paul Lyngdoh refusal to reverse the project.</li>
-                                    <li><strong>Government Defense &amp; Protesters Appeal:</strong> Read <a href="https://theshillongtimes.com/2026/11/07/govt-stands-firm-on-ropeway-as-dc-urges-protesters-to-disperse/" target="_blank" class="text-emerald-500 hover:underline font-semibold">The Shillong Times Report (Nov 7)</a> featuring Deputy Chief Minister Prestone Tynsong and DC appeals.</li>
+                                    <li><strong>Public Consultation &amp; Technical Safeguards:</strong> Read <a href="https://www.indiatodayne.in/meghalaya/story/meghalaya-government-holds-public-consultation-on-shillong-peak-ropeway-project-1471745-2026-11-05" target="_blank" class="text-emerald-500 hover:underline font-semibold">India Today NE Report</a> covering Tourism Commissioner Cyril V. Diengdoh on funding and European CEN standards[cite: 1].</li>
+                                    <li><strong>Ministerial Stance Against Relocation:</strong> Read <a href="https://theshillongtimes.com/2026/11/06/state-govt-firm-on-ropeway-project/" target="_blank" class="text-emerald-500 hover:underline font-semibold">The Shillong Times Report (Nov 6)</a> on Tourism Minister Paul Lyngdoh refusal to reverse the project[cite: 1].</li>
+                                    <li><strong>Government Defense &amp; Protesters Appeal:</strong> Read <a href="https://theshillongtimes.com/2026/11/07/govt-stands-firm-on-ropeway-as-dc-urges-protesters-to-disperse/" target="_blank" class="text-emerald-500 hover:underline font-semibold">The Shillong Times Report (Nov 7)</a> featuring Deputy Chief Minister Prestone Tynsong and DC appeals[cite: 1].</li>
                                 </ul>
                             </div>
                         </div>
@@ -260,6 +274,11 @@
         function adjustFontSize(delta) {
             const area = document.getElementById('printable-area');
             area.style.fontSize = delta > 0 ? '105%' : '100%';
+        }
+
+        // Print Article Only Function for PDF Export
+        function printArticleOnly() {
+            window.print();
         }
 
         // Theme & Mobile Menu Toggles
