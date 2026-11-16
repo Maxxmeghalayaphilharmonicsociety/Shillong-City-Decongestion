@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrative Irregularities & Environmental Violations — Meghalaya Tourism Projects</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        legal: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            gold: '#d97706',
+                            crimson: '#dc2626',
+                            emerald: '#059669',
+                            navy: '#1e3a8a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                        heading: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); }
+        ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.5); border-radius: 4px; }
+        #progress-bar { width: 0%; transition: width 0.1s ease-out; }
+        mark.highlight { background-color: #fef08a; color: #000; padding: 0.1em 0.3em; border-radius: 0.2em; }
+        mark.highlight.current { background-color: #f59e0b; color: #000; font-weight: bold; box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.5); }
+        .dark mark.highlight { background-color: #854d0e; color: #fff; }
+        .dark mark.highlight.current { background-color: #d97706; color: #fff; }
+        @media print {
+            body { background: white !important; color: black !important; font-size: 11pt; }
+            .no-print { display: none !important; }
+            nav, header.no-print { display: none !important; }
+            #printable-dossier { border: none !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; }
+            a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 80%; }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-200">
+
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1.5 bg-slate-200 dark:bg-slate-800 z-50 no-print">
+        <div id="progress-bar" class="h-full bg-emerald-600 dark:bg-emerald-500"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur border-b border-slate-200 dark:border-slate-800 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Doc Header -->
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-slate-900 text-emerald-400 rounded-lg dark:bg-emerald-500 dark:text-slate-950">
+                        <i class="fa-solid fa-file-shield text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">Civic Portal</span>
+                        <a href="index.html" class="font-heading font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:text-emerald-500 transition">Administrative Dossier</a>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Controls -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <div class="flex items-center space-x-1.5 border-r border-slate-300 dark:border-slate-700 pr-3">
+                        <a href="index.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:text-emerald-500 transition flex items-center space-x-1.5">
+                            <i class="fa-solid fa-house text-xs"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="audit_reports.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white shadow-sm">Audit Dossier</a>
+                        <a href="questions.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:text-emerald-500 transition">Questions</a>
+                    </div>
+
+                    <!-- Search Input with Find Next -->
+                    <div class="flex items-center space-x-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-full px-2 py-0.5">
+                        <div class="relative flex items-center">
+                            <i class="fa-solid fa-magnifying-glass absolute left-2.5 text-slate-400 text-xs"></i>
+                            <input type="text" id="searchInput" placeholder="Search dossier..." class="pl-7 pr-6 py-1 text-xs rounded-l-full bg-transparent focus:outline-none text-slate-800 dark:text-slate-200 w-28 focus:w-36 transition-all">
+                            <button id="clearSearch" class="hidden absolute right-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <button id="findNextBtn" disabled title="Find Next Occurrence" class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-40 disabled:hover:bg-emerald-600 text-white rounded-full text-[11px] font-semibold transition flex items-center space-x-1">
+                            <span>Next</span>
+                            <span id="matchCount" class="text-[10px] bg-black/20 px-1 rounded">0/0</span>
+                        </button>
+                    </div>
+
+                    <!-- Font Size & Theme Toggle -->
+                    <div class="flex items-center bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg p-0.5">
+                        <button onclick="adjustFontSize(-1)" class="px-2 py-1 text-slate-600 dark:text-slate-300 text-xs font-bold">A-</button>
+                        <span class="text-[10px] text-slate-400 px-1 border-x border-slate-300 dark:border-slate-700">Font</span>
+                        <button onclick="adjustFontSize(1)" class="px-2 py-1 text-slate-600 dark:text-slate-300 text-xs font-bold">A+</button>
+                    </div>
+                    <button onclick="window.print()" title="Download PDF / Print" class="p-2 text-slate-600 dark:text-slate-300 hover:text-emerald-500 rounded-lg"><i class="fa-solid fa-file-pdf"></i></button>
+                    <button id="themeToggle" title="Toggle Theme" class="p-2 text-slate-600 dark:text-slate-300 hover:text-emerald-500 rounded-lg">
+                        <i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <a href="index.html" class="p-2 text-slate-700 dark:text-slate-200 rounded-lg" title="Home"><i class="fa-solid fa-house"></i></a>
+                    <button id="mobileMenuBtn" class="p-2 text-slate-700 dark:text-slate-200 rounded-lg"><i class="fa-solid fa-bars text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 space-y-3">
+            <div class="flex items-center space-x-2">
+                <div class="relative flex-1">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+                    <input type="text" id="searchInputMobile" placeholder="Search dossier..." class="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
+                </div>
+                <button id="findNextBtnMobile" class="px-3 py-1.5 bg-emerald-600 text-white rounded-lg text-xs font-semibold">Next <span id="matchCountMobile">0/0</span></button>
+            </div>
+            <div class="grid grid-cols-3 gap-2 text-center text-xs font-semibold">
+                <a href="index.html" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">Home</a>
+                <a href="audit_reports.html" class="p-2 bg-emerald-600 text-white rounded-lg">Dossier</a>
+                <a href="questions.html" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">Questions</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Container -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div id="printable-dossier" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-6 sm:p-12 space-y-10">
+
+            <!-- Dossier Header -->
+            <section class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-8">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-200 border border-rose-300 dark:border-rose-800">
+                        <span class="w-2 h-2 rounded-full bg-rose-600 animate-pulse mr-2"></span>
+                        OFFICIAL INVESTIGATIVE COMPILATION
+                    </span>
+                    <button onclick="window.print()" class="no-print px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold shadow transition flex items-center space-x-1.5">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span>Download Dossier PDF</span>
+                    </button>
+                </div>
+                <h1 class="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                    Administrative Irregularities, Statutory Bypass, and Environmental Violations in Meghalaya Tourism Projects
+                </h1>
+                <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-serif leading-relaxed">
+                    A comprehensive cross-verification of procedural oversteps, judicial contradictions, tribal governance workarounds, and national safety violations across the ₹330-crore Taj Umiam Resort &amp; Spa redevelopment and the ₹151-crore Shillong Peak Ropeway Project.
+                </p>
+            </section>
+
+            <!-- Executive Summary -->
+            <section class="space-y-4">
+                <h2 class="font-heading text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                    <span class="p-1.5 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-md text-sm font-mono">📊</span>
+                    <span>Executive Summary</span>
+                </h2>
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 font-serif text-sm sm:text-base leading-relaxed space-y-3 text-slate-700 dark:text-slate-300">
+                    <p>
+                        This is a compilation of documented procedural oversteps, judicial contradictions, tribal governance workarounds, and national safety violations committed by the Meghalaya state administration.
+                    </p>
+                    <p>
+                        It exposes a systemic pattern of overriding local community consent, manipulating regulatory frameworks, and bypassing ecological safeguards across two multi-million-dollar flagship tourism projects: the ₹330-crore Taj Umiam Resort &amp; Spa redevelopment and the ₹151-crore Shillong Peak Ropeway Project.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Part I -->
+            <section class="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                <h2 class="font-heading text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                    <span class="p-1.5 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-md text-sm font-mono">I</span>
+                    <span>Part I: The Historical Pollution of the Original State-Run Orchid Resort</span>
+                </h2>
+                <div class="font-serif text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        Prior to its commercial transfer, the state government operated under a severe conflict of interest, serving simultaneously as the developer, the polluter, and the environmental regulator.
+                    </p>
+                    <div class="space-y-3 pl-4 border-l-2 border-emerald-500">
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">1. The Statutory Closure Notice</strong>
+                            <p class="text-xs sm:text-sm">Long before the private handover, the Meghalaya State Pollution Control Board (MSPCB) was legally forced to issue severe statutory closure notices to its own state-owned flagship properties, including the Orchid Lake Resort, for operating without functional effluent treatment infrastructure [Cobrapost].</p>
+                        </div>
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">2. Judicial Enforcement (2022)</strong>
+                            <p class="text-xs sm:text-sm">On October 20, 2022, the High Court of Meghalaya formally halted construction and intervened against prominent lakeside entities in the PIL <em>In Re: Cleanliness of Umiam Lake</em>, specifically naming the state-run Orchid Lake Resort[cite: 1]. The bench documented that the resort lacked adequate mechanisms to handle commercial effluents and garbage, allowing raw waste to seep directly into the primary water supply[cite: 1].</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part II -->
+            <section class="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                <h2 class="font-heading text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                    <span class="p-1.5 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-md text-sm font-mono">II</span>
+                    <span>Part II: The National Dam Safety Act Violations &amp; Structural Risks (Umiam)</span>
+                </h2>
+                <div class="font-serif text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        The central pillar of the engineering and energy security challenge rests on the fact that Umiam Lake is a critical, active hydroelectric reservoir housing the Umiam Stage I powerhouse, which has been operational since 1965. Activists and engineering watchdogs have exposed major violations under the central Dam Safety Act, 2021 framework:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-1 text-xs">
+                            <strong class="font-sans uppercase text-slate-900 dark:text-white block mb-1">1. Encroachment on High-Risk Inundation Zones</strong>
+                            <p>The Act mandates strict surveillance and vulnerability mapping of major dams. Heavy commercial construction is heavily restricted within high-risk margins to avoid catastrophic failures. Ignoring these boundaries on active reservoir banks directly violates safety mandates.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-1 text-xs">
+                            <strong class="font-sans uppercase text-slate-900 dark:text-white block mb-1">2. The "Grandfathered" Renovation Loophole</strong>
+                            <p>To avoid a fresh federal Environmental Impact Assessment (EIA) required for a new mega-hospitality footprint, the administration legally framed the layout as an "upgradation" or "renovation" of the old Orchid property, shielding the luxury expansion from scrutiny.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-1 text-xs">
+                            <strong class="font-sans uppercase text-slate-900 dark:text-white block mb-1">3. Siltation Acceleration</strong>
+                            <p>Under Dam Safety Act and DRIP guidelines, the state must prioritize actions reducing reservoir siltation. Heavy earth-cutting and clearing on fragile reservoir banks directly accelerate soil erosion into the waterbed, violating statutory obligations.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-1 text-xs">
+                            <strong class="font-sans uppercase text-slate-900 dark:text-white block mb-1">4. The Structural Integrity Contradiction</strong>
+                            <p>The Umiam Dam requires emergency rehabilitation (grouting, 12 MT weight limits) under DRIP. Opponents highlight the contradiction of spending public funds on emergency grouting while clearing a private mega-project introducing heavy commercial traffic along the rim.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part III -->
+            <section class="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                <h2 class="font-heading text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                    <span class="p-1.5 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-md text-sm font-mono">III</span>
+                    <span>Part III: Contradictions in the Eco-Clearances &amp; Buffer Zones</span>
+                </h2>
+                <div class="font-serif text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        Official Right to Information (RTI) records exposed a major gap between the government's public statements and its internal, legally binding approvals.
+                    </p>
+                    <div class="space-y-3 pl-4 border-l-2 border-emerald-500">
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">1. The Provisional Document Scam</strong>
+                            <p class="text-xs sm:text-sm">To quiet public anger, the Tourism Department admitted that the Consent to Establish (CTE) issued by the MSPCB was merely a provisional document. This confirmed that the state executive handed over the land and held a grand foundation ceremony before securing final, unconditional environmental clearances[cite: 3].</p>
+                        </div>
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">2. The Lumpongdeng Island Deception</strong>
+                            <p class="text-xs sm:text-sm">The Green-Tech Foundation exposed that while the Chief Minister promised the public that Lumpongdeng Island would see no permanent structural damage, the official CTE issued to Umiam Hotels Pvt. Ltd. clearly authorized the permanent construction of luxury villas, restaurants, and cafes directly on the eco-fragile island[cite: 3].</p>
+                        </div>
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">3. Manipulation of Judicial Buffer Zones</strong>
+                            <p class="text-xs sm:text-sm">In May 2023, the High Court placed a strict ban on any new constructions within 50 metres of the high-water mark[cite: 2]. To shield its public-private partnership (PPP) venture, the administration structured the Meghalaya Waterbodies (Preservation and Conservation) Guidelines, 2023 to establish relaxed localized zoning boundaries, ensuring the luxury layout would technically bypass standard encroachment violations.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part IV -->
+            <section class="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                <h2 class="font-heading text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                    <span class="p-1.5 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-md text-sm font-mono">IV</span>
+                    <span>Part IV: Sixth Schedule &amp; KHADC Land Law Violations</span>
+                </h2>
+                <div class="font-serif text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        The administrative transfers across both tourism projects violated the tribal sovereignty protections guaranteed by the Sixth Schedule of the Indian Constitution.
+                    </p>
+                    <div class="space-y-3 pl-4 border-l-2 border-emerald-500">
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">1. Circumvention of Tribal Consent (Umiam)</strong>
+                            <p class="text-xs sm:text-sm">The Meghalaya Tourism Development Corporation (MTDC) executed the 60-year commercial lease with external, private corporate bodies without obtaining a binding No-Objection Certificate (NOC) from the Khasi Hills Autonomous District Council (KHADC) and the local Dorbar Shnong (traditional village councils).</p>
+                        </div>
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">2. The Institutional Warfare at Shillong Peak</strong>
+                            <p class="text-xs sm:text-sm">This exact same bypass resulted in direct physical and legal clashes at the Shillong Peak Ropeway lower terminal site. On October 27, 2026, the KHADC Enforcement Wing aggressively locked and sealed the ropeway's terminal site. The council evicted project staff, citing that the state's chosen executing firms (KEC International and Tantia Construction) were operating illegally without a mandatory Trading License for Non-Tribals under the United Khasi-Jaintia Hills District Regulation, 1954.</p>
+                        </div>
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">3. The State Retaliation</strong>
+                            <p class="text-xs sm:text-sm">Rather than resolving the constitutional compliance issue, the state's Tourism Department openly defied the council, filing a police FIR against the KHADC Enforcement Inspector for trespass and property seizure, claiming state-owned property is exempt from tribal regulation. This mirrors the exact retroactive compliance arguments used to preserve the Umiam lease agreements.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part V -->
+            <section class="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                <h2 class="font-heading text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                    <span class="p-1.5 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-md text-sm font-mono">V</span>
+                    <span>Part V: Corroborative Manipulations in the Shillong Ropeway Project</span>
+                </h2>
+                <div class="font-serif text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        The administrative manipulation strategy re-emerges entirely within the ₹151-crore Shillong Peak Ropeway Project, exposing a state-wide blueprint for overriding ecological and civic safeguards:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-1 text-xs">
+                            <strong class="font-sans uppercase text-slate-900 dark:text-white block mb-1">1. Abuse of the Meghalaya Ropeway Act, 2022</strong>
+                            <p>Under Section 36 of the Act, the state granted the executive ultimate powers to permit private promoters to string cables over private land, engineered specifically to suppress property objections and bypass traditional rights.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-1 text-xs">
+                            <strong class="font-sans uppercase text-slate-900 dark:text-white block mb-1">2. Fabrication of Community Consent</strong>
+                            <p>To meet baseline guidelines, the state cited a 2022 public consultation. MIG minutes revealed only 27 people attended (5 being state staff), and while 80% warned of groundwater devastation, the state buried objections to claim unanimous consent.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-1 text-xs">
+                            <strong class="font-sans uppercase text-slate-900 dark:text-white block mb-1">3. Violation of Critical Catchments</strong>
+                            <p>Just as Umiam was endangered, the ropeway cuts directly through the U Lum Shyllong area, a protected catchment basin housing primary natural aquifers supplying drinking water to South Shillong.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-1 text-xs">
+                            <strong class="font-sans uppercase text-slate-900 dark:text-white block mb-1">4. The Deforestation Proof</strong>
+                            <p>Despite claims of a zero-impact eco-friendly venture, government records admitted that at least 545 trees have been felled directly within the fragile water catchment corridor to clear the 20-metre right-of-way.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part VI -->
+            <section class="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                <h2 class="font-heading text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                    <span class="p-1.5 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-md text-sm font-mono">VI</span>
+                    <span>Part VI: Current Status &amp; Executive Retractions</span>
+                </h2>
+                <div class="font-serif text-slate-700 dark:text-slate-300 space-y-4 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        Following sustained civil blockades, joint action committee protests, and environmental resistance, the state executive has been forced into partial legal rollbacks:
+                    </p>
+                    <div class="space-y-3 pl-4 border-l-2 border-emerald-500">
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">1. Mainland Umiam Containment Order</strong>
+                            <p class="text-xs sm:text-sm">The state officially decreed that all heavy five-star resort infrastructure will be strictly restricted to the pre-existing mainland footprint of the old Orchid Resort[cite: 4]. Lumpongdeng Island (36.10 acres) was scaled back to low-impact, temporary footprints under civil pressure[cite: 4].</p>
+                        </div>
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">2. The Ropeway Deadlock</strong>
+                            <p class="text-xs sm:text-sm">The Shillong Peak lower terminal remains a flashpoint of criminal cases and turf disputes between the state police and the KHADC tribal enforcement team over non-tribal trading licenses.</p>
+                        </div>
+                        <div>
+                            <strong class="font-sans text-slate-900 dark:text-white block mb-1">3. The Transparency Vacuum</strong>
+                            <p class="text-xs sm:text-sm">The administration remains under intense pressure to release the comprehensive White Paper promised by Chief Minister Conrad Sangma to address financial and statutory anomalies across these public asset handovers[cite: 5].</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Verified References Directory -->
+            <section class="space-y-6 pt-6 border-t border-slate-200 dark:border-slate-800 text-xs">
+                <div class="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800">
+                    <h2 class="font-heading text-lg font-bold text-slate-900 dark:text-white">📚 Verified References &amp; Documentation Archive</h2>
+                    <span class="font-mono text-slate-500">Official Citations (8)</span>
+                </div>
+                <div class="space-y-3 font-mono">
+                    <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <span>1. Indian Kanoon - Umiam High Court Order (PIL 2022)</span>
+                        <a href="https://indiankanoon.org/doc/51331899/" target="_blank" class="text-emerald-500 hover:underline">Link ↗</a>
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <span>2. SCC Online - Meghalaya HC Construction Restrictions (50m Buffer)</span>
+                        <span class="text-slate-400">Judicial Record</span>
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <span>3. The Shillong Times - Key Details of Taj Umiam Resort Withheld</span>
+                        <a href="https://theshillongtimes.com/2026/04/03/key-details-of-taj-umiam-resort-project-being-withheld-group/" target="_blank" class="text-emerald-500 hover:underline">Link ↗</a>
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <span>4. The Shillong Times - Row Over Luxury Resort on Island / Umiam Retreat</span>
+                        <a href="https://theshillongtimes.com/2026/04/03/key-details-of-taj-umiam-resort-project-being-withheld-group/" target="_blank" class="text-emerald-500 hover:underline">Link ↗</a>
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <span>5. The Shillong Times - CM Ready to Bring White Paper on Assets</span>
+                        <span class="text-slate-400">Archived Record</span>
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <span>6. The Shillong Times - Ropeway Act Focus &amp; Property Bypass</span>
+                        <a href="https://theshillongtimes.com/2026/11/11/ropeway-controversy-brings-act-into-focus/" target="_blank" class="text-emerald-500 hover:underline">Link ↗</a>
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <span>7. NDTV - Shillong Ropeway Conflict Escalates (KHADC Sealing &amp; FIR)</span>
+                        <a href="https://www.ndtv.com/india-news/controversy-escalates-over-rs-151-crore-shillong-ropeway-project-12272031" target="_blank" class="text-emerald-500 hover:underline">Link ↗</a>
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <span>8. India Today NE - U Lum Shyllong Aquifer Deforestation &amp; Panel Demands</span>
+                        <a href="https://www.indiatodayne.in/meghalaya/story/shillong-ropeway-project-south-shillong-panel-demands-independent-expert-study-on-impact-on-water-sources-1474962-2026-11-13" target="_blank" class="text-emerald-500 hover:underline">Link ↗</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Reading Progress Bar & ScrollSpy
+        window.onscroll = function() {
+            let winScroll = document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById("progress-bar").style.width = (winScroll / height) * 100 + "%";
+        };
+
+        // Font Size Adjustment Logic
+        let currentFontSizeLevel = 0;
+        function adjustFontSize(delta) {
+            const printableArea = document.getElementById('printable-dossier');
+            const paragraphs = printableArea.querySelectorAll('p, li, span.block');
+            currentFontSizeLevel = Math.max(-2, Math.min(3, currentFontSizeLevel + delta));
+            paragraphs.forEach(el => {
+                el.style.fontSize = `${100 + currentFontSizeLevel * 10}%`;
+            });
+        }
+
+        // Dark / Light Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
+
+        // Sitewide Search & Find Next Logic
+        const searchInput = document.getElementById('searchInput');
+        const searchInputMobile = document.getElementById('searchInputMobile');
+        const clearSearchBtn = document.getElementById('clearSearch');
+        const findNextBtn = document.getElementById('findNextBtn');
+        const findNextBtnMobile = document.getElementById('findNextBtnMobile');
+        const matchCount = document.getElementById('matchCount');
+        const matchCountMobile = document.getElementById('matchCountMobile');
+
+        let currentMatchIndex = -1;
+        let matches = [];
+
+        function handleSearch(e) {
+            const query = e.target.value.trim().toLowerCase();
+            const contentArea = document.getElementById('printable-dossier');
+            
+            if (e.target === searchInput && searchInputMobile) searchInputMobile.value = e.target.value;
+            if (e.target === searchInputMobile && searchInput) searchInput.value = e.target.value;
+
+            if (query.length > 0) {
+                clearSearchBtn.classList.remove('hidden');
+            } else {
+                clearSearchBtn.classList.add('hidden');
+                resetSearchState();
+            }
+
+            removeHighlights(contentArea);
+            if (query.length >= 2) {
+                highlightText(contentArea, query);
+                matches = contentArea.querySelectorAll('mark.highlight');
+                if (matches.length > 0) {
+                    currentMatchIndex = 0;
+                    updateCurrentMatch();
+                    findNextBtn.removeAttribute('disabled');
+                } else {
+                    currentMatchIndex = -1;
+                    updateCounter();
+                    findNextBtn.setAttribute('disabled', 'true');
+                }
+            } else {
+                resetSearchState();
+            }
+        }
+
+        function highlightText(element, query) {
+            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            function traverse(node) {
+                if (node.nodeType === 3) {
+                    const match = node.nodeValue.match(regex);
+                    if (match) {
+                        const span = document.createElement('span');
+                        span.innerHTML = node.nodeValue.replace(regex, '<mark class="highlight">$1</mark>');
+                        node.parentNode.replaceChild(span, node);
+                    }
+                } else if (node.nodeType === 1 && node.childNodes && !['SCRIPT', 'STYLE', 'INPUT', 'TEXTAREA'].includes(node.tagName)) {
+                    for (let i = 0; i < node.childNodes.length; i++) {
+                        traverse(node.childNodes[i]);
+                    }
+                }
+            }
+            traverse(element);
+        }
+
+        function removeHighlights(element) {
+            const marks = element.querySelectorAll('mark.highlight');
+            marks.forEach(mark => {
+                const parent = mark.parentNode;
+                parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                parent.normalize();
+            });
+        }
+
+        function findNext() {
+            if (matches.length === 0) return;
+            matches[currentMatchIndex].classList.remove('current');
+            currentMatchIndex = (currentMatchIndex + 1) % matches.length;
+            updateCurrentMatch();
+        }
+
+        function updateCurrentMatch() {
+            matches.forEach(m => m.classList.remove('current'));
+            const activeMatch = matches[currentMatchIndex];
+            activeMatch.classList.add('current');
+            activeMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            updateCounter();
+        }
+
+        function updateCounter() {
+            const countText = matches.length > 0 ? `${currentMatchIndex + 1}/${matches.length}` : '0/0';
+            matchCount.innerText = countText;
+            if (matchCountMobile) matchCountMobile.innerText = countText;
+        }
+
+        function resetSearchState() {
+            removeHighlights(document.getElementById('printable-dossier'));
+            matches = [];
+            currentMatchIndex = -1;
+            matchCount.innerText = '0/0';
+            if (matchCountMobile) matchCountMobile.innerText = '0/0';
+            findNextBtn.setAttribute('disabled', 'true');
+        }
+
+        if (searchInput) searchInput.addEventListener('input', handleSearch);
+        if (searchInputMobile) searchInputMobile.addEventListener('input', handleSearch);
+        if (searchInput) searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') findNext(); });
+        if (findNextBtn) findNextBtn.addEventListener('click', findNext);
+        if (findNextBtnMobile) findNextBtnMobile.addEventListener('click', findNext);
+
+        if (clearSearchBtn) {
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                if (searchInputMobile) searchInputMobile.value = '';
+                clearSearchBtn.classList.add('hidden');
+                resetSearchState();
+            });
+        }
+    </script>
+</body>
+</html>
